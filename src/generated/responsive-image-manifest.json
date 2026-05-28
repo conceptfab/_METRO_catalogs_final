@@ -7,6 +7,7 @@
   "/catalogs/FM/gallery/08_26_Metro_FM_DETAL_.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
@@ -19,36 +20,42 @@
   "/catalogs/FM/gallery/08_26_Metro_FM_HERO_1_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/FM/gallery/08_26_Metro_FM_HOME0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/FM/gallery/08_26_Metro_FM_SOLO_A_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/FM/gallery/08_26_Metro_FM_SOLO_B_0001.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/FM/gallery/08_26_Metro_FM_SOLO_C_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/FM/gallery/08_26_Metro_FM_SOLO_D_0001.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
@@ -225,12 +232,14 @@
   "/catalogs/FOTA/gallery/12_25_Metro_FOTA_DETAL_.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/FOTA/gallery/12_25_Metro_FOTA_HOME0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
@@ -243,12 +252,14 @@
   "/catalogs/FOTA/gallery/12_25_Metro_FOTA_SOLO_B_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/FOTA/gallery/12_25_Metro_FOTA_SOLO_D_0001.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
@@ -433,18 +444,21 @@
   "/catalogs/MRC1000/gallery/10_26_Metro_MCR1000_HERO_1_R1_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/MRC1000/gallery/10_26_Metro_MCR1000_HERO_3_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/MRC1000/gallery/MCR1000_detal0006.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
@@ -646,24 +660,28 @@
   "/catalogs/MRC800/gallery/scene_BLACK_A_2_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/MRC800/gallery/scene_BLACK_B_3_4K.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/MRC800/gallery/scene_BLACK_C_3_4K.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/MRC800/gallery/scene_BLACK_D_4_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
@@ -676,6 +694,7 @@
   "/catalogs/MRC800/gallery/scene_WHITE_D_4_QUAD_fix0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
@@ -791,18 +810,21 @@
   "/catalogs/QS/gallery/04_26_Metro_QS_DETAL_.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/QS/gallery/04_26_Metro_QS_HERO_0_0001.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/QS/gallery/04_26_Metro_QS_HOME0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
@@ -1006,18 +1028,21 @@
   "/catalogs/QX/gallery/02_26_Metro_QX_HERO_3_R2_VIZ0001.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/QX/gallery/02_26_Metro_QX_HOME0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/QX/gallery/02_26_Metro_QX_SOLO_C_0001.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
@@ -1030,12 +1055,14 @@
   "/catalogs/QX/gallery/desk-detail.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/QX/gallery/office-lifestyle.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
@@ -1275,24 +1302,28 @@
   "/catalogs/TS/gallery/07_26_Metro_TS_HERO_0A0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/TS/gallery/07_26_Metro_TS_HERO_1_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/TS/gallery/07_26_Metro_TS_HOME0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/TS/gallery/07_26_Metro_TS_SOLO_A_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
@@ -1471,30 +1502,35 @@
   "/catalogs/VR/gallery/05_26_Metro_VR_HERO_0_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/VR/gallery/05_26_Metro_VR_HERO_1_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/VR/gallery/05_26_Metro_VR_HOME0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/VR/gallery/05_26_Metro_VR_SOLO_A_0001.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
   "/catalogs/VR/gallery/05_26_Metro_VR_SOLO_C_0000.webp": [
     256,
     512,
+    800,
     1024,
     1600
   ],
