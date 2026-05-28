@@ -1,0 +1,223 @@
+{
+  "sectionLabel": "Models",
+  "title": "MRC1000 Collection",
+  "subtitle": "Modules",
+  "groups": [
+    {
+      "model": "RC1001",
+      "label": "RC1001",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC1001",
+          "name": "RC1001 / U100",
+          "image": "RC1001_U100_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        },
+        {
+          "code": "RC1001",
+          "name": "RC1001 / U180",
+          "image": "RC1001_U180_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        }
+      ]
+    },
+    {
+      "model": "RC1002",
+      "label": "RC1002",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC1002",
+          "name": "RC1002 / U100",
+          "image": "RC1002_U100_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        },
+        {
+          "code": "RC1002",
+          "name": "RC1002 / U180",
+          "image": "RC1002_U180_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        }
+      ]
+    },
+    {
+      "model": "RC1003",
+      "label": "RC1003",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC1003",
+          "name": "RC1003 / U100",
+          "image": "RC1003_U100_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        },
+        {
+          "code": "RC1003",
+          "name": "RC1003 / U180",
+          "image": "RC1003_U180_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        }
+      ]
+    },
+    {
+      "model": "RC1004",
+      "label": "RC1004",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC1004",
+          "name": "RC1004 / U100",
+          "image": "RC1004_U100_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        },
+        {
+          "code": "RC1004",
+          "name": "RC1004 / U180",
+          "image": "RC1004_U180_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        }
+      ]
+    },
+    {
+      "model": "RC1005",
+      "label": "RC1005",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC1005",
+          "name": "RC1005 / U100",
+          "image": "RC1005_U100_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        },
+        {
+          "code": "RC1005",
+          "name": "RC1005 / U180",
+          "image": "RC1005_U180_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        }
+      ]
+    },
+    {
+      "model": "RC1006",
+      "label": "RC1006",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC1006",
+          "name": "RC1006 / U100",
+          "image": "RC1006_U100_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        },
+        {
+          "code": "RC1006",
+          "name": "RC1006 / U180",
+          "image": "RC1006_U180_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        }
+      ]
+    },
+    {
+      "model": "RC1007",
+      "label": "RC1007",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC1007",
+          "name": "RC1007 / U100",
+          "image": "RC1007_U100_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        },
+        {
+          "code": "RC1007",
+          "name": "RC1007 / U180",
+          "image": "RC1007_U180_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        }
+      ]
+    },
+    {
+      "model": "RC1008",
+      "label": "RC1008",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC1008",
+          "name": "RC1008 / U100",
+          "image": "RC1008_U100_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        },
+        {
+          "code": "RC1008",
+          "name": "RC1008 / U180",
+          "image": "RC1008_U180_grey_4K_R11.webp",
+          "frameColorName": "Grey",
+          "frameColorCode": "",
+          "desktopColorName": "Grey",
+          "desktopColorCode": "",
+          "colorName": "Grey"
+        }
+      ]
+    }
+  ]
+}

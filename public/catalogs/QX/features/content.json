@@ -1,0 +1,82 @@
+{
+  "sectionLabel": "Functionality",
+  "title": "Features",
+  "items": [
+    {
+      "icon": "layout-grid",
+      "title": "Modular & scalable",
+      "desc": "Wide range of sizes with height adjustment — pick the footprint that fits the room and set the working level to suit each user.",
+      "video": {
+        "src": "/catalogs/QX/features/QX_height.mp4"
+      },
+      "variants": [
+        {
+          "title": "Single — height 64–84 cm",
+          "video": {
+            "src": "/catalogs/QX/features/QX_height.mp4"
+          }
+        },
+        {
+          "title": "Single — width 120–180 cm",
+          "video": {
+            "src": "/catalogs/QX/features/QX_width_120-180.mp4"
+          }
+        },
+        {
+          "title": "Single — depth 70–80 cm",
+          "video": {
+            "src": "/catalogs/QX/features/QX_depth_70-80.mp4"
+          }
+        },
+        {
+          "title": "Bench — height 64–84 cm",
+          "video": {
+            "src": "/catalogs/QX/features/QX_bench_height.mp4"
+          }
+        },
+        {
+          "title": "Bench — width 120–180 cm",
+          "video": {
+            "src": "/catalogs/QX/features/QX_bench_width_120-180.mp4"
+          }
+        },
+        {
+          "title": "Bench — depth 140–160 cm",
+          "video": {
+            "src": "/catalogs/QX/features/QX_bench_depth_140-160.mp4"
+          }
+        },
+        {
+          "title": "Optional return desk",
+          "video": {
+            "src": "/catalogs/QX/features/QX_extend.mp4"
+          }
+        }
+      ]
+    },
+    {
+      "icon": "puzzle",
+      "title": "Accessory ready",
+      "desc": "Mount monitor arms, CPU holders, cable trays, and power modules without drilling. The under-desk rail accepts 30+ certified accessories from day one or after years of use.",
+      "video": {
+        "src": "/catalogs/QX/features/ac.mp4"
+      }
+    },
+    {
+      "icon": "wrench",
+      "title": "Quick & simple assembly",
+      "desc": "Pre-assembled frame keeps installation fast and straightforward. One person can complete a full desk without specialist help.",
+      "video": {
+        "src": "/catalogs/QX/features/assembly.mp4"
+      }
+    },
+    {
+      "icon": "sparkles",
+      "title": "Seamless welded joints",
+      "desc": "Profile joints are welded and finished without visible seams, leaving the frame clean and uniform from every angle.",
+      "video": {
+        "src": "/catalogs/QX/features/QX_welds.mp4"
+      }
+    }
+  ]
+}

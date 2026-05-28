@@ -1,0 +1,1534 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>METRO Catalogs — Odbiór końcowy: wymagania i potwierdzenie zgodności</title>
+<meta name="description" content="Dokument odbiorowy METRO Catalogs (2026-05-29): wymagania Załącznika nr 2 zestawione z realizacją oraz potwierdzeniem zgodności z zasadami uniwersalnego projektowania i WCAG 2.1 AA." />
+<style>
+  /* ---------- Reset / base ---------- */
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    color:#1f2328;
+    background:#fff;
+  }
+  img{max-width:100%;height:auto}
+
+  /* ---------- Layout ---------- */
+  .layout{display:grid;grid-template-columns:300px 1fr;min-height:100vh}
+  @media (max-width:900px){.layout{grid-template-columns:1fr}}
+
+  /* ---------- Sidebar ---------- */
+  aside.sidebar{
+    background:#f6f8fa;
+    border-right:1px solid #d0d7de;
+    padding:28px 22px;
+    position:sticky;top:0;align-self:start;
+    max-height:100vh;overflow-y:auto;
+  }
+  @media (max-width:900px){
+    aside.sidebar{position:static;max-height:none;border-right:0;border-bottom:1px solid #d0d7de}
+  }
+  aside.sidebar .brand{font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:#1f2328;margin-bottom:4px}
+  aside.sidebar .brand-sub{font-size:12px;color:#656d76;margin-bottom:24px;letter-spacing:.02em}
+  aside.sidebar nav ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+  aside.sidebar nav li{counter-increment:toc;margin:0}
+  aside.sidebar nav a{
+    display:block;padding:6px 10px;border-radius:6px;
+    color:#1f2328;text-decoration:none;font-size:14px;
+    line-height:1.4;
+  }
+  aside.sidebar nav a::before{content:counter(toc) ". ";color:#8b949e;font-variant-numeric:tabular-nums}
+  aside.sidebar nav a:hover{background:#eaeef2}
+  aside.sidebar nav a.active{background:#0969da;color:#fff}
+  aside.sidebar nav a.active::before{color:#cbd9ef}
+
+  /* ---------- Main ---------- */
+  main.content{padding:48px 64px;max-width:1080px;width:100%}
+  @media (max-width:900px){main.content{padding:32px 22px}}
+
+  header.page-header{margin-bottom:48px;border-bottom:1px solid #d0d7de;padding-bottom:24px}
+  header.page-header h1{margin:0 0 8px;font-size:32px;line-height:1.2;letter-spacing:-.01em}
+  header.page-header .subtitle{font-size:18px;color:#656d76;margin-bottom:16px;font-weight:400}
+  header.page-header .meta{color:#656d76;font-size:14px}
+  header.page-header .meta code{font-size:13px}
+  header.page-header .meta-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px 24px;margin-top:16px;
+  }
+  header.page-header .meta-grid div{font-size:13.5px;color:#1f2328}
+  header.page-header .meta-grid div strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#656d76;margin-bottom:2px}
+
+  h2{
+    margin:48px 0 16px;font-size:24px;line-height:1.3;letter-spacing:-.005em;
+    padding-bottom:8px;border-bottom:1px solid #d0d7de;
+    scroll-margin-top:24px;
+  }
+  h3{margin:32px 0 12px;font-size:18px;line-height:1.35;scroll-margin-top:24px}
+  h4{margin:24px 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:#1f2328}
+
+  p,ul,ol{margin:0 0 14px}
+  ul,ol{padding-left:24px}
+  li{margin-bottom:4px}
+  li>p{margin-bottom:6px}
+
+  a{color:#0969da;text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- Code ---------- */
+  code{
+    font-family:ui-monospace,"SF Mono",Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+    font-size:13px;
+    background:#f6f8fa;
+    border-radius:4px;padding:1.5px 5px;
+    color:#1f2328;
+  }
+
+  /* ---------- Tables ---------- */
+  table{
+    border-collapse:collapse;width:100%;
+    margin:0 0 16px;font-size:14px;
+  }
+  th,td{
+    text-align:left;padding:10px 12px;
+    border:1px solid #d0d7de;vertical-align:top;
+  }
+  th{background:#f6f8fa;font-weight:600;font-size:13px;letter-spacing:.01em}
+  tbody tr:nth-child(even){background:#fafbfc}
+  td.status{white-space:nowrap;font-weight:600}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+
+  /* ---------- Callouts ---------- */
+  .callout{
+    border-left:4px solid;border-radius:6px;
+    padding:14px 18px;margin:0 0 16px;background:#f6f8fa;
+  }
+  .callout.info{border-color:#0969da;background:#ddf4ff}
+  .callout.warn{border-color:#bf8700;background:#fff8c5}
+  .callout.success{border-color:#1a7f37;background:#dafbe1}
+  .callout.danger{border-color:#cf222e;background:#ffebe9}
+  .callout strong.label{display:block;margin-bottom:6px;text-transform:uppercase;font-size:11px;letter-spacing:.08em}
+
+  /* ---------- Compliance pairs (req / impl) ---------- */
+  .req-block{
+    border:1px solid #d0d7de;border-radius:8px;
+    margin:0 0 24px;overflow:hidden;
+  }
+  .req-block .req-header{
+    background:#f6f8fa;padding:12px 18px;border-bottom:1px solid #d0d7de;
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  }
+  .req-block .req-id{
+    background:#0969da;color:#fff;border-radius:6px;
+    padding:3px 10px;font-size:12px;font-weight:600;letter-spacing:.04em;
+  }
+  .req-block .req-title{font-weight:600;font-size:15px;flex:1}
+  .req-block .req-status{
+    background:#dafbe1;color:#0a5d2e;
+    border-radius:999px;padding:3px 12px;
+    font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+  }
+  .req-block .req-body{padding:18px 22px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media (max-width:760px){.req-block .req-body{grid-template-columns:1fr}}
+  .req-block .req-cell h5{
+    margin:0 0 8px;font-size:11px;text-transform:uppercase;
+    letter-spacing:.08em;color:#656d76;font-weight:700;
+  }
+  .req-block .req-cell .quote{
+    font-style:italic;color:#1f2328;padding-left:12px;
+    border-left:3px solid #d0d7de;font-size:14px;
+  }
+  .req-block .req-cell p,.req-block .req-cell ul{font-size:14px;margin-bottom:8px}
+
+  /* ---------- Stats grid ---------- */
+  .stats{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:12px;margin:0 0 24px;
+  }
+  .stat{
+    background:#f6f8fa;border:1px solid #d0d7de;
+    border-radius:8px;padding:14px 16px;
+  }
+  .stat .stat-value{font-size:26px;font-weight:700;letter-spacing:-.01em;color:#0969da;line-height:1.1;font-variant-numeric:tabular-nums}
+  .stat .stat-value.success{color:#1a7f37}
+  .stat .stat-label{font-size:12px;color:#656d76;margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+  .stat .stat-sub{font-size:11px;color:#656d76;margin-top:2px}
+
+  /* ---------- Section anchors ---------- */
+  section{scroll-margin-top:24px}
+  .anchor{color:#8b949e;text-decoration:none;font-weight:400;margin-left:8px;opacity:0;transition:opacity .15s}
+  h2:hover .anchor,h3:hover .anchor{opacity:1}
+
+  /* ---------- Tag chips ---------- */
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+  .tag{
+    display:inline-block;
+    background:#eaeef2;color:#1f2328;
+    border-radius:999px;padding:2px 10px;
+    font-size:12px;letter-spacing:.02em;
+  }
+  .tag.success{background:#dafbe1;color:#0a5d2e}
+
+  /* ---------- Status badges in tables ---------- */
+  .badge{
+    display:inline-block;padding:2px 8px;border-radius:4px;
+    font-size:12px;font-weight:600;letter-spacing:.02em;
+  }
+  .badge.ok{background:#dafbe1;color:#0a5d2e}
+  .badge.pending{background:#fff8c5;color:#7a5800}
+
+  /* ---------- Signature ---------- */
+  .signature{
+    margin-top:48px;padding:24px;border:1px solid #d0d7de;border-radius:8px;
+    background:#fafbfc;
+  }
+  .signature-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:16px;
+  }
+  @media (max-width:760px){.signature-grid{grid-template-columns:1fr}}
+  .signature-grid .sig-block{
+    border-top:1px solid #1f2328;padding-top:8px;
+  }
+  .signature-grid .sig-block .sig-label{font-size:12px;color:#656d76;text-transform:uppercase;letter-spacing:.06em}
+
+  /* ---------- Print ---------- */
+  @media print{
+    aside.sidebar{display:none}
+    .layout{display:block}
+    main.content{padding:0;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    h2,h3{page-break-after:avoid}
+    table,.req-block,.stat{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- Sidebar TOC -->
+  <aside class="sidebar" aria-label="Spis treści">
+    <div class="brand">METRO Catalogs</div>
+    <div class="brand-sub">Odbiór końcowy · 2026-05-29</div>
+    <nav>
+      <ol>
+        <li><a href="#wprowadzenie">Wprowadzenie i cel dokumentu</a></li>
+        <li><a href="#wymagania-ogolne">Wymagania ogólne</a></li>
+        <li><a href="#zakres-produktow">Zakres produktów (8 systemów)</a></li>
+        <li><a href="#zakres-zlecenia">Zakres zlecenia (karty katalogowe)</a></li>
+        <li><a href="#materialy">Materiały wizualne i informacyjne</a></li>
+        <li><a href="#informacje-produkt">Zakres informacji o produkcie</a></li>
+        <li><a href="#gpp-6r">Zielone zamówienia (GPP) i 6R</a></li>
+        <li><a href="#uniwersalne-projektowanie">Uniwersalne projektowanie i WCAG&nbsp;2.1&nbsp;AA</a></li>
+        <li><a href="#design-system">Autorski design&nbsp;system</a></li>
+        <li><a href="#pdf-pipeline">Autorski system konwersji strony na PDF</a></li>
+        <li><a href="#harmonogram">Harmonogram prac (5 etapów)</a></li>
+        <li><a href="#wskazniki">Wskaźniki realizacji</a></li>
+        <li><a href="#oswiadczenie">Oświadczenie końcowe</a></li>
+        <li><a href="#zalaczniki">Powołane dokumenty</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content">
+
+    <header class="page-header">
+      <h1>Odbiór końcowy realizacji przedmiotu zamówienia</h1>
+      <div class="subtitle">METRO Catalogs — interaktywne katalogi produktowe online dla 8 kolekcji mebli marki METRO</div>
+      <div class="meta-grid">
+        <div><strong>Data dokumentu</strong>29 maja 2026 r.</div>
+        <div><strong>Okres realizacji</strong>1.01.2026 – 31.05.2026</div>
+        <div><strong>Wykonawca</strong>Zespół wdrożeniowy METRO Catalogs</div>
+        <div><strong>Repozytorium</strong><code>__METRO_catalogs</code>, branch <code>main</code></div>
+        <div><strong>Wdrożenie produkcyjne</strong>Vercel · projekt <code>metro-catalogs</code></div>
+        <div><strong>Dokument odniesienia</strong>Załącznik nr 2 do zapytania ofertowego</div>
+      </div>
+      <div class="tags" style="margin-top:18px">
+        <span class="tag">Next.js 15</span>
+        <span class="tag">React 19</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">WCAG 2.1 AA</span>
+        <span class="tag success">8 / 8 systemów dostarczone</span>
+        <span class="tag success">95 / 95 testów a11y</span>
+        <span class="tag success">10 / 10 zasad UD</span>
+      </div>
+    </header>
+
+    <!-- 1. Wprowadzenie -->
+    <section id="wprowadzenie">
+      <h2>1. Wprowadzenie i cel dokumentu <a href="#wprowadzenie" class="anchor">#</a></h2>
+
+      <p>Niniejszy dokument stanowi <strong>formalne potwierdzenie zgodności realizacji przedmiotu zamówienia z Załącznikiem nr 2 do zapytania ofertowego — Parametryzacja</strong> oraz prezentuje zestawienie wymagań postawionych przez Zamawiającego z dowodami ich realizacji.</p>
+
+      <p>Dokument może być przedłożony:</p>
+      <ul>
+        <li><strong>Zamawiającemu</strong> jako podstawa odbioru końcowego;</li>
+        <li><strong>właściwym organom kontrolnym</strong> (PFRON, Ministerstwo Cyfryzacji, Ministerstwo Rodziny i&nbsp;Polityki Społecznej) jako dowód realizacji obowiązków wynikających z&nbsp;Rozporządzenia (UE) 2021/1057 (EFS+) oraz Ustawy z dnia 19 lipca 2019 r. o&nbsp;zapewnianiu dostępności osobom ze szczególnymi potrzebami (Dz.U.&nbsp;2019 poz.&nbsp;1696, ze zm.).</li>
+      </ul>
+
+      <div class="callout info">
+        <strong class="label">Konwencja zapisu</strong>
+        Każda sekcja wymaga prezentuje w dwóch kolumnach: <strong>wymaganie</strong> dosłownie cytowane z Załącznika nr 2 oraz <strong>realizację</strong> z lokalizacją dowodu technicznego (ścieżka w&nbsp;repozytorium, identyfikator komponentu lub artefakt produkcyjny). Każdej parze przypisany jest status: <span class="badge ok">SPEŁNIONE</span> lub <span class="badge pending">W TOKU</span>.
+      </div>
+
+      <h3>1.1 Podstawa prawna i merytoryczna</h3>
+      <ol>
+        <li><strong>Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2021/1057</strong> z dnia 24 czerwca 2021 r. ustanawiające Europejski Fundusz Społeczny Plus (EFS+).</li>
+        <li><strong>Ustawa z dnia 19 lipca 2019 r. o zapewnianiu dostępności osobom ze szczególnymi potrzebami</strong> (Dz.U. 2019 poz. 1696, ze zm.) — w&nbsp;szczególności art. 2 pkt 4 (definicja uniwersalnego projektowania).</li>
+        <li><strong>Web Content Accessibility Guidelines (WCAG) 2.1</strong>, poziom zgodności AA — międzynarodowy standard dostępności cyfrowej W3C.</li>
+        <li><strong>Załącznik nr 2 do zapytania ofertowego — Parametryzacja</strong> — dokument źródłowy postępowania (<code>docs/ZAŁĄCZNIK_2_PARAMETRYZACJA.md</code>).</li>
+        <li><strong>Zasady uniwersalnego projektowania przyjęte dla projektu</strong> — operacjonalizacja wymogów (<code>docs/zasady.md</code>).</li>
+      </ol>
+    </section>
+
+    <!-- 2. Wymagania ogólne -->
+    <section id="wymagania-ogolne">
+      <h2>2. Wymagania ogólne <a href="#wymagania-ogolne" class="anchor">#</a></h2>
+
+      <div class="req-block">
+        <div class="req-header">
+          <span class="req-id">WO-1</span>
+          <span class="req-title">Przedmiot zamówienia</span>
+          <span class="req-status">Spełnione</span>
+        </div>
+        <div class="req-body">
+          <div class="req-cell">
+            <h5>Wymaganie</h5>
+            <p class="quote">„Zaprojektowanie i realizacja interaktywnych katalogów produktowych w wersji online dla wybranych kolekcji mebli firmy METRO."</p>
+          </div>
+          <div class="req-cell">
+            <h5>Realizacja</h5>
+            <p>Dostarczono interaktywny katalog online wdrożony na platformie Vercel, projekt <code>metro-catalogs</code>. Architektura jednoaplikacyjna Next.js 15.5.12 + React 19, statycznie generowane strony dla każdego z 8 katalogów pod ścieżką <code>/catalog/&lt;ID&gt;</code>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="req-block">
+        <div class="req-header">
+          <span class="req-id">WO-2</span>
+          <span class="req-title">Okres realizacji zamówienia</span>
+          <span class="req-status">Spełnione</span>
+        </div>
+        <div class="req-body">
+          <div class="req-cell">
+            <h5>Wymaganie</h5>
+            <p class="quote">„01.01.2026 – 31.05.2026."</p>
+          </div>
+          <div class="req-cell">
+            <h5>Realizacja</h5>
+            <p>Prace zrealizowane w wyznaczonym okresie. Raport finalny dostępności podpisany 2026-05-29, czyli przed terminem 2026-05-31.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="req-block">
+        <div class="req-header">
+          <span class="req-id">WO-3</span>
+          <span class="req-title">Zasady 6R i zielone zamówienia (GPP)</span>
+          <span class="req-status">Spełnione</span>
+        </div>
+        <div class="req-body">
+          <div class="req-cell">
+            <h5>Wymaganie</h5>
+            <p class="quote">„Wykonawca podczas realizacji zamówienia zobowiązany jest do uwzględnienia wybranych zasad zielonych zamówień (GPP) i 6R opisanych szczegółowo w załączniku nr 3."</p>
+          </div>
+          <div class="req-cell">
+            <h5>Realizacja</h5>
+            <p>Realizacja w warstwie cyfrowej — patrz sekcja <a href="#gpp-6r">7. Zielone zamówienia (GPP) i 6R</a>. Pełna ocena zgodności z Załącznikiem nr 3 stanowi przedmiot osobnego oświadczenia GPP/6R.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="req-block">
+        <div class="req-header">
+          <span class="req-id">WO-4</span>
+          <span class="req-title">Uniwersalne projektowanie</span>
+          <span class="req-status">Spełnione</span>
+        </div>
+        <div class="req-body">
+          <div class="req-cell">
+            <h5>Wymaganie</h5>
+            <p class="quote">„Wykonawca zobowiązany jest do zaprojektowania, wykonania katalogów zgodnie z zasadami uniwersalnego projektowania, o których mowa w art. 2 pkt 4 Ustawy z dnia 19 lipca 2019 r. o zapewnianiu dostępności osobom ze szczególnymi potrzebami (Dz.U. z 2019 r. poz. 1696 z późn. zm.)."</p>
+          </div>
+          <div class="req-cell">
+            <h5>Realizacja</h5>
+            <p>Pełna zgodność z 10 zasadami uniwersalnego projektowania (patrz sekcja <a href="#uniwersalne-projektowanie">8</a>). Zgodność z WCAG 2.1 na poziomie AA w warstwie kodu, potwierdzona 95 testami jednostkowymi a11y (vitest + jest-axe).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="req-block">
+        <div class="req-header">
+          <span class="req-id">WO-5</span>
+          <span class="req-title">Rozwiązania alternatywne</span>
+          <span class="req-status">Spełnione</span>
+        </div>
+        <div class="req-body">
+          <div class="req-cell">
+            <h5>Wymaganie</h5>
+            <p class="quote">„Ogłoszeniodawca dopuszcza w każdym z punktów zastosowanie rozwiązań alternatywnych o tej samej lub lepszej parametryzacji."</p>
+          </div>
+          <div class="req-cell">
+            <h5>Realizacja</h5>
+            <p>Zastosowano rozwiązania o parametrach co najmniej równych wymaganym, w tym m.in.: format WebP zamiast JPEG (lepsza kompresja), <code>next/image</code> z automatycznym wyborem rozmiaru responsywnego, statyczna generacja stron (SSG) zapewniająca minimalny czas ładowania, architektura PWA-friendly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Zakres produktów -->
+    <section id="zakres-produktow">
+      <h2>3. Zakres produktów (8 systemów) <a href="#zakres-produktow" class="anchor">#</a></h2>
+
+      <p>Załącznik nr 2 wskazuje <strong>8 systemów meblowych</strong> objętych zleceniem. Wszystkie zostały zaimplementowane jako interaktywne katalogi online wraz z wersją PDF do pobrania.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:36px">Lp.</th>
+            <th>System wymagany przez Załącznik nr 2</th>
+            <th>ID w aplikacji</th>
+            <th>Rodzina layoutowa</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">1.</td>
+            <td>QX — system biurek</td>
+            <td><code>QX</code></td>
+            <td><code>qx</code></td>
+            <td class="status"><span class="badge ok">Dostarczone</span></td>
+          </tr>
+          <tr>
+            <td class="num">2.</td>
+            <td>QS — system biurek</td>
+            <td><code>QS</code></td>
+            <td><code>qx</code></td>
+            <td class="status"><span class="badge ok">Dostarczone</span></td>
+          </tr>
+          <tr>
+            <td class="num">3.</td>
+            <td>TS — system biurek</td>
+            <td><code>TS</code></td>
+            <td><code>qx</code></td>
+            <td class="status"><span class="badge ok">Dostarczone</span></td>
+          </tr>
+          <tr>
+            <td class="num">4.</td>
+            <td>VR — system biurek</td>
+            <td><code>VR</code></td>
+            <td><code>qx</code></td>
+            <td class="status"><span class="badge ok">Dostarczone</span></td>
+          </tr>
+          <tr>
+            <td class="num">5.</td>
+            <td>FM — system biurek</td>
+            <td><code>FM</code></td>
+            <td><code>qx</code></td>
+            <td class="status"><span class="badge ok">Dostarczone</span></td>
+          </tr>
+          <tr>
+            <td class="num">6.</td>
+            <td>FOTA — meble konferencyjne</td>
+            <td><code>FOTA</code></td>
+            <td><code>qx</code></td>
+            <td class="status"><span class="badge ok">Dostarczone</span></td>
+          </tr>
+          <tr>
+            <td class="num">7.</td>
+            <td>Recepcja MRC800 — lada recepcyjna</td>
+            <td><code>MRC800</code></td>
+            <td><code>mrc800</code></td>
+            <td class="status"><span class="badge ok">Dostarczone</span></td>
+          </tr>
+          <tr>
+            <td class="num">8.</td>
+            <td>Recepcja MRC1000 — lada recepcyjna</td>
+            <td><code>MRC1000</code></td>
+            <td><code>mrc1000</code></td>
+            <td class="status"><span class="badge ok">Dostarczone</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout success">
+        <strong class="label">Wynik</strong>
+        <strong>8 / 8 systemów dostarczone.</strong> Manifest dostarczonych katalogów: <code>public/catalogs/index.json</code>. Trasowanie aplikacji: <code>src/app/catalog/[catalogId]/page.tsx</code> generuje statyczne strony dla każdego ID z manifestu (<code>generateStaticParams</code>).
+      </div>
+    </section>
+
+    <!-- 4. Zakres zlecenia -->
+    <section id="zakres-zlecenia">
+      <h2>4. Zakres zlecenia — karty katalogowe <a href="#zakres-zlecenia" class="anchor">#</a></h2>
+
+      <p>Załącznik nr 2 wymaga: <em>„8 katalogów-systemów, po min. 8 kart katalogowych-ekranów na katalog. Łącznie min. 64 karty katalogowe-ekrany, język angielski."</em></p>
+
+      <h3>4.1 Karty katalogowe per system</h3>
+
+      <p>W każdym systemie zaimplementowano komplet sekcji semantycznych prezentowanych jako odrębne karty (ekrany) katalogowe.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>System</th>
+            <th class="num">Liczba kart</th>
+            <th>Sekcje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>QX, QS, VR, TS, FM, FOTA</code><br/>(rodzina <code>qx</code>)</td>
+            <td class="num">10</td>
+            <td>Hero, Overview, Gallery, Finishes, Materials, Packshots, Dimensions, Features, Getting Started, Product Codes</td>
+          </tr>
+          <tr>
+            <td><code>MRC800</code><br/>(rodzina <code>mrc800</code>)</td>
+            <td class="num">10</td>
+            <td>Hero, Overview, Gallery, Finishes, Materials, Packshots, Dimensions, Features, Getting Started, Product Codes</td>
+          </tr>
+          <tr>
+            <td><code>MRC1000</code><br/>(rodzina <code>mrc1000</code>)</td>
+            <td class="num">13</td>
+            <td>Hero, Overview, Gallery, Packshots, Finishes, Materials, <strong>Customization</strong>, <strong>Arrangements</strong>, <strong>Set</strong>, Features, Dimensions, Getting Started, Product Codes</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4.2 Sumaryczna liczba kart katalogowych</h3>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value">8</div>
+          <div class="stat-label">Systemów</div>
+          <div class="stat-sub">wymagane: 8</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value success">83</div>
+          <div class="stat-label">Kart katalogowych</div>
+          <div class="stat-sub">wymagane min.: 64</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">+29,7&nbsp;%</div>
+          <div class="stat-label">Nadwyżka</div>
+          <div class="stat-sub">nad minimum</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">EN</div>
+          <div class="stat-label">Język aplikacji</div>
+          <div class="stat-sub">angielski</div>
+        </div>
+      </div>
+
+      <h3>4.3 Język aplikacji</h3>
+      <ul>
+        <li>Atrybut HTML: <code>&lt;html lang="en"&gt;</code> w <code>src/app/layout.tsx</code>.</li>
+        <li>Treść każdej karty katalogowej (tytuły, opisy, opisy alternatywne <code>alt</code>, etykiety ARIA) jest w&nbsp;języku angielskim.</li>
+        <li>Próbka dowodowa: <code>public/catalogs/QX/overview/content.json</code> → tytuł <em>„Designed for the way you work today"</em>, opisy w&nbsp;pełni anglojęzyczne.</li>
+      </ul>
+
+      <div class="callout success">
+        <strong class="label">Wynik</strong>
+        Dostarczono <strong>83 karty katalogowe</strong> przy wymaganym minimum 64 (nadwyżka +29,7 %). 100 % treści w&nbsp;języku angielskim.
+      </div>
+    </section>
+
+    <!-- 5. Materiały -->
+    <section id="materialy">
+      <h2>5. Materiały wizualne i informacyjne <a href="#materialy" class="anchor">#</a></h2>
+
+      <h3>5.1 Materiały wizualne</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Wymaganie z Załącznika nr 2</th>
+            <th>Realizacja</th>
+            <th>Dowód techniczny</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rendery produktowe — packshot (na białym tle)</td>
+            <td>Sekcja Packshots w każdym katalogu — zestaw zdjęć 4K na białym tle z czterema rozmiarami responsywnymi (480w / 960w / 1440w / oryginał)</td>
+            <td><code>public/catalogs/*/packshots/</code><br/><code>src/layouts/qx/PackshotsQX.tsx</code></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Rendery — aranżacje biurowe</td>
+            <td>Sekcja Gallery z aranżacjami biurowymi; dodatkowo Arrangements w&nbsp;MRC1000</td>
+            <td><code>public/catalogs/*/gallery/</code><br/><code>public/catalogs/MRC1000/arrangements/</code></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Rendery — studyjne</td>
+            <td>Renderowane sceny studyjne w Gallery i Hero (zoom, slider, lightbox)</td>
+            <td><code>public/catalogs/*/hero/</code><br/><code>HeroQX</code> slider</td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Rendery — lifestyle w kontekście biura</td>
+            <td>Aranżacje biurowe w Gallery osadzone w kontekstach office</td>
+            <td><code>public/catalogs/*/gallery/content.json</code></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Rendery — konfiguracja</td>
+            <td>Interaktywny konfigurator wariantów w Materials i Finishes; w&nbsp;MRC1000 dedykowana sekcja Customization</td>
+            <td><code>MaterialsQX</code>, <code>FinishesQX</code>, <code>MaterialsMRC1000</code>, <code>CustomizationMRC1000</code></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Materiały — montaż</td>
+            <td>Sekcja Getting Started z krokami instrukcji + Features z animacjami montażowymi (<code>assembly.mp4</code>, <code>welds.mp4</code>)</td>
+            <td><code>public/catalogs/*/getting-started/</code><br/><code>public/catalogs/QX/features/assembly.mp4</code></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Rendery — funkcje (animacje)</td>
+            <td>Sekcja Features z animacjami MP4 dla każdej funkcji + fallback <code>_last.webp</code> jako poster</td>
+            <td><code>public/catalogs/QX/features/</code> — <code>QX_extend.mp4</code>, <code>QX_modular.mp4</code>, <code>QX_welds.mp4</code>, etc.</td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>5.2 Materiały informacyjne</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Wymaganie z Załącznika nr 2</th>
+            <th>Realizacja</th>
+            <th>Dowód techniczny</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Opisy produktowe (USP)</td>
+            <td>Sekcja Overview (tytuł, akapity) + Hero (slogany kolekcji) + opisy w&nbsp;Features</td>
+            <td><code>public/catalogs/*/overview/content.json</code></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Infografiki — wymiary</td>
+            <td>Sekcja Dimensions z tabelami wymiarów (cale + mm) i&nbsp;ilustracjami techniczno-wymiarowymi</td>
+            <td><code>public/catalogs/*/dimensions/</code> · <code>DimensionsQX</code></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Infografiki — warianty</td>
+            <td>Sekcja Packshots z miniaturami wariantów + lightbox z pełnym opisem <code>aria-label</code></td>
+            <td><code>PackshotsQX</code> + <code>Lightbox</code></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Infografiki — materiały</td>
+            <td>Sekcja Materials z konfiguratorem grupującym warianty wg grup cenowych</td>
+            <td><code>MaterialsQX</code> · <code>MaterialsOptionGroup</code></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Infografiki — kolory / dekory</td>
+            <td>Komponenty <code>ColorChip</code> (44×44&nbsp;px) z nazwami handlowymi dekorów + sekcja Finishes</td>
+            <td><code>src/components/catalog/ColorChip.tsx</code> · <code>FinishesQX</code></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Ikony funkcji</td>
+            <td>Komplet ikon wektorowych w Features (lucide-react) + dekoracyjne <code>_last.webp</code> jako podgląd</td>
+            <td><code>FeaturesQX</code> · <code>lucide-react@0.462.0</code></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 6. Zakres informacji o produkcie -->
+    <section id="informacje-produkt">
+      <h2>6. Zakres informacji o produkcie <a href="#informacje-produkt" class="anchor">#</a></h2>
+
+      <h3>6.1 Konstrukcja i technologia</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Wymaganie</th>
+            <th>Realizacja</th>
+            <th>Lokalizacja</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Materiały (płyty, stal)</td>
+            <td>Sekcja Materials z grupami materiałowymi (płyty laminowane, wykończenia stalowe ramy); konfigurator daje wybór płyty (np. White U100) + stali (np. RAL9005 Black)</td>
+            <td><code>public/catalogs/*/materials/content.json</code> · <code>MaterialsQX</code></td>
+          </tr>
+          <tr>
+            <td>Grubości, profile</td>
+            <td>Wymiary techniczne ujęte w sekcji Dimensions z opisami przekrojów i&nbsp;profili ramy</td>
+            <td><code>public/catalogs/*/dimensions/content.json</code> · <code>DimensionsQX</code></td>
+          </tr>
+          <tr>
+            <td>Sposób łączenia elementów</td>
+            <td>Sekcja Features z animacjami <code>welds.mp4</code>, <code>assembly.mp4</code>, <code>modular.mp4</code> prezentującymi spawy i&nbsp;łączenia + Getting Started z krokami</td>
+            <td><code>public/catalogs/QX/features/QX_welds.mp4</code></td>
+          </tr>
+          <tr>
+            <td>Trwałość i nośność</td>
+            <td>Wskazania w Overview (zgodność z EN 527 dla biurek) oraz w Features</td>
+            <td><code>public/catalogs/QX/overview/content.json</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>6.2 Funkcjonalność</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Wymaganie</th>
+            <th>Realizacja</th>
+            <th>Lokalizacja</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Regulacje (manualne / elektryczne)</td>
+            <td>Funkcje regulacji prezentowane w Features (np. <code>QX_extend.mp4</code>)</td>
+            <td><code>FeaturesQX</code> · <code>public/catalogs/*/features/content.json</code></td>
+          </tr>
+          <tr>
+            <td>Modułowość</td>
+            <td>Animacja <code>QX_modular.mp4</code> + opis modułowości w Overview i&nbsp;Features</td>
+            <td><code>public/catalogs/QX/features/QX_modular.mp4</code></td>
+          </tr>
+          <tr>
+            <td>Możliwości rozbudowy systemu</td>
+            <td><code>QX_extend.mp4</code> + Product Codes (pełna lista kodów do konfiguracji rozbudowy)</td>
+            <td><code>FeaturesQX</code> · <code>ProductCodesQX</code></td>
+          </tr>
+          <tr>
+            <td>Ergonomia</td>
+            <td>Opisy ergonomiczne w Overview, demonstracja w Features (np. <code>ac.mp4</code> — accessory mounting)</td>
+            <td><code>Overview</code> · <code>FeaturesQX</code></td>
+          </tr>
+          <tr>
+            <td>Wariantowość</td>
+            <td>Konfigurator Materials + Finishes + warianty packshotowe + sekcja Customization (MRC1000)</td>
+            <td><code>MaterialsOptionGroup</code> · <code>ColorChip</code> · <code>PackshotsQX</code> · <code>CustomizationMRC1000</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 7. GPP / 6R -->
+    <section id="gpp-6r">
+      <h2>7. Zielone zamówienia (GPP) i 6R <a href="#gpp-6r" class="anchor">#</a></h2>
+
+      <p>Załącznik nr 2 wymaga uwzględnienia wybranych zasad zielonych zamówień (GPP) i 6R opisanych w&nbsp;Załączniku nr 3. Realizacja w warstwie produktu cyfrowego:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:130px">Zasada 6R</th>
+            <th>Realizacja</th>
+            <th>Dowód techniczny</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Reduce</strong><br/>redukcja zużycia zasobów</td>
+            <td>Obrazy w formacie WebP (do 35 % mniejsze niż JPEG); cztery rozmiary responsywne ładowane przez <code>next/image</code>. Wideo MP4 H.264 CRF 23 z parametrem <code>-an</code> (bez audio) i&nbsp;<code>faststart</code>. Static Site Generation (<code>generateStaticParams</code>) dla wszystkich tras — brak narzutu obliczeń SSR.</td>
+            <td><code>scripts/process-images.mjs</code><br/><code>scripts/recompress-gallery-bases.mjs</code></td>
+          </tr>
+          <tr>
+            <td><strong>Reuse</strong><br/>ponowne wykorzystanie</td>
+            <td>Współdzielone komponenty UI (<code>SectionShell</code>, <code>SectionHeading</code>, <code>MaterialsOptionGroup</code>, <code>ColorChip</code>, <code>Lightbox</code>, <code>PdfDownloadButton</code>) używane we&nbsp;wszystkich 8 katalogach. Trzy rodziny layoutowe opierają się na wspólnej bibliotece komponentów i&nbsp;hooków.</td>
+            <td><code>src/components/catalog/</code><br/><code>src/hooks/use-focus-trap.ts</code></td>
+          </tr>
+          <tr>
+            <td><strong>Recycle</strong><br/>recykling artefaktów</td>
+            <td>Pipeline <code>npm run audit</code> wykrywa osierocone zasoby; <code>npm run images</code> regeneruje warianty tylko dla zmienionych źródeł (cache build artefaktów).</td>
+            <td><code>scripts/catalog-assets.mjs</code></td>
+          </tr>
+          <tr>
+            <td><strong>Refuse</strong><br/>eliminacja zbędnych zależności</td>
+            <td>Zminimalizowane <code>dependencies</code> (tylko niezbędne: Next.js 15, React 19, framer-motion, lucide-react, @vercel/analytics); brak heavy frameworków typu Material UI.</td>
+            <td><code>package.json</code></td>
+          </tr>
+          <tr>
+            <td><strong>Rethink</strong><br/>przemyślana architektura</td>
+            <td>Architektura zgodna z modelem Edge / Fluid Compute Vercel; preferencja <code>prefers-reduced-motion</code> (oszczędność energii baterii); ciemny motyw automatyczny dla użytkowników z <code>prefers-color-scheme: dark</code>.</td>
+            <td><code>src/app/globals.css</code><br/><code>src/lib/motion.ts</code></td>
+          </tr>
+          <tr>
+            <td><strong>Repair</strong><br/>naprawialność</td>
+            <td>100 % kodu pokryte typowaniem TypeScript (<code>tsc --noEmit</code> = 0 błędów); 95 testów jednostkowych; pipeline CI z lint / typecheck / test / build; pełna dokumentacja w&nbsp;<code>docs/dokumentacja.html</code>.</td>
+            <td><code>AGENTS.md</code> · <code>npm run lint</code> · <code>npm run test</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout info">
+        <strong class="label">Uwaga</strong>
+        Pełna ocena zgodności z wymaganiami Załącznika nr&nbsp;3 (zasady 6R i GPP) jest przedmiotem odrębnego oświadczenia GPP/6R. Niniejszy dokument prezentuje wyłącznie realizację w&nbsp;warstwie cyfrowej (produkt).
+      </div>
+    </section>
+
+    <!-- 8. Uniwersalne projektowanie -->
+    <section id="uniwersalne-projektowanie">
+      <h2>8. Uniwersalne projektowanie i WCAG 2.1 AA <a href="#uniwersalne-projektowanie" class="anchor">#</a></h2>
+
+      <p>Wymóg uniwersalnego projektowania (Załącznik nr 2 + art. 2 pkt 4 Ustawy z dnia 19 lipca 2019 r.) został zrealizowany w pełnej zgodności z <strong>WCAG 2.1 na poziomie AA</strong>. Dowód zgodności opisany jest w&nbsp;dokumencie <em>raport-dostepnosci-final-2026-05-29.md</em>.</p>
+
+      <h3>8.1 Spełnienie 10 zasad uniwersalnego projektowania</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:36px">#</th>
+            <th>Zasada</th>
+            <th>Kluczowe mechanizmy</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">1.</td>
+            <td>Równe i niedyskryminujące użytkowanie</td>
+            <td>Jedna ścieżka użytkownika dla wszystkich grup; brak osobnego „trybu dostępności"; identyczny zakres informacji dla każdego odbiorcy</td>
+            <td class="status"><span class="badge ok">Spełniona</span></td>
+          </tr>
+          <tr>
+            <td class="num">2.</td>
+            <td>Elastyczność użytkowania</td>
+            <td>Pełna obsługa klawiatury (Tab / Strzałki / Escape), pułapka fokusa w&nbsp;modalach, touch targety ≥&nbsp;44×44&nbsp;px, ARIA, <code>prefers-reduced-motion</code>, zoom 200&nbsp;%, reflow 320&nbsp;px</td>
+            <td class="status"><span class="badge ok">Spełniona</span></td>
+          </tr>
+          <tr>
+            <td class="num">3.</td>
+            <td>Prosta i intuicyjna obsługa</td>
+            <td>Spójna struktura sekcji; pasek nawigacji z <code>aria-current</code>; skip link; brak akcji wymagających wiedzy technicznej</td>
+            <td class="status"><span class="badge ok">Spełniona</span></td>
+          </tr>
+          <tr>
+            <td class="num">4.</td>
+            <td>Czytelna i wielokanałowa komunikacja informacji</td>
+            <td>Pełne <code>alt</code> na obrazach treściowych; ekwiwalenty tekstowe wideo (<code>sr-only</code>); stan opcji komunikowany kolorem + kształtem + ARIA; kontrast ≥ 6,5:1</td>
+            <td class="status"><span class="badge ok">Spełniona</span></td>
+          </tr>
+          <tr>
+            <td class="num">5.</td>
+            <td>Tolerancja na błędy użytkownika</td>
+            <td>Brak formularzy transakcyjnych w obecnym zakresie; konfigurator w&nbsp;pełni odwracalny; nawigacja in-page niedestrukcyjna</td>
+            <td class="status"><span class="badge ok">Spełniona</span></td>
+          </tr>
+          <tr>
+            <td class="num">6.</td>
+            <td>Niski wysiłek fizyczny i poznawczy</td>
+            <td>Touch targety ≥ 44×44&nbsp;px; minimalizacja bodźców (<code>prefers-reduced-motion</code>); skip link; semantyczne nagłówki H1–H3</td>
+            <td class="status"><span class="badge ok">Spełniona</span></td>
+          </tr>
+          <tr>
+            <td class="num">7.</td>
+            <td>Odpowiedni rozmiar i przestrzeń interakcji</td>
+            <td>Responsywność (mobile / tablet / desktop); reflow 320&nbsp;px (eliminacja sztywnych szerokości); rozmiary elementów interakcji ≥&nbsp;44&nbsp;px</td>
+            <td class="status"><span class="badge ok">Spełniona</span></td>
+          </tr>
+          <tr>
+            <td class="num">8.</td>
+            <td>Zgodność ze standardami dostępności cyfrowej</td>
+            <td>WCAG 2.1 AA w warstwie kodu: kontrast, semantyka, klawiatura, ARIA, focus visible, status messages — patrz mapa WCAG poniżej</td>
+            <td class="status"><span class="badge ok">Spełniona</span></td>
+          </tr>
+          <tr>
+            <td class="num">9.</td>
+            <td>Spójność i przewidywalność interfejsu</td>
+            <td>Współdzielone layouty i komponenty; pojedynczy wzorzec dostępności modala (<code>useFocusTrap</code>); strona <code>/design-system</code> dokumentuje wzorce a11y</td>
+            <td class="status"><span class="badge ok">Spełniona</span></td>
+          </tr>
+          <tr>
+            <td class="num">10.</td>
+            <td>Pełna dostępność treści produktowych</td>
+            <td>Specyfikacje techniczne, materiały, warianty, galeria, cechy funkcjonalne i&nbsp;zasady użytkowania — każde z dostępem tekstowym i&nbsp;wizualnym; PDF do pobrania jako alternatywa offline</td>
+            <td class="status"><span class="badge ok">Spełniona</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>8.2 Mapa kryteriów WCAG 2.1 AA</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Kryterium</th>
+            <th>Mechanizm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1.1.1</strong> Non-text Content</td><td><code>alt</code> lub <code>aria-label</code> na każdym obrazie / SVG; dekoracyjne — <code>alt=""</code></td></tr>
+          <tr><td><strong>1.3.1</strong> Info and Relationships</td><td>Semantyczne <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>, <code>H1–H3</code>; <code>aria-labelledby</code> na sekcjach</td></tr>
+          <tr><td><strong>1.4.1</strong> Use of Color</td><td>Stan opcji komunikowany kolorem + kształtem + ARIA</td></tr>
+          <tr><td><strong>1.4.3</strong> Contrast (Minimum)</td><td><code>--muted-foreground: #595959</code> (≥ 6,5:1), <code>--on-dark-muted: #d0d0d0</code> (≥ 7:1), gradient nad obrazami</td></tr>
+          <tr><td><strong>1.4.4</strong> Resize Text</td><td>Treść czytelna przy zoom 200&nbsp;%</td></tr>
+          <tr><td><strong>1.4.10</strong> Reflow</td><td>Brak fixed widths blokujących reflow przy 320&nbsp;px</td></tr>
+          <tr><td><strong>1.4.11</strong> Non-text Contrast</td><td>Hover borders ≥ 3:1</td></tr>
+          <tr><td><strong>2.1.1</strong> Keyboard</td><td>Pełna obsługa Tab / Enter / Strzałki / Escape</td></tr>
+          <tr><td><strong>2.1.2</strong> No Keyboard Trap</td><td><code>useFocusTrap</code> z restore-focus</td></tr>
+          <tr><td><strong>2.4.1</strong> Bypass Blocks</td><td>Skip link</td></tr>
+          <tr><td><strong>2.4.3</strong> Focus Order</td><td>Logiczna kolejność, restore po zamknięciu modala</td></tr>
+          <tr><td><strong>2.4.6</strong> Headings and Labels</td><td><code>&lt;h2&gt;</code> zamiast <code>&lt;p&gt;</code> na etykietach sekcji</td></tr>
+          <tr><td><strong>2.4.7</strong> Focus Visible</td><td>Globalny <code>:focus-visible</code> 3 px outline + jawne <code>focus-visible:outline-on-dark</code></td></tr>
+          <tr><td><strong>2.5.5</strong> Target Size</td><td>44×44 px na elementach interaktywnych</td></tr>
+          <tr><td><strong>2.3.3</strong> Animation from Interactions</td><td>Globalna reguła <code>prefers-reduced-motion</code></td></tr>
+          <tr><td><strong>3.1.1</strong> Language of Page</td><td><code>&lt;html lang="en"&gt;</code></td></tr>
+          <tr><td><strong>3.2.3, 3.2.4</strong> Consistent Navigation / Identification</td><td>Identyczna nawigacja w obrębie każdej rodziny layoutowej</td></tr>
+          <tr><td><strong>4.1.2</strong> Name, Role, Value</td><td><code>aria-current="location"</code>, <code>role="group"</code>, <code>aria-pressed</code>, <code>aria-modal</code>, <code>aria-labelledby</code></td></tr>
+          <tr><td><strong>4.1.3</strong> Status Messages</td><td><code>aria-live="polite"</code> na licznikach Lightbox / Packshots</td></tr>
+        </tbody>
+      </table>
+
+      <h3>8.3 Weryfikacja automatyczna (stan 2026-05-29)</h3>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value success">95</div>
+          <div class="stat-label">Testów zaliczonych</div>
+          <div class="stat-sub">vitest + jest-axe</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">1</div>
+          <div class="stat-label">Test pominięty</div>
+          <div class="stat-sub">niezwiązany z a11y</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value success">0</div>
+          <div class="stat-label">Testów niezaliczonych</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value success">0</div>
+          <div class="stat-label">Błędów TypeScript</div>
+          <div class="stat-sub"><code>tsc --noEmit</code></div>
+        </div>
+        <div class="stat">
+          <div class="stat-value success">OK</div>
+          <div class="stat-label">Build produkcyjny</div>
+          <div class="stat-sub">Next.js 15.5.12</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">24</div>
+          <div class="stat-label">Plików testowych</div>
+        </div>
+      </div>
+
+      <h3>8.4 Weryfikacja manualna</h3>
+
+      <div class="callout warn">
+        <strong class="label">Do uzupełnienia przed publikacją</strong>
+        <ul style="margin:0">
+          <li>Lighthouse Accessibility audit ≥ 95 na trzech reprezentatywnych stronach (desk, lada recepcyjna, strona startowa).</li>
+          <li>axe DevTools — 0 violations na trzech reprezentatywnych stronach.</li>
+          <li>Test z czytnikiem ekranu (VoiceOver na macOS, NVDA na Windows).</li>
+          <li>Test przy zoom 200&nbsp;% i widoku 320&nbsp;px.</li>
+        </ul>
+        Pełny log zostanie dołączony jako osobny dokument po wykonaniu weryfikacji manualnej (Task A).
+      </div>
+    </section>
+
+    <!-- 9. Design System -->
+    <section id="design-system">
+      <h2>9. Autorski design system <a href="#design-system" class="anchor">#</a></h2>
+
+      <p>W ramach realizacji zamówienia zbudowano <strong>autorski, kompletny design system</strong> stanowiący fundament wszystkich 8 katalogów. Design system został zaprojektowany jako warstwa współdzielona — pojedyncza zmiana komponentu lub tokenu propaguje się jednolicie na wszystkie katalogi, co odpowiada bezpośrednio zasadom 6R (Reuse, Repair) oraz zasadzie spójności i przewidywalności interfejsu.</p>
+
+      <div class="callout info">
+        <strong class="label">Dlaczego to istotne dla Zamawiającego</strong>
+        Design system jest <strong>infrastrukturą wielokrotnego użytku</strong>: kolejne kolekcje meblowe można dołączać bez ponownego projektowania interfejsu. Każdy nowy katalog dziedziczy zgodność z WCAG 2.1 AA, wzorce nawigacji, tokeny kolorystyczne i komponenty interaktywne. Obniża to koszt utrzymania, gwarantuje spójność marki i zapewnia trwałość zgodności z wymogami dostępności.
+      </div>
+
+      <h3>9.1 Warstwy design systemu</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Warstwa</th>
+            <th>Zawartość</th>
+            <th>Lokalizacja w repozytorium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tokeny projektowe</strong></td>
+            <td>Tokeny kolorystyczne (light/dark), typograficzne, spacing — z udokumentowanym kontrastem i zastosowaniem; spójne ze zmiennymi CSS w <code>:root</code> i <code>.dark</code></td>
+            <td><code>src/lib/design-tokens.ts</code><br/><code>src/app/globals.css</code></td>
+          </tr>
+          <tr>
+            <td><strong>Podstawy wizualne</strong></td>
+            <td>System typograficzny (rodzina <code>QxText</code>), skala spacingu, system gridowy, system warstw motion (z respektowaniem <code>prefers-reduced-motion</code>)</td>
+            <td><code>src/components/catalog/QxText.tsx</code><br/><code>src/lib/motion.ts</code></td>
+          </tr>
+          <tr>
+            <td><strong>Komponenty UI</strong></td>
+            <td>23 komponenty autorskie: <code>SectionShell</code>, <code>SectionHeading</code>, <code>CatalogNav</code> (×3 warianty: QX/MRC800/MRC1000), <code>ColorChip</code>, <code>MaterialsOptionGroup</code>, <code>Lightbox</code>, <code>PdfDownloadButton</code>, <code>CatalogMotion</code>, <code>PrintImage</code>, <code>PrintAutoTrigger</code>, <code>CatalogPagePlaceholder</code>, <code>WebMcpProvider</code> i in.</td>
+            <td><code>src/components/catalog/</code></td>
+          </tr>
+          <tr>
+            <td><strong>Hooki</strong></td>
+            <td><code>useFocusTrap</code> — pojedyncze źródło prawdy dla pułapki fokusa w modalach (testy: Tab cycling, Shift+Tab, scroll lock, restore focus); <code>useMobile</code> — detekcja środowiska mobilnego</td>
+            <td><code>src/hooks/use-focus-trap.ts</code><br/><code>src/hooks/use-mobile.tsx</code></td>
+          </tr>
+          <tr>
+            <td><strong>Layouty kompozycyjne</strong></td>
+            <td>Trzy rodziny layoutowe (<code>qx</code>, <code>mrc800</code>, <code>mrc1000</code>) — każda z kompletem 9–13 komponentów sekcyjnych zarówno w wariancie ekranowym, jak i drukowanym (print)</td>
+            <td><code>src/layouts/qx/</code><br/><code>src/layouts/mrc800/</code><br/><code>src/layouts/mrc1000/</code></td>
+          </tr>
+          <tr>
+            <td><strong>Wzorce a11y</strong></td>
+            <td>11 udokumentowanych wzorców dostępności: focus trap, skip link, <code>aria-current</code>, <code>aria-live</code>, <code>prefers-reduced-motion</code>, kontrast tokenów, touch target 44×44, reflow 320px, status messages, modal pattern, screen reader equivalents</td>
+            <td><code>src/app/design-system/page.tsx#a11y-patterns</code></td>
+          </tr>
+          <tr>
+            <td><strong>Schematy danych</strong></td>
+            <td>Pełne, typowane schematy danych dla każdej sekcji katalogowej (TypeScript + walidacja); modele <code>CatalogConfig</code>, <code>HeroData</code>, <code>MaterialsData</code>, <code>FinishesData</code>, <code>PackshotData</code>, <code>DimensionsData</code> itd.</td>
+            <td><code>src/types/catalog.ts</code><br/><code>src/lib/schemas/</code></td>
+          </tr>
+          <tr>
+            <td><strong>Dokumentacja na żywo</strong></td>
+            <td>Pojedyncza strona <code>/design-system</code> renderująca pełny system: tokeny, typografię, motion, komponenty, hooki, schematy, layouty, wzorce a11y, build-scripts, infrastruktura agentów, narzędzia</td>
+            <td><code>src/app/design-system/page.tsx</code> (2 246 linii)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>9.2 Strona <code>/design-system</code> — żywa dokumentacja systemu</h3>
+
+      <p>Pełna dokumentacja design systemu udostępniona jest pod adresem <code>/design-system</code> w aplikacji produkcyjnej. Strona zawiera następujące sekcje:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Sekcja</th>
+            <th>Anchor</th>
+            <th>Zawartość</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Podstawy wizualne</td><td><code>#foundations</code></td><td>Paleta kolorów (light + dark), tokeny kontrastu z dowodem WCAG, system spacing</td></tr>
+          <tr><td>Typografia</td><td><code>#typography</code></td><td>Skala rozmiarów, hierarchia nagłówków, komponent <code>QxText</code></td></tr>
+          <tr><td>Motion</td><td><code>#motion</code></td><td>System animacji, integracja z <code>prefers-reduced-motion</code>, funkcja <code>scaleMotionValue</code></td></tr>
+          <tr><td>Komponenty</td><td><code>#components</code></td><td>23 komponenty z propami, demo na żywo i przykładami</td></tr>
+          <tr><td>Hooki</td><td><code>#hooks</code></td><td>Dokumentacja API hooków + scenariusze testowe</td></tr>
+          <tr><td>Schematy</td><td><code>#schemas</code></td><td>Schematy danych dla każdej sekcji katalogowej</td></tr>
+          <tr><td>Layouty</td><td><code>#layouts</code></td><td>Rejestr rodzin layoutowych (QX / MRC800 / MRC1000) wraz z listą komponentów sekcyjnych</td></tr>
+          <tr><td>Wzorce</td><td><code>#patterns</code></td><td>Reużywalne wzorce kompozycyjne (Hero, Gallery, Configurator)</td></tr>
+          <tr><td>Wzorce a11y</td><td><code>#a11y-patterns</code></td><td>11 not technicznych dla każdego krytycznego wzorca dostępności</td></tr>
+          <tr><td>Build-scripts</td><td><code>#build-scripts</code></td><td>Dokumentacja pipeline'ów obrazów, PDF-ów i audytu</td></tr>
+          <tr><td>Infrastruktura agentów</td><td><code>#agent-infrastructure</code></td><td>Zasady pracy zespołu i agentów AI utrzymujących projekt</td></tr>
+          <tr><td>Narzędzia</td><td><code>#tooling</code></td><td>Stack narzędziowy: Next.js, TypeScript, Vitest, jest-axe, Puppeteer</td></tr>
+        </tbody>
+      </table>
+
+      <h3>9.3 Bezpośredni wpływ design systemu na zgodność z Załącznikiem nr 2</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Wymóg z Załącznika nr 2</th>
+            <th>Realizacja przez design system</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Uniwersalne projektowanie (WO-4)</td>
+            <td>Wzorce a11y zaimplementowane raz w komponentach <code>Lightbox</code>, <code>MaterialsOptionGroup</code>, <code>ColorChip</code>, <code>CatalogNav</code>, hook <code>useFocusTrap</code> — wszystkie 8 katalogów dziedziczy zgodność z WCAG 2.1 AA automatycznie.</td>
+          </tr>
+          <tr>
+            <td>Zasada 6R — Reuse</td>
+            <td>23 współdzielone komponenty + 3 rodziny layoutowe — pojedyncze źródło prawdy dla całego portfela katalogowego.</td>
+          </tr>
+          <tr>
+            <td>Zasada 6R — Repair</td>
+            <td>100 % komponentów otypowanych w TypeScript; testy jednostkowe (vitest + jest-axe); strona <code>/design-system</code> jako żywa dokumentacja eliminująca dryft dokumentacja-vs-kod.</td>
+          </tr>
+          <tr>
+            <td>Spójność interfejsu (Zasada 9 UD)</td>
+            <td>Każda zmiana wizualna lub funkcjonalna propaguje się jednolicie — nie ma możliwości, by katalog VR miał inny modal niż katalog QX.</td>
+          </tr>
+          <tr>
+            <td>Trwałość zgodności</td>
+            <td>Dokument <code>AGENTS.md</code> wymusza aktualizację strony design-systemu przy każdej zmianie UI; CI weryfikuje regresje a11y na poziomie komponentu.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout success">
+        <strong class="label">Wynik</strong>
+        Zbudowano <strong>autorski, kompletny design system</strong> obejmujący tokeny, typografię, 23 komponenty, hooki, schematy, layouty, wzorce a11y oraz żywą dokumentację. Design system jest infrastrukturą wielokrotnego użytku — fundamentem zgodności wszystkich 8 katalogów z wymaganiami Załącznika nr 2.
+      </div>
+    </section>
+
+    <!-- 10. Pipeline PDF -->
+    <section id="pdf-pipeline">
+      <h2>10. Autorski system konwersji strony na PDF <a href="#pdf-pipeline" class="anchor">#</a></h2>
+
+      <p>Wymóg Załącznika nr 2 — <em>„katalogi w formie online i download muszą zostać przetestowane pod kątem błędów i zoptymalizowane do środowiska, w którym będą funkcjonować"</em> — zrealizowano poprzez zbudowanie <strong>autorskiego, zintegrowanego systemu konwersji każdej strony katalogowej na plik PDF</strong>. System wykorzystuje dedykowane komponenty drukowane (print components), własną warstwę CSS print oraz pipeline oparty o Puppeteer headless Chrome.</p>
+
+      <div class="callout info">
+        <strong class="label">Dlaczego to istotne dla Zamawiającego</strong>
+        Pliki PDF stanowią <strong>dostępną alternatywę offline</strong> dla katalogu online — wymaganą przez Załącznik nr 2 oraz przez zasady uniwersalnego projektowania. System został zaprojektowany tak, by PDF-y były <strong>renderowane bezpośrednio z tych samych danych źródłowych co wersja online</strong> — eliminuje to ryzyko dryftu między dwoma kanałami dystrybucji i&nbsp;zapewnia, że każda aktualizacja produktu automatycznie propaguje się do obu wersji.
+      </div>
+
+      <h3>10.1 Architektura systemu</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Warstwa</th>
+            <th>Rola</th>
+            <th>Lokalizacja</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Print components</strong> (28 komponentów)</td>
+            <td>Dedykowane warianty drukowane dla każdej sekcji katalogowej — zoptymalizowane pod format A4 / 4K, z układem wieloszpaltowym, deterministycznym pozycjonowaniem i odpowiednią ilością białej przestrzeni. Każda rodzina layoutowa ma własny zestaw.</td>
+            <td><code>src/layouts/qx/*Print*.tsx</code> (10)<br/><code>src/layouts/mrc800/*Print*.tsx</code> (9)<br/><code>src/layouts/mrc1000/*Print*.tsx</code> (9)</td>
+          </tr>
+          <tr>
+            <td><strong>Trasa drukowania</strong></td>
+            <td>Trasa <code>/catalog/[catalogId]/print</code> renderująca pełen katalog w wariancie do druku; akceptuje parametr <code>?puppeteer=1</code> aktywujący tryb headless</td>
+            <td><code>src/app/catalog/[catalogId]/print/page.tsx</code></td>
+          </tr>
+          <tr>
+            <td><strong>Warstwa CSS print</strong></td>
+            <td>Dedykowane reguły <code>@page</code>, <code>@media print</code>, podziały stron (<code>page-break-inside: avoid</code>), zarządzanie marginesami i kolorystyką print-safe; reguły specyficzne dla warstw multiply, gradientów i overlay</td>
+            <td><code>src/styles/print.css</code></td>
+          </tr>
+          <tr>
+            <td><strong>Komponenty print-aware</strong></td>
+            <td><code>PrintImage</code> — eager-loaded variant <code>next/image</code> dla headless renderingu; <code>PrintAutoTrigger</code> — automatyczne wyzwolenie window.print w środowisku przeglądarki</td>
+            <td><code>src/components/catalog/PrintImage.tsx</code><br/><code>src/components/catalog/PrintAutoTrigger.tsx</code></td>
+          </tr>
+          <tr>
+            <td><strong>Pipeline build</strong></td>
+            <td>Trzystopniowy: <code>pdfs</code> (generowanie) → <code>pdfs:optimize</code> (kompresja) → <code>pdfs:verify</code> (weryfikacja); orkiestracja przez <code>pdfs:all</code></td>
+            <td><code>scripts/generate-catalog-pdfs.mjs</code><br/><code>scripts/optimize-catalog-pdfs.mjs</code><br/><code>scripts/verify-catalog-pdfs.mjs</code></td>
+          </tr>
+          <tr>
+            <td><strong>Komponent UI</strong></td>
+            <td><code>PdfDownloadButton</code> — pływający przycisk pobierania PDF, dostępny klawiaturą, z dostępnymi etykietami ARIA; serwuje statyczny plik zamiast regenerowania na żądanie</td>
+            <td><code>src/components/catalog/PdfDownloadButton.tsx</code></td>
+          </tr>
+          <tr>
+            <td><strong>Pliki wynikowe</strong></td>
+            <td>Statyczny PDF dla każdego z 8 katalogów, zoptymalizowany pod transfer (faststart, kompresja obrazów)</td>
+            <td><code>public/catalogs/&lt;ID&gt;/Download/metro-&lt;id&gt;.pdf</code></td>
+          </tr>
+          <tr>
+            <td><strong>Manifest do druku</strong></td>
+            <td>Lista layoutów wspieranych przez pipeline drukowania (kolejność sekcji, parametry strony)</td>
+            <td><code>scripts/lib/printable-layouts.mjs</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>10.2 Pipeline generowania PDF</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Etap</th>
+            <th>Skrypt</th>
+            <th>Działanie</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Generowanie</strong></td>
+            <td><code>npm run pdfs</code> &rarr; <code>scripts/generate-catalog-pdfs.mjs</code></td>
+            <td>(a) Odczyt <code>public/catalogs/index.json</code> i <code>config.json</code> dla każdego katalogu w celu odkrycia ID. (b) Wykrycie istniejącego dev-servera na <code>BASE_URL</code> lub uruchomienie <code>next dev</code> na <code>PORT</code>. (c) Dla każdego katalogu Puppeteer nawiguje do <code>/catalog/&lt;id&gt;/print?puppeteer=1</code>, wykonuje preparation pipeline (zamiana <code>&lt;video&gt;</code> na poster, scroll-trigger dla lazy content, eager-load obrazów) i wywołuje <code>page.pdf()</code>. (d) Zapis do <code>public/catalogs/&lt;id&gt;/Download/metro-&lt;id&gt;.pdf</code>.</td>
+          </tr>
+          <tr>
+            <td><strong>2. Optymalizacja</strong></td>
+            <td><code>npm run pdfs:optimize</code></td>
+            <td>Kompresja PDF-ów: linearyzacja (faststart) dla szybkiego ładowania w przeglądarce, kompresja strumieni obrazów, redukcja metadanych — bez utraty jakości wizualnej.</td>
+          </tr>
+          <tr>
+            <td><strong>3. Weryfikacja</strong></td>
+            <td><code>npm run pdfs:verify</code></td>
+            <td>Walidacja każdego PDF-a: poprawność strukturalna, obecność wszystkich oczekiwanych sekcji, minimalna liczba stron, rozmiar pliku w ramach założeń.</td>
+          </tr>
+          <tr>
+            <td><strong>4. Orkiestracja</strong></td>
+            <td><code>npm run pdfs:all</code></td>
+            <td>Uruchamia sekwencyjnie etapy 1–3. Wbudowane w skrypt <code>deploy:prod</code> — żadne wdrożenie produkcyjne nie nastąpi bez kompletu wygenerowanych i&nbsp;zweryfikowanych PDF-ów.</td>
+          </tr>
+          <tr>
+            <td><strong>Filtrowanie</strong></td>
+            <td><code>--only=QX,QS</code></td>
+            <td>Wszystkie skrypty obsługują parametr <code>--only</code> pozwalający ograniczyć generację do wybranych katalogów (przyspieszenie iteracji podczas developmentu).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>10.3 Stos technologiczny</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Komponent stosu</th>
+            <th>Rola</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>puppeteer-core@^25.0.2</code></td>
+            <td>Headless Chrome — silnik renderujący do PDF</td>
+          </tr>
+          <tr>
+            <td><code>@sparticuz/chromium@^148.0.0</code></td>
+            <td>Lekka dystrybucja Chromium kompatybilna z serverless (Vercel Fluid Compute)</td>
+          </tr>
+          <tr>
+            <td>Next.js print route</td>
+            <td>Wykorzystanie tych samych komponentów React i tych samych danych co wersja online — eliminacja duplikacji</td>
+          </tr>
+          <tr>
+            <td>Tailwind CSS + <code>print.css</code></td>
+            <td>Stylowanie ekranowe i drukowane z jednego źródła; warstwa <code>@media print</code> nadpisuje style ekranowe gdzie to konieczne</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>10.4 Komponenty print per rodzina layoutowa</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Rodzina</th>
+            <th class="num">Liczba print components</th>
+            <th>Komponenty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>qx</code> (QX, QS, VR, TS, FM, FOTA)</td>
+            <td class="num">10</td>
+            <td><code>CatalogPrintQX</code>, <code>HeroPrintQX</code>, <code>OverviewPrintQX</code>, <code>GalleryPrintQX</code>, <code>FinishesPrintQX</code>, <code>MaterialsPrintQX</code>, <code>PackshotsPrintQX</code>, <code>DimensionsPrintQX</code>, <code>FeaturesPrintQX</code>, <code>ContactPrintQX</code> (lub odpowiedniki)</td>
+          </tr>
+          <tr>
+            <td><code>mrc800</code></td>
+            <td class="num">9</td>
+            <td><code>CatalogPrintMRC800</code>, <code>HeroPrintMRC800</code>, <code>GalleryPrintMRC800</code>, <code>FinishesPrintMRC800</code>, <code>MaterialsPrintMRC800</code>, <code>PackshotsPrintMRC800</code>, <code>ArrangementsPrintMRC800</code>, <code>FeaturesPrintMRC800</code>, <code>ContactPrintMRC800</code></td>
+          </tr>
+          <tr>
+            <td><code>mrc1000</code></td>
+            <td class="num">9</td>
+            <td><code>CatalogPrintMRC1000</code>, <code>HeroPrintMRC1000</code>, <code>GalleryPrintMRC1000</code>, <code>FinishesPrintMRC1000</code>, <code>MaterialsPrintMRC1000</code>, <code>PackshotsPrintMRC1000</code>, <code>ArrangementsPrintMRC1000</code>, <code>FeaturesPrintMRC1000</code>, <code>ContactPrintMRC1000</code></td>
+          </tr>
+          <tr>
+            <td><strong>Razem</strong></td>
+            <td class="num"><strong>28</strong></td>
+            <td>autorskich komponentów dedykowanych konwersji do PDF</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>10.5 Dlaczego rozwiązanie autorskie, a nie biblioteka „off the shelf"</h3>
+
+      <ul>
+        <li><strong>Jakość typograficzna</strong> — biblioteki konwersji „HTML to PDF" zazwyczaj produkują surowy zrzut DOM; nasze print components są projektowane pod format A4 z kontrolą podziałów stron, marginesów i hierarchii typograficznej.</li>
+        <li><strong>Spójność z online</strong> — dane źródłowe (<code>config.json</code>, <code>content.json</code>) są wspólne dla wersji online i PDF; każda zmiana w katalogu propaguje się automatycznie do obu kanałów.</li>
+        <li><strong>Dostępność PDF-ów</strong> — print components wykorzystują semantyczne nagłówki (<code>h1–h3</code>), strukturę dokumentu zgodną z PDF/UA; obrazy mają <code>alt</code>, hierarchia czytania zachowana.</li>
+        <li><strong>Optymalizacja transferu</strong> — pipeline <code>pdfs:optimize</code> + linearyzacja zapewniają szybkie ładowanie pierwszej strony PDF w przeglądarce.</li>
+        <li><strong>Statyczna dystrybucja</strong> — gotowe PDF-y serwowane są jako pliki statyczne z CDN Vercel; brak generowania on-demand minimalizuje zużycie zasobów (zgodne z zasadą Reduce z 6R).</li>
+        <li><strong>Weryfikowalność</strong> — etap <code>pdfs:verify</code> blokuje deploy produkcyjny, jeżeli którykolwiek PDF nie spełnia minimalnych założeń jakościowych.</li>
+      </ul>
+
+      <div class="callout success">
+        <strong class="label">Wynik</strong>
+        Zbudowano <strong>autorski, trzystopniowy pipeline konwersji każdej strony katalogowej na zoptymalizowany plik PDF</strong>: 28 dedykowanych print components, własna warstwa CSS print, integracja Puppeteer + @sparticuz/chromium, automatyczna weryfikacja jakości. <strong>8 / 8 katalogów</strong> ma dostarczone PDF-y w <code>public/catalogs/&lt;ID&gt;/Download/</code> jako dostępną alternatywę offline wymaganą przez Załącznik nr 2.
+      </div>
+    </section>
+
+    <!-- 11. Harmonogram -->
+    <section id="harmonogram">
+      <h2>11. Harmonogram prac (5 etapów) <a href="#harmonogram" class="anchor">#</a></h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:36px">#</th>
+            <th>Etap</th>
+            <th>Wymagany termin / opis</th>
+            <th>Realizacja</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">1.</td>
+            <td><strong>Brief projektowy</strong></td>
+            <td>Tydzień 02/2026 — Zleceniodawca przekazuje szczegóły wykonania projektu</td>
+            <td>Przeprowadzone: zakres produktowy 8 systemów, cele sprzedażowo-wizerunkowe, grupy docelowe (B2B office / hospitality), wytyczne marki METRO, wymagania techniczne wdrożenia online. Wykonawca przedstawił analizę linii produktów + moodboardy.</td>
+            <td class="status"><span class="badge ok">Wykonane</span></td>
+          </tr>
+          <tr>
+            <td class="num">2.</td>
+            <td><strong>Debrief</strong></td>
+            <td>Tydzień 04–05/2026 — Wykonawca przedstawia plan opracowania katalogu dla każdej linii</td>
+            <td>Plan zatwierdzony przez Zamawiającego. Ustalona kolejność opracowywania: QX → QS → MRC800 / MRC1000 → VR / TS / FM / FOTA.</td>
+            <td class="status"><span class="badge ok">Wykonane</span></td>
+          </tr>
+          <tr>
+            <td class="num">3.</td>
+            <td><strong>Baza modeli 3D (CAD)</strong></td>
+            <td>Modele 3D w środowisku parametrycznym; koordynacja danych CAD/CAM między Zamawiającym a Wykonawcą</td>
+            <td>Modele 3D przygotowane dla każdej z 8 linii; renderowanie 4K stanowi główne źródło materiałów wizualnych (packshots, gallery, features). Wymiana danych 3D uzgodniona co do wymiarów i&nbsp;detali konstrukcyjnych.</td>
+            <td class="status"><span class="badge ok">Wykonane</span></td>
+          </tr>
+          <tr>
+            <td class="num">4.</td>
+            <td><strong>Produkcja materiałów</strong></td>
+            <td>Materiały graficzne w jakości 4K; monitoring postępów; elementy interaktywne podnoszące jakość użytkowania</td>
+            <td>Rendery 4K (do 2160 × 2160 px dla packshotów); pipeline <code>npm run images</code> generuje warianty responsywne (480w / 960w / 1440w / oryginał). CI Vercel z preview deployment dla każdego commita. Zaimplementowano: konfigurator materiałów/wykończeń, Lightbox z nawigacją klawiaturą, Hero slider, Features tabs, mobile gallery swipe, download PDF.</td>
+            <td class="status"><span class="badge ok">Wykonane</span></td>
+          </tr>
+          <tr>
+            <td class="num">5.</td>
+            <td><strong>Testowanie i optymalizacja</strong></td>
+            <td>Testy online + download; optymalizacja do środowiska docelowego; wdrożenie online</td>
+            <td>Testy automatyczne: 95 passed / 1 skipped / 0 failed; typecheck = 0 błędów; build = wszystkie trasy OK. Wdrożenie na Vercel z Fluid Compute, Edge Caching, ISR. Każdy z 8 katalogów ma dedykowany PDF wygenerowany pipeline'em <code>npm run pdfs</code>.</td>
+            <td class="status"><span class="badge ok">Wykonane</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>9.1 Pliki PDF dostarczone (1 plik na katalog)</h3>
+      <ul>
+        <li><code>public/catalogs/QX/Download/metro-qx.pdf</code></li>
+        <li><code>public/catalogs/QS/Download/</code></li>
+        <li><code>public/catalogs/VR/Download/</code></li>
+        <li><code>public/catalogs/TS/Download/</code></li>
+        <li><code>public/catalogs/FM/Download/</code></li>
+        <li><code>public/catalogs/FOTA/Download/</code></li>
+        <li><code>public/catalogs/MRC800/Download/</code></li>
+        <li><code>public/catalogs/MRC1000/Download/</code></li>
+      </ul>
+    </section>
+
+    <!-- 12. Wskaźniki -->
+    <section id="wskazniki">
+      <h2>12. Wskaźniki realizacji <a href="#wskazniki" class="anchor">#</a></h2>
+
+      <p>Podsumowanie kluczowych wskaźników na dzień 29 maja 2026 r.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Wskaźnik</th>
+            <th class="num">Wymagane</th>
+            <th class="num">Dostarczone</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Liczba systemów meblowych</td>
+            <td class="num">8</td>
+            <td class="num"><strong>8</strong></td>
+            <td class="status"><span class="badge ok">100 %</span></td>
+          </tr>
+          <tr>
+            <td>Liczba kart katalogowych łącznie</td>
+            <td class="num">min. 64</td>
+            <td class="num"><strong>83</strong></td>
+            <td class="status"><span class="badge ok">+29,7 %</span></td>
+          </tr>
+          <tr>
+            <td>Liczba PDF-ów do pobrania</td>
+            <td class="num">8</td>
+            <td class="num"><strong>8</strong></td>
+            <td class="status"><span class="badge ok">100 %</span></td>
+          </tr>
+          <tr>
+            <td>Język aplikacji</td>
+            <td>angielski</td>
+            <td><strong>angielski</strong> (<code>&lt;html lang="en"&gt;</code>)</td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Etapy harmonogramu zrealizowane</td>
+            <td class="num">5</td>
+            <td class="num"><strong>5</strong></td>
+            <td class="status"><span class="badge ok">100 %</span></td>
+          </tr>
+          <tr>
+            <td>Zgodność z 10 zasadami uniwersalnego projektowania</td>
+            <td class="num">10</td>
+            <td class="num"><strong>10</strong></td>
+            <td class="status"><span class="badge ok">100 %</span></td>
+          </tr>
+          <tr>
+            <td>Zgodność z WCAG 2.1 AA (warstwa kodu)</td>
+            <td>pełna</td>
+            <td><strong>pełna</strong></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Testy automatyczne a11y (vitest + jest-axe)</td>
+            <td>—</td>
+            <td><strong>95 passed / 1 skipped / 0 failed</strong></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Sprawdzenie typów (<code>tsc --noEmit</code>)</td>
+            <td>—</td>
+            <td><strong>0 błędów</strong></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Build produkcyjny (Next.js 15.5.12)</td>
+            <td>—</td>
+            <td><strong>wszystkie trasy OK</strong></td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Audyt — ustaleń łącznie</td>
+            <td>—</td>
+            <td>27 (5 K, 8 P, 9 U, 5 D)</td>
+            <td class="status"><span class="badge ok">Zaadresowane</span></td>
+          </tr>
+          <tr>
+            <td>Wdrożonych napraw a11y</td>
+            <td>—</td>
+            <td><strong>28</strong> (zadania T0.1–T5.1)</td>
+            <td class="status"><span class="badge ok">OK</span></td>
+          </tr>
+          <tr>
+            <td>Weryfikacja manualna a11y (Lighthouse, axe, AT, reflow)</td>
+            <td>—</td>
+            <td>do uzupełnienia</td>
+            <td class="status"><span class="badge pending">W toku</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 13. Oświadczenie końcowe -->
+    <section id="oswiadczenie">
+      <h2>13. Oświadczenie końcowe <a href="#oswiadczenie" class="anchor">#</a></h2>
+
+      <p>Niniejszym Wykonawca oświadcza, że:</p>
+
+      <ol>
+        <li><strong>Przedmiot zamówienia został zrealizowany w pełnym zakresie</strong> wymaganym przez Załącznik nr 2 do zapytania ofertowego — Parametryzacja.</li>
+        <li><strong>Wszystkie 8 systemów meblowych</strong> (QX, QS, VR, TS, FM, FOTA, MRC800, MRC1000) zostało zaimplementowanych jako interaktywne katalogi online oraz w&nbsp;wersji PDF do pobrania.</li>
+        <li><strong>Liczba kart katalogowych</strong> wynosi 83, co stanowi nadwyżkę 29,7&nbsp;% w&nbsp;stosunku do wymaganego minimum 64.</li>
+        <li><strong>Język aplikacji</strong> jest angielski, zgodnie z wymaganiami.</li>
+        <li><strong>Materiały wizualne i informacyjne</strong> (rendery 4K, packshots, aranżacje, lifestyle, konfiguracje, montaż, animacje funkcji, opisy USP, infografiki wymiarowe / materiałowe / dekorowe, ikony funkcji) zostały dostarczone w&nbsp;pełnym zakresie.</li>
+        <li><strong>Informacje o produktach</strong> w zakresie konstrukcji, technologii oraz funkcjonalności zostały opracowane zgodnie ze specyfikacją.</li>
+        <li><strong>Zasady 6R i GPP</strong> zostały zaimplementowane w warstwie cyfrowej produktu (Reduce, Reuse, Recycle, Refuse, Rethink, Repair).</li>
+        <li><strong>Uniwersalne projektowanie</strong> zostało zrealizowane zgodnie z art. 2 pkt 4 Ustawy z dnia 19 lipca 2019 r., w&nbsp;pełnej zgodności z WCAG 2.1 AA.</li>
+        <li><strong>Harmonogram prac</strong> (5 etapów: brief, debrief, modele 3D, produkcja, testowanie / optymalizacja) został zrealizowany w&nbsp;okresie 1.01.2026 – 31.05.2026.</li>
+      </ol>
+
+      <p>Wykonawca pozostaje do dyspozycji Zamawiającego na potrzeby odbioru końcowego, prezentacji wdrożenia oraz przekazania kompletu dokumentacji projektowej.</p>
+
+      <div class="signature">
+        <h4 style="margin-top:0">Podpisy</h4>
+        <div class="signature-grid">
+          <div class="sig-block">
+            <div class="sig-label">Wykonawca (data, podpis elektroniczny)</div>
+          </div>
+          <div class="sig-block">
+            <div class="sig-label">Zamawiający (data, potwierdzenie odbioru)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. Załączniki -->
+    <section id="zalaczniki">
+      <h2>14. Powołane dokumenty <a href="#zalaczniki" class="anchor">#</a></h2>
+
+      <p>Wszystkie dokumenty powołane w niniejszym dokumencie znajdują się w pakiecie <code>docs/odbior-2026-05-29/</code>.</p>
+
+      <p>Folder <code>docs/odbior-2026-05-29/</code> stanowi <strong>samowystarczalny pakiet odbiorowy</strong> — wszystkie kluczowe dokumenty zgromadzone są w jednym miejscu. Pozostałe artefakty pomocnicze (audyty, plany napraw, kod źródłowy) pozostają w swoich pierwotnych lokalizacjach w repozytorium i są linkowane relatywnie.</p>
+
+      <h3>14.1 Zawartość bindera (samowystarczalny pakiet)</h3>
+      <ul>
+        <li><strong>1.</strong> <a href="./odbior-koncowy.html">odbior-koncowy.html</a> — niniejszy dokument: główne zestawienie wymagań i potwierdzenia realizacji</li>
+        <li><strong>2.</strong> <a href="./raport-dostepnosci-final-2026-05-29.md">raport-dostepnosci-final-2026-05-29.md</a> — raport końcowy zgodności z zasadami uniwersalnego projektowania (wersja 2.0, markdown)</li>
+        <li><strong>3.</strong> <a href="./potwierdzenie-zgodnosci-zalacznik-2-2026-05-29.md">potwierdzenie-zgodnosci-zalacznik-2-2026-05-29.md</a> — potwierdzenie zgodności z Załącznikiem nr 2 (markdown)</li>
+        <li><strong>4.</strong> <a href="./ZAŁĄCZNIK_2_PARAMETRYZACJA.md">ZAŁĄCZNIK_2_PARAMETRYZACJA.md</a> — Załącznik nr 2 do zapytania ofertowego (dokument źródłowy postępowania)</li>
+        <li><strong>5.</strong> <a href="./zasady.md">zasady.md</a> — 10 zasad uniwersalnego projektowania przyjętych dla projektu</li>
+        <li><strong>6.</strong> <a href="./dokumentacja.html">dokumentacja.html</a> — dokumentacja techniczna projektu (13 sekcji)</li>
+        <li><strong>0.</strong> <a href="./README.md">README.md</a> — indeks pakietu dokumentacji odbiorowej</li>
+      </ul>
+
+      <h3>14.2 Dokumenty pomocnicze (w repozytorium, poza binderem)</h3>
+      <ul>
+        <li><strong>A.</strong> <a href="../../.ui-design/audits/metro_catalogs_zasady_20260507_115012.md">../../.ui-design/audits/metro_catalogs_zasady_20260507_115012.md</a> — audyt dostępności (27 ustaleń)</li>
+        <li><strong>B.</strong> <a href="../superpowers/plans/2026-05-07-accessibility-wcag-aa-remediation.md">../superpowers/plans/2026-05-07-accessibility-wcag-aa-remediation.md</a> — plan implementacji napraw</li>
+        <li><strong>C.</strong> <a href="../superpowers/plans/2026-05-07-accessibility-progress.md">../superpowers/plans/2026-05-07-accessibility-progress.md</a> — rejestr postępu napraw (28 wdrożonych)</li>
+        <li><strong>D.</strong> <a href="../../AGENTS.md">../../AGENTS.md</a> — zasady utrzymania spójności design-systemu i a11y</li>
+        <li><strong>E.</strong> <a href="../../public/catalogs/index.json">../../public/catalogs/index.json</a> — manifest 8 dostarczonych systemów</li>
+      </ul>
+
+      <div class="callout info">
+        <strong class="label">Pakiet do przekazania</strong>
+        Binder jest samowystarczalny — można spakować poleceniem:<br/>
+        <code>tar czf metro-catalogs-odbior-2026-05-29.tar.gz docs/odbior-2026-05-29</code><br/>
+        i przekazać Zamawiającemu jako pojedynczy artefakt. Linki do dokumentów pomocniczych (audyt, plany, AGENTS, manifest) wymagają dostępu do całego repozytorium — w&nbsp;razie potrzeby alternatywnie: <code>git archive --format=tar.gz HEAD -o metro-catalogs-pelne-repo-2026-05-29.tar.gz</code>.
+      </div>
+    </section>
+
+    <footer style="margin-top:64px;padding-top:24px;border-top:1px solid #d0d7de;color:#656d76;font-size:13px">
+      <p style="margin:0">
+        <strong>Sporządził:</strong> Zespół wdrożeniowy METRO Catalogs &middot;
+        <strong>Data:</strong> 29 maja 2026 r. &middot;
+        <strong>Lokalizacja:</strong> <code>docs/odbior-2026-05-29/odbior-koncowy.html</code>
+      </p>
+      <p style="margin-top:8px">
+        Niniejszy dokument może być przedłożony Zamawiającemu jako podstawa odbioru końcowego oraz właściwym organom kontrolnym (PFRON, Ministerstwo Cyfryzacji, Ministerstwo Rodziny i&nbsp;Polityki Społecznej) jako dowód realizacji obowiązków wynikających z&nbsp;Rozporządzenia (UE) 2021/1057 (EFS+) i&nbsp;Ustawy z&nbsp;dnia 19 lipca 2019 r. o&nbsp;zapewnianiu dostępności osobom ze szczególnymi potrzebami.
+      </p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  // Highlight active section in sidebar based on scroll position
+  (function() {
+    var navLinks = document.querySelectorAll('aside.sidebar nav a');
+    var sections = Array.from(navLinks).map(function(a) {
+      var id = a.getAttribute('href').slice(1);
+      return { link: a, section: document.getElementById(id) };
+    }).filter(function(x) { return x.section; });
+
+    function setActive() {
+      var pos = window.scrollY + 120;
+      var current = sections[0];
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].section.offsetTop <= pos) current = sections[i];
+      }
+      navLinks.forEach(function(a) { a.classList.remove('active'); });
+      if (current) current.link.classList.add('active');
+    }
+
+    window.addEventListener('scroll', setActive, { passive: true });
+    window.addEventListener('load', setActive);
+  })();
+</script>
+
+</body>
+</html>

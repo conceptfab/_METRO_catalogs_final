@@ -1,0 +1,224 @@
+{
+  "sectionLabel": "Product Codes",
+  "title": "Order references",
+  "description": "Use these unique codes when placing your order or specifying modules for your workspace.",
+  "image": "/catalogs/QS/codes/axo_QS_codes.svg",
+  "groups": [
+    {
+      "id": "single-depth-70",
+      "category": "single",
+      "title": "QS single desk (depth 70 cm)",
+      "rows": [
+        {
+          "index": "QS1",
+          "indexR": "QS1R",
+          "dimensions": "120 × 70 × 74"
+        },
+        {
+          "index": "QS2",
+          "indexR": "QS2R",
+          "dimensions": "140 × 70 × 74"
+        },
+        {
+          "index": "QS3",
+          "indexR": "QS3R",
+          "dimensions": "160 × 70 × 74"
+        },
+        {
+          "index": "QS4",
+          "indexR": "QS4R",
+          "dimensions": "180 × 70 × 74"
+        }
+      ]
+    },
+    {
+      "id": "single-depth-80",
+      "category": "single",
+      "title": "QS single desk (depth 80 cm)",
+      "rows": [
+        {
+          "index": "QS180",
+          "indexR": "QS1R80",
+          "dimensions": "120 × 80 × 74"
+        },
+        {
+          "index": "QS280",
+          "indexR": "QS2R80",
+          "dimensions": "140 × 80 × 74"
+        },
+        {
+          "index": "QS380",
+          "indexR": "QS3R80",
+          "dimensions": "160 × 80 × 74"
+        },
+        {
+          "index": "QS480",
+          "indexR": "QS4R80",
+          "dimensions": "180 × 80 × 74"
+        }
+      ]
+    },
+    {
+      "id": "single-extension-depth-70",
+      "category": "single",
+      "title": "Extension for QS single desk (depth 70 cm)",
+      "rows": [
+        {
+          "index": "QS1D",
+          "indexR": "QS1RD",
+          "dimensions": "66.5 × 50 × 74"
+        },
+        {
+          "index": "QS2D",
+          "indexR": "QS2RD",
+          "dimensions": "86.5 × 50 × 74"
+        },
+        {
+          "index": "QS3D",
+          "indexR": "QS3RD",
+          "dimensions": "106.5 × 50 × 74"
+        },
+        {
+          "index": "QS4D",
+          "indexR": "QS4RD",
+          "dimensions": "126.5 × 50 × 74"
+        }
+      ]
+    },
+    {
+      "id": "single-extension-depth-80",
+      "category": "single",
+      "title": "Extension for QS single desk (depth 80 cm)",
+      "rows": [
+        {
+          "index": "QS1D80",
+          "indexR": "QS1RD80",
+          "dimensions": "66.5 × 50 × 74"
+        },
+        {
+          "index": "QS2D80",
+          "indexR": "QS2RD80",
+          "dimensions": "86.5 × 50 × 74"
+        },
+        {
+          "index": "QS3D80",
+          "indexR": "QS3RD80",
+          "dimensions": "106.5 × 50 × 74"
+        },
+        {
+          "index": "QS4D80",
+          "indexR": "QS4RD80",
+          "dimensions": "126.5 × 50 × 74"
+        }
+      ]
+    },
+    {
+      "id": "bench-depth-140",
+      "category": "bench",
+      "title": "QS bench double desk (depth 140 cm)",
+      "rows": [
+        {
+          "index": "QS10",
+          "indexR": "QS10R",
+          "dimensions": "120 × 140 × 74"
+        },
+        {
+          "index": "QS11",
+          "indexR": "QS11R",
+          "dimensions": "140 × 140 × 74"
+        },
+        {
+          "index": "QS12",
+          "indexR": "QS12R",
+          "dimensions": "160 × 140 × 74"
+        },
+        {
+          "index": "QS13",
+          "indexR": "QS13R",
+          "dimensions": "180 × 140 × 74"
+        }
+      ]
+    },
+    {
+      "id": "bench-depth-160",
+      "category": "bench",
+      "title": "QS bench double desk (depth 160 cm)",
+      "rows": [
+        {
+          "index": "QS1080",
+          "indexR": "QS1080R",
+          "dimensions": "120 × 160 × 74"
+        },
+        {
+          "index": "QS1180",
+          "indexR": "QS1180R",
+          "dimensions": "140 × 160 × 74"
+        },
+        {
+          "index": "QS1280",
+          "indexR": "QS1280R",
+          "dimensions": "160 × 160 × 74"
+        },
+        {
+          "index": "QS1380",
+          "indexR": "QS1380R",
+          "dimensions": "180 × 160 × 74"
+        }
+      ]
+    },
+    {
+      "id": "bench-flaps-depth-140",
+      "category": "bench",
+      "title": "QS bench double desk with access to the cable canal through the flaps (depth 140 cm)",
+      "rows": [
+        {
+          "index": "QS15",
+          "indexR": "QS15R",
+          "dimensions": "120 × 140 × 74"
+        },
+        {
+          "index": "QS16",
+          "indexR": "QS16R",
+          "dimensions": "140 × 140 × 74"
+        },
+        {
+          "index": "QS17",
+          "indexR": "QS17R",
+          "dimensions": "160 × 140 × 74"
+        },
+        {
+          "index": "QS18",
+          "indexR": "QS18R",
+          "dimensions": "180 × 140 × 74"
+        }
+      ]
+    },
+    {
+      "id": "bench-flaps-depth-160",
+      "category": "bench",
+      "title": "QS bench double desk with access to the cable canal through the flaps (depth 160 cm)",
+      "rows": [
+        {
+          "index": "QS1580",
+          "indexR": "QS1580R",
+          "dimensions": "120 × 160 × 74"
+        },
+        {
+          "index": "QS1680",
+          "indexR": "QS1680R",
+          "dimensions": "140 × 160 × 74"
+        },
+        {
+          "index": "QS1780",
+          "indexR": "QS1780R",
+          "dimensions": "160 × 160 × 74"
+        },
+        {
+          "index": "QS1880",
+          "indexR": "QS1880R",
+          "dimensions": "180 × 160 × 74"
+        }
+      ]
+    }
+  ]
+}

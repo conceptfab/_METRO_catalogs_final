@@ -1,0 +1,48 @@
+{
+  "sectionLabel": "Functionality",
+  "title": "Features",
+  "items": [
+    {
+      "icon": "layout-grid",
+      "title": "Classic & timeless",
+      "desc": "A clean, restrained silhouette that fits any office aesthetic — from formal executive suites to modern open-plan layouts.",
+      "video": {
+        "src": "/catalogs/FM/features/FM_classic.mp4"
+      },
+      "variants": [
+        {
+          "title": "Classic profile",
+          "video": {
+            "src": "/catalogs/FM/features/FM_classic.mp4"
+          }
+        },
+        {
+          "title": "Width 100–180 cm",
+          "video": {
+            "src": "/catalogs/FM/features/FM_width_100-180.mp4"
+          }
+        },
+        {
+          "title": "Depth 70–80 cm",
+          "video": {
+            "src": "/catalogs/FM/features/FM_depth_70-80.mp4"
+          }
+        },
+        {
+          "title": "Optional return desk",
+          "video": {
+            "src": "/catalogs/FM/features/FM_extend.mp4"
+          }
+        }
+      ]
+    },
+    {
+      "icon": "wrench",
+      "title": "Quick & simple assembly",
+      "desc": "Pre-assembled frame keeps installation fast and straightforward. One person can complete a full desk without specialist help.",
+      "video": {
+        "src": "/catalogs/FM/features/FM_assembly.mp4"
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "sectionLabel": "Product Codes",
+  "title": "Order references",
+  "description": "Use these unique codes when placing your order or specifying modules for your workspace.",
+  "image": "/catalogs/MRC800/codes/axo_QS_codes.svg",
+  "gridColumns": 2,
+  "modules": [
+    { "image": "/catalogs/MRC800/dimensions/RC801.svg", "label": "RC801" },
+    { "image": "/catalogs/MRC800/dimensions/RC801FS.svg", "label": "RC801FS" },
+    { "image": "/catalogs/MRC800/dimensions/RC802.svg", "label": "RC802" },
+    { "image": "/catalogs/MRC800/dimensions/RC802FS.svg", "label": "RC802FS" },
+    { "image": "/catalogs/MRC800/dimensions/RC803.svg", "label": "RC803" },
+    { "image": "/catalogs/MRC800/dimensions/RC804L_R.svg", "label": "RC804L / RC804R" }
+  ],
+  "groups": [
+    {
+      "id": "mrc800-modules",
+      "category": "single",
+      "title": "MRC800 modules",
+      "rows": [
+        {
+          "index": "RC801",
+          "indexR": "",
+          "dimensions": "82 × 82 × 110"
+        },
+        {
+          "index": "RC801FS",
+          "indexR": "",
+          "dimensions": "85 × 82 × 110"
+        },
+        {
+          "index": "RC802",
+          "indexR": "",
+          "dimensions": "120 × 82 × 110"
+        },
+        {
+          "index": "RC802FS",
+          "indexR": "",
+          "dimensions": "124 × 82 × 110"
+        },
+        {
+          "index": "RC803",
+          "indexR": "",
+          "dimensions": "84 × 82 × 110"
+        },
+        {
+          "index": "RC804L",
+          "indexR": "",
+          "dimensions": "84 × 112 × 74"
+        },
+        {
+          "index": "RC804R",
+          "indexR": "",
+          "dimensions": "84 × 112 × 74"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "sectionLabel": "Product Codes",
+  "title": "Order references",
+  "description": "Use these unique codes when placing your order or specifying modules for your workspace.",
+  "image": "/catalogs/MRC1000/codes/axo_QS_codes.svg",
+  "gridColumns": 2,
+  "modules": [
+    {
+      "image": "/catalogs/MRC1000/dimensions/RC1001.svg",
+      "label": "RC1001"
+    },
+    {
+      "image": "/catalogs/MRC1000/dimensions/RC1002.svg",
+      "label": "RC1002"
+    },
+    {
+      "image": "/catalogs/MRC1000/dimensions/RC1003.svg",
+      "label": "RC1003"
+    },
+    {
+      "image": "/catalogs/MRC1000/dimensions/RC1004.svg",
+      "label": "RC1004"
+    },
+    {
+      "image": "/catalogs/MRC1000/dimensions/RC1005.svg",
+      "label": "RC1005"
+    },
+    {
+      "image": "/catalogs/MRC1000/dimensions/RC1006.svg",
+      "label": "RC1006"
+    },
+    {
+      "image": "/catalogs/MRC1000/dimensions/RC1007.svg",
+      "label": "RC1007"
+    },
+    {
+      "image": "/catalogs/MRC1000/dimensions/RC1008.svg",
+      "label": "RC1008"
+    }
+  ],
+  "groups": [
+    {
+      "id": "mrc1000-modules",
+      "category": "single",
+      "title": "MRC1000 modules",
+      "rows": [
+        {
+          "index": "RC1001",
+          "indexR": "",
+          "dimensions": "80 × 82 × 110"
+        },
+        {
+          "index": "RC1002",
+          "indexR": "",
+          "dimensions": "120 × 82 × 110"
+        },
+        {
+          "index": "RC1003",
+          "indexR": "",
+          "dimensions": "82 × 82 × 110"
+        },
+        {
+          "index": "RC1004",
+          "indexR": "",
+          "dimensions": "1224 × 82 × 110"
+        },
+        {
+          "index": "RC1005",
+          "indexR": "",
+          "dimensions": "82 × 82 × 110"
+        },
+        {
+          "index": "RC1006",
+          "indexR": "",
+          "dimensions": "82 × 102 × 74"
+        },
+        {
+          "index": "RC1007",
+          "indexR": "",
+          "dimensions": "28 × 160 × 60"
+        },
+        {
+          "index": "RC1008",
+          "indexR": "",
+          "dimensions": "28 × 120 × 60"
+        }
+      ]
+    }
+  ]
+}

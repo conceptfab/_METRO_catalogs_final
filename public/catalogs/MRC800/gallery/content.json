@@ -1,0 +1,36 @@
+{
+  "sectionLabel": "Visual Gallery",
+  "title": "See MRC800 in every context",
+  "images": [
+    {
+      "image": "scene_WHITE_A_4_4K.webp",
+      "alt": "MRC800 desk in a bright workspace – white finish, side view",
+      "category": "Office"
+    },
+    {
+      "image": "scene_BLACK_A_2_0000.webp",
+      "alt": "MRC800 desk packshot – black finish",
+      "category": "Bench"
+    },
+    {
+      "image": "scene_BLACK_B_3_4K.webp",
+      "alt": "MRC800 desks in open-plan office with natural lighting",
+      "category": "Office"
+    },
+    {
+      "image": "scene_BLACK_C_3_4K.webp",
+      "alt": "MRC800 desk in home office setup with task lighting",
+      "category": "Home"
+    },
+    {
+      "image": "scene_BLACK_D_4_0000.webp",
+      "alt": "MRC800 desk close-up – frame and desktop detail",
+      "category": "Detail"
+    },
+    {
+      "image": "scene_WHITE_D_4_QUAD_fix0000.webp",
+      "alt": "MRC800 desks in a quad workstation arrangement",
+      "category": "Office"
+    }
+  ]
+}

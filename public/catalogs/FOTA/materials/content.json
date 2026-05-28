@@ -1,0 +1,56 @@
+{
+  "sectionLabel": "Customization",
+  "title": "Top & frame combinations",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat tempor odio rutrum varius.",
+  "materials": [
+    {
+      "name": "Desktop Surface",
+      "desc": "High-pressure laminate (HPL) on 25mm moisture-resistant particleboard core. Scratch-resistant, easy to clean, ABS edge banding 2mm.",
+      "specs": "EN 438 Class HGS"
+    },
+    {
+      "name": "Steel Frame",
+      "desc": "Cold-rolled steel profiles, powder-coated finish in RAL colours. Anti-corrosion treated. Column profiles: 70×70mm rectangular tube.",
+      "specs": "EN 10025-2 S235JR"
+    },
+    {
+      "name": "Feet & Levellers",
+      "desc": "Die-cast zinc alloy feet with felt pads for floor protection. Adjustable levellers ±15mm for uneven floors.",
+      "specs": "EN 1728 certified"
+    }
+  ],
+  "swatches": [
+    {
+      "name": "Natural Oak",
+      "hex": "#c9a96e"
+    },
+    {
+      "name": "Walnut Dark",
+      "hex": "#5c3a21"
+    },
+    {
+      "name": "Pure White",
+      "hex": "#f2f0ec"
+    },
+    {
+      "name": "Light Grey",
+      "hex": "#c8c5be"
+    },
+    {
+      "name": "Anthracite",
+      "hex": "#3a3a3c"
+    },
+    {
+      "name": "Black",
+      "hex": "#1a1a1a"
+    },
+    {
+      "name": "Warm Beige",
+      "hex": "#d4c5a9"
+    },
+    {
+      "name": "Sage Green",
+      "hex": "#8a9a7b"
+    }
+  ]
+}

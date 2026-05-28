@@ -1,0 +1,21 @@
+{
+  "ignore": {
+    "overrides": [
+      {
+        "files": ["src/lib/image-loader.ts"],
+        "rules": ["deslop/unused-file"]
+      },
+      {
+        "files": ["src/app/design-system/page.tsx"],
+        "rules": [
+          "react-doctor/no-multi-comp",
+          "react-doctor/prefer-tag-over-role"
+        ]
+      },
+      {
+        "files": ["src/app/page.tsx"],
+        "rules": ["react-doctor/nextjs-no-img-element"]
+      }
+    ]
+  }
+}

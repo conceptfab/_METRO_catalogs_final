@@ -1,0 +1,31 @@
+{
+  "sectionLabel": "Finishes",
+  "title": "Materials & Finishes",
+  "description": "Two finish options for MRC800: White and Black. Powder-coated steel frame, MFC desktop, PVC/ABS edge tape 2mm.",
+  "desktopColors": [
+    { "name": "White", "code": "#f2f0ec", "ral": "RAL 9010" },
+    { "name": "Black", "code": "#1a1a1a", "ral": "RAL 9005" }
+  ],
+  "frameColors": [
+    { "name": "White", "code": "#f2f0ec" },
+    { "name": "Black", "code": "#1a1a1a" }
+  ],
+  "sizes": [],
+  "comparisonTable": [],
+  "illustrations": [
+    {
+      "id": "white-detail",
+      "color": "white",
+      "label": "White finish",
+      "image": "/catalogs/MRC800/finishes/07_25_Metro_Lada_WHITE_C_2_R5.webp",
+      "alt": "MRC800 frame and desktop detail in white finish"
+    },
+    {
+      "id": "black-detail",
+      "color": "black",
+      "label": "Black finish",
+      "image": "/catalogs/MRC800/finishes/07_25_Metro_Lada_BLACK_C_2_r5_0000.webp",
+      "alt": "MRC800 frame and desktop detail in black finish"
+    }
+  ]
+}

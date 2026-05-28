@@ -1,0 +1,49 @@
+{
+  "sectionLabel": "Technical Data",
+  "title": "System and Modules Description",
+  "description": "The modular design of the counter allows for configurations tailored to user needs and space requirements. Available modules can be used to create straight or corner configurations.\nRC1001 Straight module 80.\nRC1002 Straight module 120.\nRC1003 End module (left/right) width 80.\nRC1004 End module (left/right) width 120.\nRC1005 Corner module.\nRC1006 Module with countertop for serving individuals using wheelchairs, for system expansion. Available only as an end module (left/right version).\nRC1007 Top extension width 160.\nRC1008 Top extension width 120.",
+  "image": "/catalogs/MRC1000/dimensions/RC1001.svg",
+  "modules": [
+    { "image": "/catalogs/MRC1000/dimensions/RC1001.svg", "label": "RC1001" },
+    { "image": "/catalogs/MRC1000/dimensions/RC1002.svg", "label": "RC1002" },
+    { "image": "/catalogs/MRC1000/dimensions/RC1003.svg", "label": "RC1003" },
+    { "image": "/catalogs/MRC1000/dimensions/RC1004.svg", "label": "RC1004" },
+    { "image": "/catalogs/MRC1000/dimensions/RC1005.svg", "label": "RC1005" },
+    { "image": "/catalogs/MRC1000/dimensions/RC1006.svg", "label": "RC1006" },
+    { "image": "/catalogs/MRC1000/dimensions/RC1007.svg", "label": "RC1007" },
+    { "image": "/catalogs/MRC1000/dimensions/RC1008.svg", "label": "RC1008" }
+  ],
+  "specs": [
+    {
+      "label": "Width",
+      "value": "120 – 180 cm"
+    },
+    {
+      "label": "Depth",
+      "value": "70 – 80 cm"
+    },
+    {
+      "label": "Height",
+      "value": "74 cm"
+    },
+    {
+      "label": "Weight (frame)",
+      "value": "28 – 42 kg"
+    },
+    {
+      "label": "Desktop thickness",
+      "value": "25 mm"
+    }
+  ],
+  "certifications": [
+    "EN 527-1:2011 Office furniture — Work tables",
+    "EN 527-2:2016 Safety requirements",
+    "GS Mark (Geprüfte Sicherheit)",
+    "ISO 14001 Environmental Management"
+  ],
+  "dimensionDiagram": {
+    "width": "1600 mm",
+    "depth": "800 mm",
+    "heightRange": "650–1300 mm"
+  }
+}

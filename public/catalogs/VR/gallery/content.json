@@ -1,0 +1,36 @@
+{
+  "sectionLabel": "Visual Gallery",
+  "title": "See VR in every context",
+  "images": [
+    {
+      "image": "05_26_Metro_VR_SOLO_D_0001.webp",
+      "alt": "VR bench desk packshot on white background – full product view",
+      "category": "Bench"
+    },
+    {
+      "image": "05_26_Metro_VR_HERO_0_0000.webp",
+      "alt": "VR desks in open-plan office with natural lighting and workers",
+      "category": "Office"
+    },
+    {
+      "image": "05_26_Metro_VR_SOLO_C_0000.webp",
+      "alt": "VR desk packshot on white background – side view",
+      "category": "Office"
+    },
+    {
+      "image": "05_26_Metro_VR_HOME0000.webp",
+      "alt": "VR desk in home office setup with framed wall art and task lighting",
+      "category": "Home"
+    },
+    {
+      "image": "05_26_Metro_VR_SOLO_A_0001.webp",
+      "alt": "VR desk packshot on white background – angled view showing desk and frame detail",
+      "category": "Detail"
+    },
+    {
+      "image": "05_26_Metro_VR_HERO_1_0000.webp",
+      "alt": "VR desks in modern office interior with coordinated seating",
+      "category": "Office"
+    }
+  ]
+}

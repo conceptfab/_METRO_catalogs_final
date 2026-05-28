@@ -1,0 +1,60 @@
+{
+  "sectionLabel": "Product Codes",
+  "title": "Order references",
+  "description": "Use these unique codes when placing your order or specifying modules for your workspace.",
+  "image": "/catalogs/FOTA/codes/axo_FOTA_codes.svg",
+  "gridColumns": 2,
+  "placeholders": [
+    {
+      "label": "FF ??",
+      "image": "/catalogs/FOTA/codes/img_01.svg"
+    },
+    {
+      "label": "FF ??",
+      "image": "/catalogs/FOTA/codes/img_02.svg"
+    },
+    {
+      "label": "FF10",
+      "image": "/catalogs/FOTA/codes/img_03.svg"
+    }
+  ],
+  "groups": [
+    {
+      "id": "meeting-mobile-table",
+      "category": "single",
+      "title": "Meeting mobile table",
+      "rows": [
+        {
+          "index": "FF1",
+          "indexR": "",
+          "dimensions": "140 × 70 × 74"
+        },
+        {
+          "index": "FF2",
+          "indexR": "",
+          "dimensions": "160 × 70 × 74"
+        },
+        {
+          "index": "FF3",
+          "indexR": "",
+          "dimensions": "180 × 70 × 74"
+        },
+        {
+          "index": "FF4",
+          "indexR": "",
+          "dimensions": "140 × 80 × 74"
+        },
+        {
+          "index": "FF5",
+          "indexR": "",
+          "dimensions": "160 × 80 × 74"
+        },
+        {
+          "index": "FF6",
+          "indexR": "",
+          "dimensions": "180 × 80 × 74"
+        }
+      ]
+    }
+  ]
+}

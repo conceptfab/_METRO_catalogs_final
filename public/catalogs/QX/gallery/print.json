@@ -1,0 +1,9 @@
+{
+  "columns": 3,
+  "rows": 2,
+  "gap": 16,
+  "padding": 80,
+  "background": "#ffffff",
+  "showTitle": true,
+  "maxImages": 6
+}

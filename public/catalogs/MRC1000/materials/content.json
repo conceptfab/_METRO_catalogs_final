@@ -1,0 +1,66 @@
+{
+  "sectionLabel": "Customization",
+  "title": "Body & hutch finishes",
+  "description": "Configure the desk body and the optional hutch independently. Switch which part you are editing, then select a décor from the manufacturer-rated range — grouped by three price tiers. Toggle the hutch off to preview the body on its own.",
+  "materials": [],
+  "swatches": [],
+  "illustrations": [
+    {
+      "id": "set-a",
+      "model": "Set A",
+      "image": "/catalogs/MRC1000/set/MCR1000_U140_grey_4K_R11_SET_A.webp",
+      "alt": "MRC1000 Set A"
+    },
+    {
+      "id": "set-b",
+      "model": "Set B",
+      "image": "/catalogs/MRC1000/set/MCR1000_U160_grey_4K_R11_SET_B.webp",
+      "alt": "MRC1000 Set B"
+    },
+    {
+      "id": "set-c",
+      "model": "Set C",
+      "image": "/catalogs/MRC1000/set/MCR1000_W220_grey_U160_4K_R11_SET_C.webp",
+      "alt": "MRC1000 Set C"
+    },
+    {
+      "id": "set-d",
+      "model": "Set D",
+      "image": "/catalogs/MRC1000/set/MCR1000_U180_grey_4K_R11_SET_D.webp",
+      "alt": "MRC1000 Set D"
+    },
+    {
+      "id": "set-e",
+      "model": "Set E",
+      "image": "/catalogs/MRC1000/set/MCR1000_U170_grey_U160_4K_R11_SET_E.webp",
+      "alt": "MRC1000 Set E"
+    },
+    {
+      "id": "set-f",
+      "model": "Set F",
+      "image": "/catalogs/MRC1000/set/MCR1000_U160_grey_W220_4K_R11_SET_F.webp",
+      "alt": "MRC1000 Set F"
+    },
+    {
+      "id": "set-g",
+      "model": "Set G",
+      "image": "/catalogs/MRC1000/set/MCR1000_U140_grey_W220_4K_R11_SET_G.webp",
+      "alt": "MRC1000 Set G"
+    }
+  ],
+  "priceGroups": [
+    {
+      "title": "I-st price group",
+      "codes": ["U100", "U110", "U120", "U130", "U140", "U150", "W220", "W240", "W350"]
+    },
+    {
+      "title": "II-nd price group",
+      "codes": ["U160", "U190", "W200", "W210", "W250", "W300", "W310", "W330"]
+    },
+    {
+      "title": "III-rd price group",
+      "codes": ["U170", "U180", "W340"]
+    }
+  ],
+  "previewMode": "desktop-only"
+}

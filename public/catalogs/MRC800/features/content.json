@@ -1,0 +1,30 @@
+{
+  "sectionLabel": "Functionality",
+  "title": "Features",
+  "items": [
+    {
+      "icon": "layout-grid",
+      "title": "Modular sets",
+      "desc": "Wide range of sizes — pick the footprint that fits the room and the workflow.",
+      "video": {
+        "src": "/catalogs/MRC800/features/MCR800 - sets.mp4"
+      }
+    },
+    {
+      "icon": "zap",
+      "title": "Integrated lighting",
+      "desc": "Built-in lighting brings task illumination right to the workstation.",
+      "video": {
+        "src": "/catalogs/MRC800/features/MCR800 - light.mp4"
+      }
+    },
+    {
+      "icon": "puzzle",
+      "title": "Accessory ready",
+      "desc": "Mount monitor arms, CPU holders, cable trays, and power modules without drilling. The under-desk rail accepts 30+ certified accessories from day one or after years of use.",
+      "video": {
+        "src": "/catalogs/MRC800/features/MCR - adds.mp4"
+      }
+    }
+  ]
+}

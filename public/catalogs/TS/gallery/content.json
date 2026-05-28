@@ -1,0 +1,31 @@
+{
+  "sectionLabel": "Visual Gallery",
+  "title": "See TS in every context",
+  "images": [
+    {
+      "image": "07_26_Metro_TS_SOLO_B_0001.webp",
+      "alt": "TS desk packshot on white background – full product view",
+      "category": "Bench"
+    },
+    {
+      "image": "07_26_Metro_TS_HERO_0A0000.webp",
+      "alt": "TS desks in open-plan office with natural lighting and workers",
+      "category": "Office"
+    },
+    {
+      "image": "07_26_Metro_TS_SOLO_A_0000.webp",
+      "alt": "TS desk packshot on white background – angled view showing desk and frame detail",
+      "category": "Office"
+    },
+    {
+      "image": "07_26_Metro_TS_HOME0000.webp",
+      "alt": "TS desk in home office setup with framed wall art and task lighting",
+      "category": "Home"
+    },
+    {
+      "image": "07_26_Metro_TS_HERO_1_0000.webp",
+      "alt": "TS desks in modern office interior with coordinated seating",
+      "category": "Office"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "sectionLabel": "Arrangements",
+  "title": "Sample arrangements",
+  "placeholders": [
+    { "label": "Set A", "image": "/catalogs/MRC1000/arrangements/MCR1000_SET_A.svg" },
+    { "label": "Set B", "image": "/catalogs/MRC1000/arrangements/MCR1000_SET_B.svg" },
+    { "label": "Set C", "image": "/catalogs/MRC1000/arrangements/MCR1000_SET_C.svg" },
+    { "label": "Set D", "image": "/catalogs/MRC1000/arrangements/MCR1000_SET_D.svg" },
+    { "label": "Set E", "image": "/catalogs/MRC1000/arrangements/MCR1000_SET_E.svg" },
+    { "label": "Set F", "image": "/catalogs/MRC1000/arrangements/MCR1000_SET_F.svg" },
+    { "label": "Set G", "image": "/catalogs/MRC1000/arrangements/MCR1000_SET_G.svg" }
+  ]
+}

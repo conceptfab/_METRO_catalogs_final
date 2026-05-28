@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "title": "METRO VR",
+    "tagline": "modern office desk system",
+    "description": "VR - Modular desk system engineered for the modern workspace.",
+    "brandName": "METRO VR",
+    "collectionName": "VR",
+    "layoutType": "qx",
+    "theme": "qx0"
+  },
+  "sections": [
+    { "id": "overview", "label": "Overview" },
+    { "id": "gallery", "label": "Gallery" },
+    { "id": "finishes", "label": "Finishes" },
+    { "id": "packshots", "label": "Models" },
+    { "id": "dimensions", "label": "Dimensions" },
+    { "id": "materials", "label": "Customization" },
+    { "id": "features", "label": "Features" },
+    { "id": "getting-started", "label": "Getting Started" },
+    { "id": "codes", "label": "Codes" }
+  ]
+}

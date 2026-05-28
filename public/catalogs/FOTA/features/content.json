@@ -1,0 +1,38 @@
+{
+  "sectionLabel": "Functionality",
+  "title": "Features",
+  "items": [
+    {
+      "icon": "layout-grid",
+      "title": "Efficient storage",
+      "desc": "Stack and store with minimal footprint — designed to keep the room tidy when not in use.",
+      "video": {
+        "src": "/catalogs/FOTA/features/FOTA_efficient_storage.mp4"
+      }
+    },
+    {
+      "icon": "wrench",
+      "title": "Fast folding",
+      "desc": "Fold-out mechanism lets a single person set up or pack away in seconds, with no tools required.",
+      "video": {
+        "src": "/catalogs/FOTA/features/FOTA_fast_folding.mp4"
+      }
+    },
+    {
+      "icon": "sparkles",
+      "title": "High-strength wheels",
+      "desc": "Heavy-duty castors carry the full load smoothly across hard floors and low-pile carpet, with locking brakes for stability.",
+      "video": {
+        "src": "/catalogs/FOTA/features/FOTA_high-strength_wheels.mp4"
+      }
+    },
+    {
+      "icon": "combine",
+      "title": "Smart connection",
+      "desc": "Link multiple units together for larger configurations — quick to attach, secure when locked.",
+      "video": {
+        "src": "/catalogs/FOTA/features/FOTA_smart_connection.mp4"
+      }
+    }
+  ]
+}

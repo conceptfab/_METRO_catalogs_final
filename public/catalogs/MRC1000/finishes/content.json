@@ -1,0 +1,23 @@
+{
+  "sectionLabel": "Finishes",
+  "title": "Materials & Finishes",
+  "description": "Choose a finish from the manufacturer-rated décor range, grouped into three price tiers.",
+  "desktopColors": [],
+  "frameColors": [],
+  "sizes": [],
+  "comparisonTable": [],
+  "priceGroups": [
+    {
+      "title": "I-st price group",
+      "codes": ["U100", "U110", "U120", "U130", "U140", "U150", "W220", "W240", "W350"]
+    },
+    {
+      "title": "II-nd price group",
+      "codes": ["U160", "U190", "W200", "W210", "W250", "W300", "W310", "W330"]
+    },
+    {
+      "title": "III-rd price group",
+      "codes": ["U170", "U180", "W340"]
+    }
+  ]
+}

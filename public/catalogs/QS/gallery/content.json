@@ -1,0 +1,26 @@
+{
+  "sectionLabel": "Visual Gallery",
+  "title": "See QS in every context",
+  "images": [
+    {
+      "image": "04_26_Metro_QS_SOLO_A_0001.webp",
+      "alt": "QS desk packshot on white background – full product view",
+      "category": "Bench"
+    },
+    {
+      "image": "04_26_Metro_QS_HERO_0_0001.webp",
+      "alt": "QS desks in open-plan office with natural lighting and workers",
+      "category": "Office"
+    },
+    {
+      "image": "04_26_Metro_QS_HOME0000.webp",
+      "alt": "QS desk in home office setup with framed wall art and task lighting",
+      "category": "Home"
+    },
+    {
+      "image": "04_26_Metro_QS_DETAL_.webp",
+      "alt": "Close-up of QS desk edge showing oak grain and steel joint detail",
+      "category": "Detail"
+    }
+  ]
+}

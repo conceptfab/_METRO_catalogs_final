@@ -1,0 +1,65 @@
+{
+  "sectionLabel": "Models",
+  "title": "FOTA Collection",
+  "subtitle": "Selected models",
+  "groups": [
+    {
+      "model": "FF1",
+      "label": "FF1",
+      "desc": "",
+      "items": [
+        {
+          "code": "FF1",
+          "name": "",
+          "image": "FF1_W240_black__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FF1",
+          "name": "",
+          "image": "FF1_U100_white__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        }
+      ]
+    },
+    {
+      "model": "FF2",
+      "label": "FF2",
+      "desc": "",
+      "items": [
+        {
+          "code": "FF2",
+          "name": "",
+          "image": "FF2_W240_black__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FF2",
+          "name": "",
+          "image": "FF2_U100_white__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        }
+      ]
+    }
+  ]
+}

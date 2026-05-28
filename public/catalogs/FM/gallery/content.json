@@ -1,0 +1,46 @@
+{
+  "sectionLabel": "Visual Gallery",
+  "title": "See FM in every context",
+  "images": [
+    {
+      "image": "08_26_Metro_FM_HERO_0_0000.webp",
+      "alt": "FM desk system in a modern open-space office with people working",
+      "category": "Office"
+    },
+    {
+      "image": "08_26_Metro_FM_HERO_1_0000.webp",
+      "alt": "FM desks in open-plan office with natural lighting",
+      "category": "Office"
+    },
+    {
+      "image": "08_26_Metro_FM_HOME0000.webp",
+      "alt": "FM desk in home office setup with framed wall art and task lighting",
+      "category": "Home"
+    },
+    {
+      "image": "08_26_Metro_FM_SOLO_A_0000.webp",
+      "alt": "FM desk packshot on white background – full product view",
+      "category": "Solo"
+    },
+    {
+      "image": "08_26_Metro_FM_SOLO_B_0001.webp",
+      "alt": "FM desk packshot in alternate configuration",
+      "category": "Solo"
+    },
+    {
+      "image": "08_26_Metro_FM_SOLO_C_0000.webp",
+      "alt": "FM executive desk in private office with monitor arm setup",
+      "category": "Solo"
+    },
+    {
+      "image": "08_26_Metro_FM_SOLO_D_0001.webp",
+      "alt": "FM bench double desk configuration on white background",
+      "category": "Bench"
+    },
+    {
+      "image": "08_26_Metro_FM_DETAL_.webp",
+      "alt": "Close-up of FM desk edge showing finish and steel joint detail",
+      "category": "Detail"
+    }
+  ]
+}

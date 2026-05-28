@@ -1,0 +1,207 @@
+{
+  "sectionLabel": "Models",
+  "title": "FM Collection",
+  "subtitle": "Selected models",
+  "groups": [
+    {
+      "model": "FM2",
+      "label": "FM2",
+      "desc": "",
+      "items": [
+        {
+          "code": "FM2",
+          "name": "",
+          "image": "FM2_U130_RAL7024__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FM2",
+          "name": "",
+          "image": "FM2_U100_white__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FM2",
+          "name": "",
+          "image": "FM2_W310__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        }
+      ]
+    },
+    {
+      "model": "FM3",
+      "label": "FM3",
+      "desc": "",
+      "items": [
+        {
+          "code": "FM3",
+          "name": "",
+          "image": "FM3_U130_RAL7024__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FM3",
+          "name": "",
+          "image": "FM3_U100_white__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FM3",
+          "name": "",
+          "image": "FM3_W310__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        }
+      ]
+    },
+    {
+      "model": "FM4",
+      "label": "FM4",
+      "desc": "",
+      "items": [
+        {
+          "code": "FM4",
+          "name": "",
+          "image": "FM4_U130_RAL7024__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FM4",
+          "name": "",
+          "image": "FM4_U100_white__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FM4",
+          "name": "",
+          "image": "FM4_W310__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        }
+      ]
+    },
+    {
+      "model": "FM580",
+      "label": "FM580",
+      "desc": "",
+      "items": [
+        {
+          "code": "FM580",
+          "name": "",
+          "image": "FM580_U130_RAL7024__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FM580",
+          "name": "",
+          "image": "FM580_U100_white__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FM580",
+          "name": "",
+          "image": "FM580_W310__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        }
+      ]
+    },
+    {
+      "model": "FM1D",
+      "label": "FM1D",
+      "desc": "",
+      "items": [
+        {
+          "code": "FM1D",
+          "name": "",
+          "image": "FM1D_U130_RAL7024__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FM1D",
+          "name": "",
+          "image": "FM1D_U100_white__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        },
+        {
+          "code": "FM1D",
+          "name": "",
+          "image": "FM1D_W310__Shot_A__4K_R8.webp",
+          "frameColorName": "",
+          "frameColorCode": "",
+          "desktopColorName": "",
+          "desktopColorCode": "",
+          "colorName": "",
+          "colorCode": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>METRO Catalogs — Dokumentacja techniczna</title>
+<meta name="description" content="Dokumentacja techniczna projektu METRO Catalogs (production, branch main): stos technologiczny, deploy, logika edycji treści." />
+<style>
+  /* ---------- Reset / base ---------- */
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    color:#1f2328;
+    background:#fff;
+  }
+  img{max-width:100%;height:auto}
+
+  /* ---------- Layout ---------- */
+  .layout{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+  @media (max-width:900px){.layout{grid-template-columns:1fr}}
+
+  /* ---------- Sidebar ---------- */
+  aside.sidebar{
+    background:#f6f8fa;
+    border-right:1px solid #d0d7de;
+    padding:28px 22px;
+    position:sticky;top:0;align-self:start;
+    max-height:100vh;overflow-y:auto;
+  }
+  @media (max-width:900px){
+    aside.sidebar{position:static;max-height:none;border-right:0;border-bottom:1px solid #d0d7de}
+  }
+  aside.sidebar .brand{font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:#1f2328;margin-bottom:4px}
+  aside.sidebar .brand-sub{font-size:12px;color:#656d76;margin-bottom:24px;letter-spacing:.02em}
+  aside.sidebar nav ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+  aside.sidebar nav li{counter-increment:toc;margin:0}
+  aside.sidebar nav a{
+    display:block;padding:6px 10px;border-radius:6px;
+    color:#1f2328;text-decoration:none;font-size:14px;
+    line-height:1.4;
+  }
+  aside.sidebar nav a::before{content:counter(toc) ". ";color:#8b949e;font-variant-numeric:tabular-nums}
+  aside.sidebar nav a:hover{background:#eaeef2}
+  aside.sidebar nav a.active{background:#0969da;color:#fff}
+  aside.sidebar nav a.active::before{color:#cbd9ef}
+
+  /* ---------- Main ---------- */
+  main.content{padding:48px 64px;max-width:980px;width:100%}
+  @media (max-width:900px){main.content{padding:32px 22px}}
+
+  header.page-header{margin-bottom:48px;border-bottom:1px solid #d0d7de;padding-bottom:24px}
+  header.page-header h1{margin:0 0 8px;font-size:34px;line-height:1.2;letter-spacing:-.01em}
+  header.page-header .meta{color:#656d76;font-size:14px}
+  header.page-header .meta code{font-size:13px}
+
+  h2{
+    margin:48px 0 16px;font-size:24px;line-height:1.3;letter-spacing:-.005em;
+    padding-bottom:8px;border-bottom:1px solid #d0d7de;
+    scroll-margin-top:24px;
+  }
+  h3{margin:32px 0 12px;font-size:18px;line-height:1.35;scroll-margin-top:24px}
+  h4{margin:24px 0 8px;font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:#1f2328}
+
+  p,ul,ol{margin:0 0 14px}
+  ul,ol{padding-left:24px}
+  li{margin-bottom:4px}
+  li>p{margin-bottom:6px}
+
+  a{color:#0969da;text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- Code ---------- */
+  code{
+    font-family:ui-monospace,"SF Mono",Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+    font-size:13.5px;
+    background:#f6f8fa;
+    border-radius:4px;padding:1.5px 5px;
+    color:#1f2328;
+  }
+  pre{
+    background:#0d1117;color:#e6edf3;
+    padding:16px 18px;border-radius:8px;
+    overflow-x:auto;font-size:13px;line-height:1.55;
+    margin:0 0 16px;
+  }
+  pre code{background:transparent;color:inherit;padding:0;font-size:inherit}
+
+  /* ---------- Tables ---------- */
+  table{
+    border-collapse:collapse;width:100%;
+    margin:0 0 16px;font-size:14.5px;
+  }
+  th,td{
+    text-align:left;padding:8px 12px;
+    border:1px solid #d0d7de;vertical-align:top;
+  }
+  th{background:#f6f8fa;font-weight:600}
+  tbody tr:nth-child(even){background:#fafbfc}
+
+  /* ---------- Callouts ---------- */
+  .callout{
+    border-left:4px solid;border-radius:6px;
+    padding:12px 16px;margin:0 0 16px;background:#f6f8fa;
+  }
+  .callout.info{border-color:#0969da;background:#ddf4ff}
+  .callout.warn{border-color:#bf8700;background:#fff8c5}
+  .callout.danger{border-color:#cf222e;background:#ffebe9}
+  .callout strong{display:block;margin-bottom:4px;text-transform:uppercase;font-size:11px;letter-spacing:.08em}
+  .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;letter-spacing:.02em}
+  .badge.plus {
+    background: #f3eaff;
+    color: #5a1ea8;
+    border: 1px solid #c9a6f7;
+  }
+  .callout.plus {
+    border-left: 4px solid #7b3ad6;
+    background: #faf5ff;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .callout.plus strong { color: #4a1085; }
+
+  /* ---------- Section anchors ---------- */
+  section{scroll-margin-top:24px}
+  .anchor{color:#8b949e;text-decoration:none;font-weight:400;margin-left:8px;opacity:0;transition:opacity .15s}
+  h2:hover .anchor,h3:hover .anchor{opacity:1}
+
+  /* ---------- Tag chips ---------- */
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+  .tag{
+    display:inline-block;
+    background:#eaeef2;color:#1f2328;
+    border-radius:999px;padding:2px 10px;
+    font-size:12px;letter-spacing:.02em;
+  }
+
+  /* ---------- Diagram (ASCII) ---------- */
+  .diagram{
+    background:#0d1117;color:#e6edf3;
+    padding:16px;border-radius:8px;
+    font-family:ui-monospace,"SF Mono",Menlo,Monaco,monospace;
+    font-size:12px;line-height:1.5;
+    white-space:pre;overflow-x:auto;
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    aside.sidebar{display:none}
+    .layout{display:block}
+    main.content{padding:0;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    h2,h3{page-break-after:avoid}
+    pre,table{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- Sidebar TOC -->
+  <aside class="sidebar" aria-label="Spis treści">
+    <div class="brand">METRO Catalogs</div>
+    <div class="brand-sub">Dokumentacja techniczna · production</div>
+    <nav>
+      <ol>
+        <li><a href="#stos">Stos technologiczny</a></li>
+        <li><a href="#architektura">Architektura aplikacji</a></li>
+        <li><a href="#tresc">Model treści</a></li>
+        <li><a href="#przeplyw">Przepływ danych</a></li>
+        <li><a href="#obrazy">Pipeline obrazów</a></li>
+        <li><a href="#pdf">Generowanie PDF-ów</a></li>
+        <li><a href="#deploy">Wdrożenie (deploy)</a></li>
+        <li><a href="#skrypty">Skrypty NPM</a></li>
+        <li><a href="#edycja">Logika edycji treści</a></li>
+        <li><a href="#strona-glowna">Strona główna i nawigacja</a></li>
+        <li><a href="#api">API i SEO</a></li>
+        <li><a href="#testy">Testy</a></li>
+        <li><a href="#onboarding">Szybki onboarding</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content">
+
+    <header class="page-header">
+      <h1>METRO Catalogs — Dokumentacja techniczna</h1>
+      <div class="meta">
+        Wersja: <code>production</code> &middot;
+        Projekt: <code>metro-catalogs</code> &middot;
+        Data: <code>2026-05-29</code> &middot;
+        Branch: <code>main</code>
+      </div>
+      <div class="tags">
+        <span class="tag">Next.js 15</span>
+        <span class="tag">React 19</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Tailwind CSS</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">Puppeteer PDF</span>
+      </div>
+      <p style="margin-top:20px;color:#1f2328;">
+        Aplikacja prezentuje katalogi produktowe marki METRO (kolekcje mebli biurowych: <strong>QX, QS, VR, TS, FM, FOTA, MRC800, MRC1000</strong>). Każdy katalog renderowany jest jako pojedyncza strona złożona z konfigurowanych sekcji (overview, gallery, finishes, packshots, dimensions, arrangements, materials, features, getting-started, codes) z możliwością pobrania PDF-a.
+      </p>
+    </header>
+
+    <!-- 1. Stos -->
+    <section id="stos">
+      <h2>1. Stos technologiczny <a href="#stos" class="anchor">#</a></h2>
+
+      <h3>Runtime i framework</h3>
+      <ul>
+        <li><strong>Next.js 15.5.12</strong> — App Router, React Server Components, statyczne generowanie (<code>generateStaticParams</code>).</li>
+        <li><strong>React 19.0.0</strong> + <strong>React Compiler</strong> (<code>babel-plugin-react-compiler</code>, włączony przez <code>experimental.reactCompiler</code> w <code>next.config.ts</code>).</li>
+        <li><strong>TypeScript 5.9.3</strong> — strict mode, <code>tsc --noEmit</code> w pipeline kontroli typów.</li>
+        <li><strong>Node.js ≥ 20</strong> (deklarowane w <code>package.json:engines</code>).</li>
+      </ul>
+
+      <h3>Warstwa UI</h3>
+      <ul>
+        <li><strong>Tailwind CSS 3.4</strong> + <code>tailwindcss-animate</code>, <code>@tailwindcss/typography</code>.</li>
+        <li><strong>Tokeny CSS</strong> w <code>src/app/globals.css</code> — kolory (<code>--background</code>, <code>--surface-elevated</code>, <code>--warm-light</code>, <code>--accent</code>), klasy semantyczne sekcji (<code>.section_ID</code>, <code>.section_Title</code>, <code>.sec_main_text</code>, <code>.qx-word</code>), overrides motywu per katalog (<code>.catalog-qx0</code>).</li>
+        <li><strong>Framer Motion 12</strong> — animacje sekcji i przejść.</li>
+        <li><strong>Lucide React</strong> — ikony (mapa w <code>src/lib/icon-map.tsx</code>).</li>
+        <li><strong>Design System</strong> — żywa strona przeglądowa pod <code>/design-system</code>.</li>
+      </ul>
+
+      <h3>Walidacja danych</h3>
+      <ul>
+        <li><strong>Zod 3</strong> — schematy treści (<code>src/lib/schemas/hero.ts</code>, <code>src/lib/schemas/packshots.ts</code>).</li>
+      </ul>
+
+      <h3>Generowanie PDF</h3>
+      <ul>
+        <li><strong>puppeteer-core</strong> + <strong>@sparticuz/chromium</strong> — headless Chromium do printu.</li>
+        <li>Pakiety oznaczone w <code>serverExternalPackages</code>, żeby nie były trace'owane do bundla serverless.</li>
+      </ul>
+
+      <h3>Pipeline obrazów</h3>
+      <ul>
+        <li><strong>sharp 0.33</strong> — kompresja i generowanie wariantów responsywnych.</li>
+        <li>Custom <strong>image-loader</strong> (<code>src/lib/image-loader.ts</code>) — <code>next/image</code> rozwiązuje wstępnie wygenerowane warianty <code>-256w/-400w/-512w/-800w/-1024w/-1200w/-1600w/-1920w/-2560w.webp</code> z manifestu <code>src/generated/responsive-image-manifest.json</code>.</li>
+      </ul>
+
+      <h3>Testy i jakość</h3>
+      <ul>
+        <li><strong>Vitest 2</strong> + <strong>@testing-library/react</strong> + <strong>jsdom</strong>.</li>
+        <li><strong>jest-axe</strong> — testy dostępności.</li>
+        <li><strong>ESLint 9</strong> + <code>eslint-config-next</code>.</li>
+        <li><strong>Knip</strong> — wykrywanie martwego kodu.</li>
+      </ul>
+
+      <h3>Hosting</h3>
+      <ul>
+        <li><strong>Vercel</strong> — deploy z <code>main</code> (vercel.json). Fluid Compute (Node.js 24 LTS).</li>
+      </ul>
+    </section>
+
+    <!-- 2. Architektura -->
+    <section id="architektura">
+      <h2>2. Architektura aplikacji <a href="#architektura" class="anchor">#</a></h2>
+
+      <h3>Mapa katalogów</h3>
+      <pre><code>src/
+├── app/                       — App Router
+│   ├── page.tsx               — strona główna (kafelki katalogów + banner EU)
+│   ├── layout.tsx             — root layout
+│   ├── globals.css            — tokeny CSS + klasy semantyczne
+│   ├── catalog/[catalogId]/
+│   │   ├── page.tsx           — dynamiczna trasa z dispatchem layoutu
+│   │   └── print/page.tsx     — wariant printowy (Puppeteer wchodzi tu)
+│   ├── design-system/         — żywy design system
+│   ├── api/catalogs/route.ts  — JSON z listą katalogów (service-desc)
+│   ├── sitemap.ts             — sitemap.xml generowany z listy katalogów
+│   └── not-found.tsx
+├── components/catalog/        — komponenty współdzielone
+├── layouts/
+│   ├── qx/                    — layout dla QX, QS, VR, TS, FM, FOTA
+│   ├── mrc800/                — layout dla MRC800
+│   └── mrc1000/               — layout dla MRC1000 (z sekcją Arrangements i konfiguratorem dual-part)
+├── lib/
+│   ├── catalog-loader.ts      — ŁADOWANIE i normalizacja content.json
+│   ├── schemas/               — schematy Zod
+│   ├── image-loader.ts        — custom loader dla next/image
+│   └── ...
+├── generated/
+│   └── responsive-image-manifest.json   — auto-generowany manifest
+└── types/catalog.ts           — wszystkie typy domeny
+
+public/
+├── config.json                — konfiguracja globalna
+├── banner.webp                — banner EU
+└── catalogs/
+    ├── index.json             — lista ID katalogów
+    └── &lt;ID&gt;/                   — folder per katalog
+        ├── config.json        — meta + sections + layoutType + theme
+        ├── overview/content.json
+        ├── hero/(content.json, slider.json, *.webp)
+        ├── gallery/(content.json, *.webp, print.json)
+        ├── finishes/content.json
+        ├── packshots/(content.json, *.webp)
+        ├── dimensions/(content.json, axo_*.svg)
+        ├── materials/(content.json, *.webp)
+        ├── features/(content.json, *.mp4, *_last.webp)
+        ├── getting-started/content.json
+        ├── codes/(content.json, axo_*_codes.svg)
+        ├── thumbs/(&lt;id&gt;-home.webp, &lt;id&gt;-nav.webp)
+        └── Download/metro-&lt;id&gt;.pdf
+</code></pre>
+
+      <h3>Dispatch layoutów</h3>
+      <p>Wszystkie katalogi przechodzą przez jedną dynamiczną trasę <code>/catalog/[catalogId]</code>. Wybór konkretnego layoutu odbywa się przez prostą mapę:</p>
+      <pre><code>const layoutMap = {
+  qx:      CatalogPageQX,
+  mrc800:  CatalogPageMRC800,
+  mrc1000: CatalogPageMRC1000,
+  type2:   CatalogPagePlaceholder,
+  type3:   CatalogPagePlaceholder,
+};</code></pre>
+      <p>Pole <code>meta.layoutType</code> z <code>config.json</code> katalogu decyduje, który komponent zostanie wyrenderowany. Pozwala to mieć osobne wizualnie layouty dla różnych linii produktowych przy jednym wspólnym potoku danych.</p>
+
+      <h4>Aktualne mapowanie</h4>
+      <table>
+        <thead><tr><th>layoutType</th><th>Komponent</th><th>Używany przez</th></tr></thead>
+        <tbody>
+          <tr><td><code>qx</code></td><td><code>CatalogPageQX</code></td><td>QX, QS, VR, TS, FM, FOTA</td></tr>
+          <tr><td><code>mrc800</code></td><td><code>CatalogPageMRC800</code></td><td>MRC800</td></tr>
+          <tr><td><code>mrc1000</code></td><td><code>CatalogPageMRC1000</code></td><td>MRC1000</td></tr>
+          <tr><td><code>type2</code>, <code>type3</code></td><td><code>CatalogPagePlaceholder</code></td><td>rezerwa na nowe layouty</td></tr>
+        </tbody>
+      </table>
+
+      <h3>FM overrides</h3>
+      <p>FM korzysta z <code>layoutType: "qx"</code>, ale <code>CatalogPageQX</code> i <code>CatalogPrintQX</code> zawierają branch <code>catalog.id === "FM"</code>, który przekierowuje render do dedykowanych komponentów. Powód: FM to mebel płytowy — dekor pokrywa wszystkie powierzchnie (nie tylko blat), a stal występuje w jednym kolorze (RAL 9006), więc semantyka „Top / Frame combinations" jest niedopasowana.</p>
+      <table>
+        <thead><tr><th>Sekcja</th><th>QX (QS, VR, TS, FOTA, QX)</th><th>FM override</th></tr></thead>
+        <tbody>
+          <tr><td>Finishes</td><td><code>FinishesQX</code></td><td><code>FinishesFM</code> — nagłówek „Decor", Steel parts zawężone do RAL 9006</td></tr>
+          <tr><td>Customization (Materials)</td><td><code>MaterialsQX</code></td><td><code>MaterialsFM</code> — nagłówek „Decor", frame zawężony do RAL 9006</td></tr>
+          <tr><td>Models (Packshots)</td><td><code>PackshotsQX</code></td><td><code>PackshotsFM</code> — chip „Decor", bez chipa „Frame"</td></tr>
+          <tr><td>Print: Finishes</td><td><code>FinishesPrintQX</code></td><td><code>FinishesPrintFM</code> — etykieta „Decor", legenda „Decor:" + „Steel parts:"</td></tr>
+          <tr><td>Print: Packshots</td><td><code>PackshotsPrintQX</code></td><td><code>PackshotsPrintFM</code> — chip „Decor", bez chipa „Frame"</td></tr>
+        </tbody>
+      </table>
+      <p>Pozostałe katalogi z <code>layoutType: "qx"</code> (QX, QS, VR, TS, FOTA) nadal renderują się oryginalnymi komponentami QX bez zmian.</p>
+
+      <h3>MRC1000 — specyfika layoutu</h3>
+      <p>MRC1000 to modułowa kolekcja recepcyjna z własnym <code>layoutType: "mrc1000"</code>. Cechy odróżniające od QX/MRC800:</p>
+      <ul>
+        <li>Dodatkowa sekcja <strong>Arrangements</strong> (komponent <code>ArrangementsMRC1000</code>) — wzorcowe aranżacje 2×2 między Gallery a Packshots. Analog MRC800.</li>
+        <li><strong>Konfigurator dual-part</strong> w <code>MaterialsMRC1000</code> — niezależne wybory <em>body</em> i <em>hutch</em> (segmented control <code>editTarget</code>) z togglem <code>hutchVisible</code>. Preview to 3-warstwowy compositor (base + shadow z mix-blend-multiply + hutch z alfą).</li>
+        <li><strong>Print MRC1000</strong> (<code>MaterialsPrintMRC1000</code>, <code>FinishesPrintMRC1000</code>) używa <code>configurator + priceGroups</code> zamiast starego <code>illustrations[]</code>. 144 kombinacje body/hutch.</li>
+        <li><code>ExampleSetsMRC1000</code> — wydzielony komponent z gotowymi zestawami modułowymi.</li>
+      </ul>
+
+      <h3>Statyczne generowanie</h3>
+      <p><code>generateStaticParams()</code> zwraca wszystkie ID z <code>public/catalogs/index.json</code> — Next.js prerenderuje stronę dla każdego katalogu na etapie build. Sitemap działa analogicznie.</p>
+    </section>
+
+    <!-- 3. Model treści -->
+    <section id="tresc">
+      <h2>3. Model treści <a href="#tresc" class="anchor">#</a></h2>
+      <div class="callout info">
+        <strong>Kluczowa zasada</strong>
+        Wszystkie treści katalogu mieszczą się w plikach JSON wewnątrz <code>public/catalogs/&lt;ID&gt;/</code>. Aplikacja nie używa CMS-a — zmiany treści = edycja JSON-ów + commit do gita.
+      </div>
+
+      <h3><code>public/config.json</code> — konfiguracja globalna</h3>
+      <pre><code>{
+  "brandName": "METRO",
+  "siteTitle": "METRO",
+  "siteSubtitle": "Product catalogs — browse by collection",
+  "footerText": "CONCEPT / CREATION / EXECUTION BY",
+  "catalogListTitle": "Available catalogs"
+}</code></pre>
+      <p>Wartości domyślne są w <code>src/lib/catalog-loader.ts</code> (<code>DEFAULT_GLOBAL_CONFIG</code>). Plik nadpisuje tylko wymienione klucze.</p>
+
+      <h3><code>public/catalogs/index.json</code> — lista katalogów</h3>
+      <pre><code>{ "catalogs": ["QX", "QS", "VR", "TS", "FM", "FOTA", "MRC800", "MRC1000"] }</code></pre>
+      <p>Kolejność wpływa na sortowanie na stronie głównej i w nawigacji stopki.</p>
+
+      <h3><code>public/catalogs/&lt;ID&gt;/config.json</code> — konfiguracja katalogu</h3>
+      <pre><code>{
+  "meta": {
+    "title": "METRO QX",
+    "tagline": "modern office desk system",
+    "description": "QX — Modular desk system...",
+    "brandName": "METRO QX",
+    "collectionName": "QX",
+    "layoutType": "qx",
+    "theme": "qx0"
+  },
+  "sections": [
+    { "id": "overview",    "label": "Overview" },
+    { "id": "gallery",     "label": "Gallery" },
+    { "id": "finishes",    "label": "Finishes" },
+    { "id": "packshots",   "label": "Models" },
+    { "id": "dimensions",  "label": "Dimensions" },
+    { "id": "materials",   "label": "Top & frame combinations" },
+    { "id": "features",    "label": "Features" },
+    { "id": "getting-started", "label": "Getting Started" },
+    { "id": "codes",       "label": "Codes" }
+  ]
+}</code></pre>
+      <ul>
+        <li><code>meta.layoutType</code> — wybiera komponent layoutu (<code>qx</code> / <code>mrc800</code> / <code>mrc1000</code> / <code>type2</code> / <code>type3</code>).</li>
+        <li><code>meta.theme</code> — nazwa klasy motywu CSS dodawanej do wrappera (np. <code>qx0</code> → <code>.catalog-qx0</code>).</li>
+        <li><code>meta.useSharedMaterials</code> (opcjonalny) — gdy <code>true</code>, katalog korzysta z <code>public/shared/materials/</code> zamiast własnych assetów. Domyślnie <code>false</code> dla MRC1000.</li>
+        <li><code>meta.finishesFromMaterials</code> (opcjonalny) — gdy <code>true</code>, sekcja Finishes jest derywowana z <code>materials/content.json</code> (używane przez MRC1000).</li>
+        <li><code>sections</code> — kolejność i etykiety sekcji. Usunięcie wpisu = ukrycie sekcji. MRC1000 dodaje sekcję <code>arrangements</code>.</li>
+      </ul>
+
+      <h3>Sekcje — <code>&lt;section&gt;/content.json</code></h3>
+      <p>Każda sekcja ma swój <code>content.json</code> ładowany w <code>src/lib/catalog-loader.ts</code>. Loader:</p>
+      <ol>
+        <li>czyta surowy JSON,</li>
+        <li>normalizuje ścieżki obrazów do <code>/catalogs/&lt;ID&gt;/&lt;section&gt;/&lt;plik&gt;</code>,</li>
+        <li>dla obrazów rastrowych sondą <code>sharp</code> ustala wymiary (cache w pamięci),</li>
+        <li>wzbogaca strukturę o <code>srcset</code> z manifestu wariantów responsywnych,</li>
+        <li>wybrane sekcje (hero, packshots) waliduje przez Zod.</li>
+      </ol>
+      <p>Pełne typy wynikowe znajdują się w <code>src/types/catalog.ts</code>.</p>
+
+      <h3>Konwencje materiałów (price groups)</h3>
+      <div class="callout warn">
+        <strong>Konwencja</strong>
+        Wewnątrz tablic grup cenowych w <code>materials/content.json</code> kody <code>W…/U…/RAL…</code> muszą być posortowane <strong>rosnąco numerycznie</strong>. Synchronizacja kolejności obowiązuje również w pliku swatchów na stronie design-system.
+      </div>
+    </section>
+
+    <!-- 4. Przepływ -->
+    <section id="przeplyw">
+      <h2>4. Przepływ danych <a href="#przeplyw" class="anchor">#</a></h2>
+      <div class="diagram">                ┌──────────────────────────────────────┐
+                │  build / generateStaticParams        │
+                │  read public/catalogs/index.json     │
+                └──────────────┬───────────────────────┘
+                               │
+                               ▼
+  /catalog/[catalogId]   →   loadCatalog(catalogId)        ── lib/catalog-loader.ts
+                               │
+            ┌──────────────────┼──────────────────┐
+            ▼                  ▼                  ▼
+   read config.json    read overview/...   read gallery/...
+                               │                  │
+                               ▼                  ▼
+                    Zod validation       sharp metadata + manifest
+                               │
+                               ▼
+                  CatalogData (znormalizowane)
+                               │
+                               ▼
+         layoutMap[meta.layoutType] → &lt;CatalogPageQX/MRC800/...&gt;
+                               │
+                               ▼
+                       SSR / static HTML → klient
+</div>
+      <p>Wszystkie ścieżki obrazów w gotowym <code>CatalogData</code> są absolutne (<code>/catalogs/QX/...</code>) i zawsze odpowiadają plikom fizycznym pod <code>public/catalogs/</code>.</p>
+    </section>
+
+    <!-- 5. Obrazy -->
+    <section id="obrazy">
+      <h2>5. Pipeline obrazów <a href="#obrazy" class="anchor">#</a></h2>
+      <ol>
+        <li>Operator wrzuca pliki <code>.webp</code> w folder sekcji (np. <code>public/catalogs/QX/gallery/desk-detail.webp</code>).</li>
+        <li><code>npm run images</code> (skrót do <code>scripts/process-images.mjs</code>) wykonuje:
+          <ul>
+            <li><code>assets:check</code> — fail jeśli ktoś wrzucił <code>.jpg/.png</code> zamiast WebP.</li>
+            <li><code>recompress:gallery</code> — re-encoding bazowych plików galerii (q=82, idempotentnie).</li>
+            <li><code>thumbnails</code> — generuje warianty <code>-256/-400/-512/-800/-1024/-1200/-1600/-1920/-2560w.webp</code> i odświeża <code>src/generated/responsive-image-manifest.json</code>.</li>
+          </ul>
+        </li>
+        <li>Krok <code>prebuild</code> w <code>package.json</code> uruchamia <code>npm run images</code> automatycznie przed każdym <code>next build</code>.</li>
+        <li>W trakcie renderu <code>next/image</code> używa custom loadera, który dobiera odpowiedni wariant zamiast wywoływać <code>_next/image</code> na Vercelu.</li>
+      </ol>
+
+      <h4>Konwencje thumbnaili</h4>
+      <table>
+        <thead><tr><th>Plik</th><th>Rola</th></tr></thead>
+        <tbody>
+          <tr><td><code>thumbs/&lt;id&gt;-home.webp</code></td><td>kafelek strony głównej (hero scene)</td></tr>
+          <tr><td><code>thumbs/&lt;id&gt;-nav.webp</code></td><td>kafelek nawigacji stopki (packshot z overview)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 6. PDF -->
+    <section id="pdf">
+      <h2>6. Generowanie PDF-ów <a href="#pdf" class="anchor">#</a></h2>
+      <p>Każdy katalog ma statyczny plik <code>public/catalogs/&lt;ID&gt;/Download/metro-&lt;id&gt;.pdf</code> serwowany z floating-buttona „Download PDF".</p>
+
+      <h4>Pipeline (<code>scripts/generate-catalog-pdfs.mjs</code>)</h4>
+      <ol>
+        <li>Skrypt podnosi dev server (<code>next dev</code> na wolnym porcie) lub używa już działającego.</li>
+        <li>Dla każdego ID Puppeteer otwiera <code>/catalog/&lt;id&gt;/print?puppeteer=1</code> (osobny layout printowy w <code>src/app/catalog/[catalogId]/print/</code> oraz komponenty <code>*PrintQX/MRC800.tsx</code>).</li>
+        <li>Strona printowa zamienia <code>&lt;video&gt;</code> na poster, eager-loaduje obrazy, scrolluje do końca.</li>
+        <li><code>page.pdf()</code> zapisuje wynik do <code>Download/metro-&lt;id&gt;.pdf</code>.</li>
+        <li><code>optimize-catalog-pdfs.mjs</code> kompresuje strumienie, <code>verify-catalog-pdfs.mjs</code> waliduje wielkość i liczbę stron.</li>
+      </ol>
+
+      <pre><code>npm run pdfs            # generacja
+npm run pdfs:optimize   # optymalizacja
+npm run pdfs:verify     # walidacja
+npm run pdfs:all        # wszystkie trzy</code></pre>
+
+      <div class="callout danger">
+        <strong>Uwaga</strong>
+        Zmiany printowe muszą żyć w komponentach <code>*Print*.tsx</code> i nie wpływać na bazowy on-screen layout.
+      </div>
+    </section>
+
+    <!-- 7. Deploy -->
+    <section id="deploy">
+      <h2>7. Wdrożenie (deploy) <a href="#deploy" class="anchor">#</a></h2>
+
+      <h3>Hosting: Vercel</h3>
+      <ul>
+        <li>Projekt: <code>metro-catalogs</code> (ID <code>prj_ftCfrK7OGj9L0XVVVGCGTwWGWs97</code>) w teamie <code>conceptfabs-projects</code> (<code>team_YHz7JTzYpZiifYQth2jQefjR</code>).</li>
+        <li>Produkcyjna domena: <code>metro-catalogs.vercel.app</code>.</li>
+        <li>Konfiguracja w <code>vercel.json</code>: <code>{ "git": { "deploymentEnabled": { "main": true } } }</code>.</li>
+        <li>Każdy push na <code>main</code> startuje build produkcyjny na Vercelu.</li>
+        <li>Pre-build na Vercelu wywołuje skrypt <code>prebuild</code> → przetwarza obrazy i odświeża manifest.</li>
+        <li><code>outputFileTracingExcludes</code> w <code>next.config.ts</code> wyklucza <code>public/catalogs/**</code> i <code>public/shared/**</code> z trace'a serverless functions (200+ MB assetów byłoby trace'owane → przekroczyłoby limit 250 MB Vercela).</li>
+        <li><code>puppeteer-core</code> i <code>@sparticuz/chromium</code> są w <code>serverExternalPackages</code> — nie wchodzą do bundla.</li>
+      </ul>
+
+      <h3>Pełen deploy z PDF-ami (z lokalnej maszyny)</h3>
+      <pre><code>npm run deploy:prod
+# = npm run pdfs && npm run pdfs:optimize && npm run pdfs:verify && vercel --prod --scope=conceptfabs-projects</code></pre>
+      <p>Ten skrót generuje świeże PDF-y <strong>lokalnie</strong> (Puppeteer nie pracuje w cloud-build), commit-uje je do <code>public/catalogs/&lt;ID&gt;/Download/</code>, po czym promotuje deployment na produkcję.</p>
+
+      <h3>Build lokalny vs Vercel</h3>
+      <ul>
+        <li>Lokalny build używa <code>NEXT_LOCAL_ISOLATED_DIST=1</code>, która kieruje wyjście do <code>.next-build</code> (zamiast <code>.next</code>) — pozwala uruchamiać dev i prod jednocześnie bez konfliktów.</li>
+        <li>Vercel build używa standardowego <code>.next</code> (warunek <code>process.env.VERCEL === '1'</code>).</li>
+      </ul>
+
+      <h3>Zmienne środowiskowe</h3>
+      <ul>
+        <li>Zarządzanie: <code>vercel env</code> + Vercel Dashboard.</li>
+        <li>Lokalnie: <code>.env.local</code> (nie commitowany).</li>
+        <li>Aplikacja jest w 100% statyczna na poziomie treści — nie wymaga sekretów do działania UI.</li>
+      </ul>
+    </section>
+
+    <!-- 8. Skrypty -->
+    <section id="skrypty">
+      <h2>8. Skrypty NPM <a href="#skrypty" class="anchor">#</a></h2>
+      <table>
+        <thead><tr><th>Skrypt</th><th>Działanie</th></tr></thead>
+        <tbody>
+          <tr><td><code>npm run dev</code></td><td>dev server Next.js (port 3000)</td></tr>
+          <tr><td><code>npm run dev:turbo</code></td><td>dev z Turbopackiem</td></tr>
+          <tr><td><code>npm run build</code></td><td>produkcyjny build (output w <code>.next-build</code> lokalnie)</td></tr>
+          <tr><td><code>npm run start</code></td><td>serwer produkcyjny</td></tr>
+          <tr><td><code>npm run images</code></td><td>pełen pipeline obrazów</td></tr>
+          <tr><td><code>npm run images:force</code></td><td>jak wyżej, ale wymusza re-generację wariantów</td></tr>
+          <tr><td><code>npm run thumbnails</code></td><td>tylko thumbnails + manifest</td></tr>
+          <tr><td><code>npm run mrc1000:combinations</code></td><td>generuje warianty kombinacji body/hutch dla MRC1000 (3-warstwowy compositor)</td></tr>
+          <tr><td><code>npm run mrc1000:combinations:force</code></td><td>jak wyżej, wymusza ponowne wygenerowanie</td></tr>
+          <tr><td><code>npm run pdfs</code></td><td>generuje wszystkie PDF-y katalogów</td></tr>
+          <tr><td><code>npm run pdfs:optimize</code></td><td>kompresuje PDF-y</td></tr>
+          <tr><td><code>npm run pdfs:verify</code></td><td>waliduje PDF-y</td></tr>
+          <tr><td><code>npm run pdfs:all</code></td><td>pdfs + optimize + verify</td></tr>
+          <tr><td><code>npm run audit</code></td><td>raport stanu assetów katalogów</td></tr>
+          <tr><td><code>npm run audit:check</code></td><td>exit 1 gdy assety nie spełniają wymogów</td></tr>
+          <tr><td><code>npm run typecheck</code></td><td><code>tsc --noEmit</code></td></tr>
+          <tr><td><code>npm run lint</code></td><td>ESLint</td></tr>
+          <tr><td><code>npm run test</code></td><td>Vitest (single run)</td></tr>
+          <tr><td><code>npm run test:watch</code></td><td>Vitest watch</td></tr>
+          <tr><td><code>npm run deploy:prod</code></td><td>pełen deploy do produkcji (pdf + vercel --prod)</td></tr>
+          <tr><td><code>npm run deploy:preview</code></td><td>deploy preview (vercel)</td></tr>
+          <tr><td><code>npm run vercel:link</code></td><td>linkuje katalog do projektu <code>metro-catalogs</code></td></tr>
+          <tr><td><code>npm run vercel:env:pull</code></td><td>pobiera env development do <code>.env.local</code></td></tr>
+          <tr><td><code>npm run vercel:env:list</code></td><td>listuje env w projekcie</td></tr>
+          <tr><td><code>npm run vercel:logs</code></td><td>logi runtime z ostatniego deploymentu</td></tr>
+          <tr><td><code>npm run vercel:inspect</code></td><td>szczegóły ostatniego deploymentu</td></tr>
+          <tr><td><code>npm run vercel:whoami</code></td><td>aktywny user/team Vercel CLI</td></tr>
+          <tr><td><code>npm run clean</code></td><td>czyści <code>.next</code>, <code>.next-build</code>, <code>node_modules/.cache</code></td></tr>
+          <tr><td><code>npm run kill:next:mac</code></td><td>zabija proces dev servera na portach 3000–3009</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 9. Edycja -->
+    <section id="edycja">
+      <h2>9. Logika edycji treści <a href="#edycja" class="anchor">#</a></h2>
+
+      <h3>Edycja istniejącego katalogu</h3>
+      <ol>
+        <li>Otwórz <code>public/catalogs/&lt;ID&gt;/&lt;sekcja&gt;/content.json</code>.</li>
+        <li>Zmodyfikuj treść (teksty, etykiety, opisy, listy materiałów).</li>
+        <li><strong>Obrazy</strong>: wrzuć WebP do tego samego folderu, użyj nazwy pliku bez przedrostka <code>/</code>, np. <code>"packshotImage": "02_26_Metro_QX_SOLO_D_0000.webp"</code>.</li>
+        <li>Uruchom <code>npm run images</code>, żeby wygenerować warianty i odświeżyć manifest.</li>
+        <li><code>npm run dev</code> + ręczna weryfikacja na <code>/catalog/&lt;ID&gt;</code>.</li>
+        <li>Commit zmian (JSON + obrazy + odświeżony <code>responsive-image-manifest.json</code>).</li>
+      </ol>
+
+      <h3>Zmiana kolejności / etykiet sekcji</h3>
+      <p>Edytuj tablicę <code>sections</code> w <code>public/catalogs/&lt;ID&gt;/config.json</code>. Usunięcie wpisu = ukrycie sekcji; dodanie wpisu wymaga, by katalog miał odpowiadający folder z <code>content.json</code>.</p>
+
+      <h3>Zmiany globalne (brand, footer)</h3>
+      <p><code>public/config.json</code> — wartości nadpisują <code>DEFAULT_GLOBAL_CONFIG</code> w <code>src/lib/catalog-loader.ts</code>. Loader merge'uje <code>{ ...DEFAULT, ...data }</code>, więc można pominąć dowolne klucze.</p>
+
+      <h3>Dodanie nowego katalogu</h3>
+      <ol>
+        <li>Dodaj ID do <code>public/catalogs/index.json</code>.</li>
+        <li>Skopiuj folder istniejącego katalogu (np. <code>QX/</code>) jako szablon.</li>
+        <li>Edytuj <code>config.json</code> — <code>meta.title</code>, <code>meta.tagline</code>, <code>meta.collectionName</code>, <code>meta.layoutType</code>, <code>meta.theme</code>, <code>sections</code>.</li>
+        <li>Podmień treści w <code>*/content.json</code> i obrazy w folderach sekcji.</li>
+        <li>Wygeneruj thumbnaile: <code>thumbs/&lt;id&gt;-home.webp</code> (scena hero) i <code>thumbs/&lt;id&gt;-nav.webp</code> (packshot).</li>
+        <li>Dodaj kafelek w <code>src/app/page.tsx</code> (sekcje strony głównej są obecnie hard-codowane).</li>
+        <li><code>npm run images && npm run pdfs && npm run dev</code>.</li>
+      </ol>
+
+      <h3>Dodanie nowego typu layoutu</h3>
+      <ol>
+        <li>W <code>src/types/catalog.ts</code> rozszerz <code>CatalogLayoutType</code> o nowy literał (np. <code>'newdesk'</code>).</li>
+        <li>Stwórz folder <code>src/layouts/newdesk/</code> z plikami <code>CatalogPageNewdesk.tsx</code>, <code>CatalogPrintNewdesk.tsx</code> i <code>*Newdesk.tsx</code> dla każdej sekcji.</li>
+        <li>Zarejestruj komponent w <code>layoutMap</code> w <code>src/app/catalog/[catalogId]/page.tsx</code>.</li>
+        <li>Ustaw <code>meta.layoutType: "newdesk"</code> w <code>config.json</code> katalogu.</li>
+      </ol>
+
+      <h3>Walidacja i obowiązki przy zmianach UI</h3>
+      <ul>
+        <li>Każda zmiana wpływająca na UI musi być odzwierciedlona w <code>src/app/design-system/page.tsx</code>.</li>
+        <li>Nowe tokeny → najpierw <code>src/app/globals.css</code> i (jeśli trzeba) <code>tailwind.config.ts</code>, zamiast hardcodować wartości w komponentach.</li>
+        <li><code>npm run typecheck && npm run lint && npm run test</code> przed PR-em.</li>
+      </ul>
+    </section>
+
+    <!-- 10. Strona główna -->
+    <section id="strona-glowna">
+      <h2>10. Strona główna i nawigacja <a href="#strona-glowna" class="anchor">#</a></h2>
+      <ul>
+        <li><code>src/app/page.tsx</code> — strona główna ma trzy sekcje (<em>Operational</em>, <em>Conference</em>, <em>Reception</em>) z hard-codowanymi kafelkami i ścieżkami do <code>thumbs/&lt;id&gt;-home.webp</code>. To świadomy wybór — strona główna jest „brandingowa", nie generyczna.</li>
+        <li><code>src/components/catalog/CatalogNav.tsx</code> — wspólna nawigacja. W stopce dostaje listę katalogów z <code>getCatalogFooterEntries()</code>, które priorytetyzują <code>thumbs/&lt;id&gt;-nav.webp</code> z fallbackiem do <code>overview/packshot</code>.</li>
+      </ul>
+    </section>
+
+    <!-- 11. API -->
+    <section id="api">
+      <h2>11. API i SEO <a href="#api" class="anchor">#</a></h2>
+
+      <h3>11.1 API katalogów</h3>
+      <ul>
+        <li><code>src/app/api/catalogs/route.ts</code> — JSON z listą katalogów, oznaczony nagłówkiem <code>Link</code> z <code>/api-catalog</code> (RFC 9727) w <code>next.config.ts</code>.</li>
+      </ul>
+
+      <h3>11.2 Sitemap, robots, metadane (standard)</h3>
+      <ul>
+        <li><code>src/app/sitemap.ts</code> — <code>/</code> + <code>/catalog/&lt;id&gt;</code> dla każdego ID; <code>lastModified</code> odczytywany ze <code>stat()</code> pliku <code>public/catalogs/&lt;ID&gt;/config.json</code>, z fallbackiem na <code>new Date()</code> przy braku pliku.</li>
+        <li><code>src/app/robots.txt/route.ts</code> — dynamiczny endpoint z nagłówkiem <code>Content-Signal</code>, dyrektywami <code>Allow/Disallow</code> i linkiem do sitemapy.</li>
+        <li><code>src/app/layout.tsx</code> — globalne <code>title</code>, <code>description</code>, <code>openGraph</code>, <code>twitter</code> (<code>summary_large_image</code>), <code>metadataBase</code>, ikony i manifest.</li>
+        <li><code>src/app/page.tsx</code> — <code>generateMetadata</code> z canonical <code>/</code>, OG image <code>/banner.webp</code> i pełnym Twitter card.</li>
+        <li><code>src/app/catalog/[catalogId]/page.tsx</code> — <code>generateMetadata</code> ustawia <code>title = meta.title — meta.tagline</code>, <code>description = meta.description</code>, <code>alternates.canonical</code>, <code>openGraph.images</code> i <code>twitter.images</code> z per-katalogowego pliku <code>/catalogs/&lt;ID&gt;/thumbs/&lt;id&gt;-home.webp</code>.</li>
+      </ul>
+
+      <h3>11.3 Dane strukturalne (JSON-LD) <span class="badge plus">PONAD WYMAGANY STANDARD</span></h3>
+      <div class="callout plus">
+        <strong class="label">Realizacja ponad wymagany standard.</strong>
+        <p>Załącznik nr 2 nie wymaga dostarczenia danych strukturalnych w formacie schema.org. Dostarczono je dodatkowo, aby strony katalogów były kwalifikowalne do wzbogaconych wyników wyszukiwania (Google rich results) — bez zmiany treści ani konfiguracji wymaganej kontraktem.</p>
+      </div>
+      <ul>
+        <li><code>src/lib/seo.ts</code> — typowane buildery JSON-LD: <code>buildOrganizationJsonLd</code>, <code>buildWebSiteJsonLd</code>, <code>buildCatalogCollectionJsonLd</code>, <code>buildBreadcrumbJsonLd</code>; helpery <code>absoluteUrl</code>, <code>catalogCanonicalPath</code>, <code>catalogOgImagePath</code>.</li>
+        <li><code>src/components/seo/JsonLd.tsx</code> — server component renderujący <code>&lt;script type="application/ld+json"&gt;</code> z escapem sekwencji <code>&lt;/script&gt;</code> (ochrona XSS).</li>
+        <li><strong>Strona główna:</strong> emituje JSON-LD typu <code>Organization</code> i <code>WebSite</code>.</li>
+        <li><strong>Strony katalogów:</strong> emitują JSON-LD typu <code>CollectionPage</code> (z <code>about: ProductGroup</code> + <code>brand: Brand</code>) oraz <code>BreadcrumbList</code> (Home → tytuł katalogu).</li>
+        <li>Wszystkie URL-e w strukturach są absolutne, generowane przez <code>getSiteUrl()</code> i <code>metadataBase</code>.</li>
+        <li>Źródłem treści są wyłącznie pola <code>meta</code> z <code>config.json</code> każdego katalogu — żadnych zmyślonych SKU, cen ani GTIN.</li>
+      </ul>
+
+      <h3>11.4 Testy</h3>
+      <ul>
+        <li>Sitemap: <code>src/app/sitemap.test.ts</code> (mtime, brak <code>/print</code>, fallback przy <code>ENOENT</code>).</li>
+        <li>Buildery JSON-LD: <code>src/lib/seo.test.ts</code>.</li>
+        <li>Komponent JSON-LD: <code>src/components/seo/JsonLd.test.tsx</code> (w tym test escapowania <code>&lt;/script&gt;</code>).</li>
+        <li>Metadane i obecność JSON-LD na stronach: <code>src/app/page.test.tsx</code>, <code>src/app/catalog/[catalogId]/page.test.tsx</code>.</li>
+      </ul>
+    </section>
+
+    <!-- 12. Testy -->
+    <section id="testy">
+      <h2>12. Testy <a href="#testy" class="anchor">#</a></h2>
+      <ul>
+        <li>Komponenty: <code>src/components/catalog/*.test.tsx</code>, <code>src/layouts/qx/*.test.tsx</code>.</li>
+        <li>Loader: <code>src/lib/catalog-loader.test.ts</code>.</li>
+        <li>Schemata: <code>src/lib/schemas/schemas.test.ts</code>.</li>
+        <li>Image utils: <code>src/lib/responsive-image.test.ts</code>.</li>
+        <li>Sitemap: <code>src/app/sitemap.test.ts</code>.</li>
+        <li>Middleware: <code>src/middleware.test.ts</code>.</li>
+        <li>Dostępność: testy z <code>jest-axe</code> w komponentach.</li>
+      </ul>
+      <pre><code>npm run test          # run-once
+npm run test:watch</code></pre>
+    </section>
+
+    <!-- 13. Onboarding -->
+    <section id="onboarding">
+      <h2>13. Szybki onboarding dla nowego deva <a href="#onboarding" class="anchor">#</a></h2>
+      <pre><code>git clone &lt;repo&gt; && cd __METRO_catalogs
+npm install
+npm run images        # generacja wariantów obrazów + manifest
+npm run dev           # → http://localhost:3000
+
+# przed PR-em:
+npm run typecheck && npm run lint && npm run test</code></pre>
+
+      <h4>Kluczowe pliki w kolejności czytania</h4>
+      <ol>
+        <li><code>public/catalogs/README.md</code> — szablon treści.</li>
+        <li><code>src/types/catalog.ts</code> — kontrakty domeny.</li>
+        <li><code>src/lib/catalog-loader.ts</code> — całe ładowanie treści.</li>
+        <li><code>src/app/catalog/[catalogId]/page.tsx</code> — dispatch layoutów.</li>
+        <li><code>src/layouts/qx/CatalogPageQX.tsx</code> — przykładowy layout sekcji.</li>
+        <li><code>AGENTS.md</code> — zasady design systemu i konwencje pracy.</li>
+      </ol>
+    </section>
+
+    <footer style="margin-top:64px;padding-top:24px;border-top:1px solid #d0d7de;color:#656d76;font-size:13px;">
+      METRO Catalogs · dokumentacja techniczna · ostatnia aktualizacja: 2026-05-29
+    </footer>
+
+  </main>
+</div>
+
+<!-- minimalny JS: aktywne podświetlenie w TOC -->
+<script>
+(function(){
+  var links = document.querySelectorAll('aside.sidebar nav a');
+  var byHash = {};
+  links.forEach(function(a){ byHash[a.getAttribute('href')] = a; });
+
+  var sections = Array.from(document.querySelectorAll('main section[id]'));
+
+  function setActive(id){
+    links.forEach(function(a){ a.classList.remove('active'); });
+    var a = byHash['#'+id];
+    if(a) a.classList.add('active');
+  }
+
+  var observer = new IntersectionObserver(function(entries){
+    var visible = entries.filter(function(e){ return e.isIntersecting; });
+    if(visible.length){
+      visible.sort(function(a,b){ return a.target.offsetTop - b.target.offsetTop; });
+      setActive(visible[0].target.id);
+    }
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(function(s){ observer.observe(s); });
+})();
+</script>
+</body>
+</html>
