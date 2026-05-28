@@ -1,0 +1,40 @@
+{
+  "sectionLabel": "Collection Overview",
+  "title": "Designed for the way you work today",
+  "paragraphs": [
+    "T-shaped construction.",
+    "TS is a desk designed for people who value simplicity, functionality, and durability. It is a solution for those who do not need sit/stand functionality but are looking for a stable, solid desk for everyday work with manual height adjustment. Thanks to its restrained form and neutral character, TS works well in offices, educational spaces, shared work environments, and home offices.",
+    "The metal frame with a horizontal runner and the MFC tabletop provide durability and comfortable use even under intensive daily operation."
+  ],
+  "packshotImage": "07_26_Metro_TS_SOLO_C_overview0001.webp",
+  "packshotImageAlt": "TS desk system product shot – L-shaped oak desktop with black steel frame on white background",
+  "packshotCaption": "TS — White / Grey",
+  "features": [
+    {
+      "icon": "puzzle",
+      "title": "Modular Design",
+      "desc": "Infinitely configurable to fit any workspace layout"
+    },
+    {
+      "icon": "zap",
+      "title": "Height Adjustable",
+      "desc": "Electric sit-stand mechanism with memory presets"
+    },
+    {
+      "icon": "ruler",
+      "title": "Multiple Sizes",
+      "desc": "From compact 1200mm to executive 2000mm widths"
+    },
+    {
+      "icon": "shield",
+      "title": "10-Year Warranty",
+      "desc": "Built to last with premium materials and craftsmanship"
+    }
+  ],
+  "quickLinkLabels": [
+    "Finishes",
+    "Dimensions",
+    "Materials",
+    "Features"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "sectionLabel": "Visual Gallery",
+  "title": "See QX in every context",
+  "images": [
+    {
+      "image": "02_26_Metro_QX_SOLO_D_0001.webp",
+      "alt": "QX desk packshot on white background – full product view",
+      "category": "Bench"
+    },
+    {
+      "image": "02_26_Metro_QX_HERO_3_R2_VIZ0001.webp",
+      "alt": "QX desks in open-plan office with natural lighting and workers",
+      "category": "Office"
+    },
+    {
+      "image": "02_26_Metro_QX_SOLO_C_0001.webp",
+      "alt": "QX executive desk in private office with monitor arm setup",
+      "category": "Office"
+    },
+    {
+      "image": "02_26_Metro_QX_HOME0000.webp",
+      "alt": "QX desk in home office setup with framed wall art and task lighting",
+      "category": "Home"
+    },
+    {
+      "image": "desk-detail.webp",
+      "alt": "Close-up of QX desk edge showing oak grain and steel joint detail",
+      "category": "Detail"
+    },
+    {
+      "image": "office-lifestyle.webp",
+      "alt": "Modern conference room with QX conference table and chairs",
+      "category": "Office"
+    }
+  ]
+}

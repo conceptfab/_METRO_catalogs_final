@@ -1,0 +1,39 @@
+{
+  "sectionLabel": "Technical Data",
+  "title": "Dimensions & specifications",
+  "description": "Thoughtful construction and smooth height adjustment provide lasting comfort, stability, and an ideal fit for executive and professional office environments.",
+  "image": "/catalogs/TS/dimensions/axo_ts.svg",
+  "specs": [
+    {
+      "label": "Width",
+      "value": "120, 140, 160, 180 cm"
+    },
+    {
+      "label": "Depth",
+      "value": "70, 80 cm"
+    },
+    {
+      "label": "Height range (manual)",
+      "value": "64 – 84 cm"
+    },
+    {
+      "label": "Weight (frame)",
+      "value": "24 – 28 kg"
+    },
+    {
+      "label": "Desktop thickness",
+      "value": "25 mm"
+    }
+  ],
+  "certifications": [
+    "EN 527-1:2011 Office furniture — Work tables",
+    "EN 527-2:2016 Safety requirements",
+    "GS Mark (Geprüfte Sicherheit)",
+    "ISO 14001 Environmental Management"
+  ],
+  "dimensionDiagram": {
+    "width": "1600 mm",
+    "depth": "800 mm",
+    "heightRange": "650–1300 mm"
+  }
+}

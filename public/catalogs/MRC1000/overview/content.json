@@ -1,0 +1,40 @@
+{
+  "sectionLabel": "Collection Overview",
+  "title": "MRC1000 — a modular reception system designed for modern welcome areas.",
+  "paragraphs": [
+    "Minimalist form, balanced proportions, and refined details create a space that welcomes guests professionally and with class.",
+    "The modular construction makes it easy to adapt the layout to the character of the interior and the needs of users.",
+    "It is a solution that combines aesthetics, functionality, and a consistent image of a modern company."
+  ],
+  "packshotImage": "mcr1000_overview0008.webp",
+  "packshotImageAlt": "MRC1000 desk system product shot – L-shaped oak desktop with black steel frame on white background",
+  "packshotCaption": "MRC1000 — White / Grey",
+  "features": [
+    {
+      "icon": "puzzle",
+      "title": "Modular Design",
+      "desc": "Infinitely configurable to fit any workspace layout"
+    },
+    {
+      "icon": "zap",
+      "title": "Height Adjustable",
+      "desc": "Electric sit-stand mechanism with memory presets"
+    },
+    {
+      "icon": "ruler",
+      "title": "Multiple Sizes",
+      "desc": "From compact 1200mm to executive 2000mm widths"
+    },
+    {
+      "icon": "shield",
+      "title": "10-Year Warranty",
+      "desc": "Built to last with premium materials and craftsmanship"
+    }
+  ],
+  "quickLinkLabels": [
+    "Finishes",
+    "Dimensions",
+    "Materials",
+    "Features"
+  ]
+}

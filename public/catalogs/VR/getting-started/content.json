@@ -1,0 +1,49 @@
+{
+  "sectionLabel": "Getting Started",
+  "title": "How to order",
+  "steps": [
+    {
+      "step": 1,
+      "title": "Explore the offer",
+      "desc": "Browse our offer and pick the models you're interested in. You'll find the full product list in the Product Codes section.",
+      "icon": "search"
+    },
+    {
+      "step": 2,
+      "title": "Customization",
+      "desc": "Use the on-site configurator to choose your preferred combination of tabletop and frame colors. Within a single order, you can freely configure each piece of furniture.",
+      "icon": "palette"
+    },
+    {
+      "step": 3,
+      "title": "Get in touch",
+      "desc": "Contact us by phone or email. Our sales representative will answer your questions and help you finalize the order.",
+      "icon": "phone"
+    },
+    {
+      "step": 4,
+      "title": "Order processing",
+      "desc": "Once the order is confirmed and the pro forma invoice is paid, we'll start preparing your order for shipment right away. You'll receive updates on its status along the way.",
+      "icon": "package"
+    },
+    {
+      "step": 5,
+      "title": "Receiving your order",
+      "desc": "On delivery, please make sure the shipment hasn't been damaged in transit. If you notice any issues, contact our sales team to resolve them.",
+      "icon": "truck"
+    },
+    {
+      "step": 6,
+      "title": "Assembly",
+      "desc": "Before assembling the furniture, read the manual carefully. Review all the steps and prepare the parts and tools you'll need. Proper assembly will ensure your METRO furniture serves you well for many years to come!",
+      "icon": "wrench"
+    }
+  ],
+  "ctaLabels": {
+    "quote": "Request a Quote",
+    "pdf": "Download PDF",
+    "contact": "Contact Sales"
+  },
+  "footerText": "© 2025 METRO. All rights reserved. Catalogue version VR-2025.1",
+  "versionInfo": "Co-financed by European Funds (PARP). All products meet WCAG 2.1 AA accessibility standards."
+}

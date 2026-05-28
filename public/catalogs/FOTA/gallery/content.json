@@ -1,0 +1,31 @@
+{
+  "sectionLabel": "Visual Gallery",
+  "title": "See FOTA in every context",
+  "images": [
+    {
+      "image": "12_25_Metro_FOTA_SOLO_A_0000.webp",
+      "alt": "FOTA packshot on white background – full product view",
+      "category": "Solo"
+    },
+    {
+      "image": "12_25_Metro_FOTA_SOLO_B_0000.webp",
+      "alt": "FOTA product alternate angle view",
+      "category": "Solo"
+    },
+    {
+      "image": "12_25_Metro_FOTA_SOLO_D_0001.webp",
+      "alt": "FOTA product additional view",
+      "category": "Solo"
+    },
+    {
+      "image": "12_25_Metro_FOTA_HOME0000.webp",
+      "alt": "FOTA in a home environment",
+      "category": "Home"
+    },
+    {
+      "image": "12_25_Metro_FOTA_DETAL_.webp",
+      "alt": "Close-up detail of FOTA construction",
+      "category": "Detail"
+    }
+  ]
+}

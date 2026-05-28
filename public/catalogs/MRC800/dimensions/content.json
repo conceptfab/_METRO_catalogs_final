@@ -1,0 +1,47 @@
+{
+  "sectionLabel": "Technical Data",
+  "title": "System and Modules Description",
+  "description": "The modular design of the counter allows for configurations tailored to user needs and space requirements. Available modules can be used to create straight or corner configurations.\nRC801 Straight module 80 - expandable or as a free-standing module RC801FS.\nRC802 Straight module 120 - expandable or as a free-standing module RC802FS.\nRC803 Universal (left/right) Corner Module - expandable.\nNotice: The module is equipped with 2 x side panels, which constitute the ends of the counter. In case of connecting the Universal Corner Module to another module, the side panel is not used.\nRC804L Low module (left) with countertop for serving individuals using wheelchairs, for system expansion. Available only as an end module (left version).\nRC804R Low module (right) with countertop for serving individuals using wheelchairs, for system expansion. Available only as an end module (right version).",
+  "image": "/catalogs/MRC800/dimensions/axo_QS.svg",
+  "modules": [
+    { "image": "/catalogs/MRC800/dimensions/RC801.svg", "label": "RC801" },
+    { "image": "/catalogs/MRC800/dimensions/RC801FS.svg", "label": "RC801FS" },
+    { "image": "/catalogs/MRC800/dimensions/RC802.svg", "label": "RC802" },
+    { "image": "/catalogs/MRC800/dimensions/RC802FS.svg", "label": "RC802FS" },
+    { "image": "/catalogs/MRC800/dimensions/RC803.svg", "label": "RC803" },
+    { "image": "/catalogs/MRC800/dimensions/RC804L_R.svg", "label": "RC804L / RC804R" }
+  ],
+  "specs": [
+    {
+      "label": "Width",
+      "value": "120 – 180 cm"
+    },
+    {
+      "label": "Depth",
+      "value": "70 – 80 cm"
+    },
+    {
+      "label": "Height",
+      "value": "74 cm"
+    },
+    {
+      "label": "Weight (frame)",
+      "value": "28 – 42 kg"
+    },
+    {
+      "label": "Desktop thickness",
+      "value": "25 mm"
+    }
+  ],
+  "certifications": [
+    "EN 527-1:2011 Office furniture — Work tables",
+    "EN 527-2:2016 Safety requirements",
+    "GS Mark (Geprüfte Sicherheit)",
+    "ISO 14001 Environmental Management"
+  ],
+  "dimensionDiagram": {
+    "width": "1600 mm",
+    "depth": "800 mm",
+    "heightRange": "650–1300 mm"
+  }
+}

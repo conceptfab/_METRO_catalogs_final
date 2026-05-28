@@ -1,0 +1,225 @@
+{
+  "sectionLabel": "Product Codes",
+  "title": "Order references",
+  "description": "Use these unique codes when placing your order or specifying modules for your workspace.",
+  "image": "/catalogs/QX/codes/axo_qx_codes.svg",
+  "legend": "* R – height-adjustable desk models. Other models feature a leveling range of +/- 1cm.",
+  "groups": [
+    {
+      "id": "single-depth-70",
+      "category": "single",
+      "title": "QX single desk (depth 70 cm)",
+      "rows": [
+        {
+          "index": "QX1(R)*",
+          "indexR": "QX1R",
+          "dimensions": "120 × 70 × 74 (64-84)*"
+        },
+        {
+          "index": "QX2(R)*",
+          "indexR": "QX2R",
+          "dimensions": "140 × 70 × 74 (64-84)*"
+        },
+        {
+          "index": "QX3(R)*",
+          "indexR": "QX3R",
+          "dimensions": "160 × 70 × 74 (64-84)*"
+        },
+        {
+          "index": "QX4(R)*",
+          "indexR": "QX4R",
+          "dimensions": "180 × 70 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "single-depth-80",
+      "category": "single",
+      "title": "QX single desk (depth 80 cm)",
+      "rows": [
+        {
+          "index": "QX180(R)*",
+          "indexR": "QX1R80",
+          "dimensions": "120 × 80 × 74 (64-84)*"
+        },
+        {
+          "index": "QX280(R)*",
+          "indexR": "QX2R80",
+          "dimensions": "140 × 80 × 74 (64-84)*"
+        },
+        {
+          "index": "QX380(R)*",
+          "indexR": "QX3R80",
+          "dimensions": "160 × 80 × 74 (64-84)*"
+        },
+        {
+          "index": "QX480(R)*",
+          "indexR": "QX4R80",
+          "dimensions": "180 × 80 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "single-extension-depth-70",
+      "category": "single",
+      "title": "Extension for QX single desk (depth 70 cm)",
+      "rows": [
+        {
+          "index": "QX1D(R)*",
+          "indexR": "QX1RD",
+          "dimensions": "66.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "QX2D(R)*",
+          "indexR": "QX2RD",
+          "dimensions": "86.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "QX3D(R)*",
+          "indexR": "QX3RD",
+          "dimensions": "106.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "QX4D(R)*",
+          "indexR": "QX4RD",
+          "dimensions": "126.5 × 50 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "single-extension-depth-80",
+      "category": "single",
+      "title": "Extension for QX single desk (depth 80 cm)",
+      "rows": [
+        {
+          "index": "QX1D80(R)*",
+          "indexR": "QX1RD80",
+          "dimensions": "66.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "QX2D80(R)*",
+          "indexR": "QX2RD80",
+          "dimensions": "86.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "QX3D80(R)*",
+          "indexR": "QX3RD80",
+          "dimensions": "106.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "QX4D80(R)*",
+          "indexR": "QX4RD80",
+          "dimensions": "126.5 × 50 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "bench-depth-140",
+      "category": "bench",
+      "title": "QX bench double desk (depth 140 cm)",
+      "rows": [
+        {
+          "index": "QX10(R)*",
+          "indexR": "QX10R",
+          "dimensions": "120 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "QX11(R)*",
+          "indexR": "QX11R",
+          "dimensions": "140 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "QX12(R)*",
+          "indexR": "QX12R",
+          "dimensions": "160 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "QX13(R)*",
+          "indexR": "QX13R",
+          "dimensions": "180 × 140 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "bench-depth-160",
+      "category": "bench",
+      "title": "QX bench double desk (depth 160 cm)",
+      "rows": [
+        {
+          "index": "QX1080(R)*",
+          "indexR": "QX1080R",
+          "dimensions": "120 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "QX1180(R)*",
+          "indexR": "QX1180R",
+          "dimensions": "140 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "QX1280(R)*",
+          "indexR": "QX1280R",
+          "dimensions": "160 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "QX1380(R)*",
+          "indexR": "QX1380R",
+          "dimensions": "180 × 160 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "bench-flaps-depth-140",
+      "category": "bench",
+      "title": "QX bench double desk with access to the cable canal through the flaps (depth 140 cm)",
+      "rows": [
+        {
+          "index": "QX15(R)*",
+          "indexR": "QX15R",
+          "dimensions": "120 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "QX16(R)*",
+          "indexR": "QX16R",
+          "dimensions": "140 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "QX17(R)*",
+          "indexR": "QX17R",
+          "dimensions": "160 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "QX18(R)*",
+          "indexR": "QX18R",
+          "dimensions": "180 × 140 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "bench-flaps-depth-160",
+      "category": "bench",
+      "title": "QX bench double desk with access to the cable canal through the flaps (depth 160 cm)",
+      "rows": [
+        {
+          "index": "QX1580(R)*",
+          "indexR": "QX1580R",
+          "dimensions": "120 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "QX1680(R)*",
+          "indexR": "QX1680R",
+          "dimensions": "140 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "QX1780(R)*",
+          "indexR": "QX1780R",
+          "dimensions": "160 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "QX1880(R)*",
+          "indexR": "QX1880R",
+          "dimensions": "180 × 160 × 74 (64-84)*"
+        }
+      ]
+    }
+  ]
+}

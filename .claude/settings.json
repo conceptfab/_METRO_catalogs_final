@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /tmp/qx-contact)",
+      "Bash(rm -f /tmp/qx-contact/*)",
+      "Bash(pdftoppm -r 90 -f 16 -l 16 /tmp/qx-pdf-now.pdf /tmp/qx-contact/page)",
+      "Bash(sips -s format png /tmp/qx-contact/page-16.ppm --out /tmp/qx-contact/page-16.png)",
+      "Bash(mkdir -p /tmp/vr-check)",
+      "Bash(rm -f /tmp/vr-check/*)",
+      "Bash(pdftotext -layout -f 11 -l 12 /tmp/vr-pdf.pdf -)",
+      "Bash(pdftoppm -r 80 -f 11 -l 11 /tmp/vr-pdf.pdf /tmp/vr-check/feat)",
+      "Bash(sips -s format png /tmp/vr-check/feat-11.ppm --out /tmp/vr-check/feat-11.png)",
+      "Bash(curl -sS -o /tmp/ts-pdf.pdf \"http://localhost:3000/api/catalog/TS/pdf\")",
+      "Bash(mkdir -p /tmp/ts-pack)",
+      "Bash(rm -f /tmp/ts-pack/*)",
+      "Bash(pdftoppm -r 70 -f 6 -l 6 /tmp/ts-pdf.pdf /tmp/ts-pack/p)",
+      "Bash(sips -s format png /tmp/ts-pack/p-06.ppm --out /tmp/ts-pack/p-06.png)",
+      "Bash(mkdir -p /tmp/fm-pack)",
+      "Bash(rm -f /tmp/fm-pack/*)",
+      "Bash(pdftoppm -r 70 -f 6 -l 6 /tmp/FM-pdf.pdf /tmp/fm-pack/p)",
+      "Bash(sips -s format png /tmp/fm-pack/p-06.ppm --out /tmp/fm-pack/p-06.png)"
+    ]
+  }
+}

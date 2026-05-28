@@ -1,0 +1,39 @@
+{
+  "sectionLabel": "Technical Data",
+  "title": "Dimensions & specifications",
+  "description": "QS combines refined simplicity with practical flexibility. Offered in four width options and two depth variants, it provides the freedom to create efficient, comfortable workstations tailored to the needs of contemporary offices.",
+  "image": "/catalogs/QS/dimensions/axo_QS.svg",
+  "specs": [
+    {
+      "label": "Width",
+      "value": "120, 140, 160, 180 cm"
+    },
+    {
+      "label": "Depth",
+      "value": "70, 80 cm"
+    },
+    {
+      "label": "Height",
+      "value": "74 cm"
+    },
+    {
+      "label": "Weight (frame)",
+      "value": "26 - 37 kg"
+    },
+    {
+      "label": "Desktop thickness",
+      "value": "25 mm"
+    }
+  ],
+  "certifications": [
+    "EN 527-1:2011 Office furniture — Work tables",
+    "EN 527-2:2016 Safety requirements",
+    "GS Mark (Geprüfte Sicherheit)",
+    "ISO 14001 Environmental Management"
+  ],
+  "dimensionDiagram": {
+    "width": "1600 mm",
+    "depth": "800 mm",
+    "heightRange": "650–1300 mm"
+  }
+}

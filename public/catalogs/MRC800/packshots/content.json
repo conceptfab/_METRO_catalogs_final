@@ -1,0 +1,169 @@
+{
+  "sectionLabel": "Models",
+  "title": "MRC800 Collection",
+  "subtitle": "Modules",
+  "groups": [
+    {
+      "model": "RC801",
+      "label": "RC801",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC801",
+          "name": "RC801 / Black",
+          "image": "RC801_black_gb__Shot_A__4K_R8.webp",
+          "frameColorName": "Black",
+          "frameColorCode": "",
+          "desktopColorName": "Graphite",
+          "desktopColorCode": "",
+          "colorName": "Black"
+        },
+        {
+          "code": "RC801",
+          "name": "RC801 / White",
+          "image": "RC801_white_wg__Shot_A__4K_R8.webp",
+          "frameColorName": "White",
+          "frameColorCode": "",
+          "desktopColorName": "Warm Grey",
+          "desktopColorCode": "",
+          "colorName": "White"
+        }
+      ]
+    },
+    {
+      "model": "RC801FS",
+      "label": "RC801FS",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC801FS",
+          "name": "RC801FS / Black",
+          "image": "RC801FS_black_gb__Shot_A__4K_R8.webp",
+          "frameColorName": "Black",
+          "frameColorCode": "",
+          "desktopColorName": "Graphite",
+          "desktopColorCode": "",
+          "colorName": "Black"
+        },
+        {
+          "code": "RC801FS",
+          "name": "RC801FS / White",
+          "image": "RC801FS_white_wg__Shot_A__4K_R8.webp",
+          "frameColorName": "White",
+          "frameColorCode": "",
+          "desktopColorName": "Warm Grey",
+          "desktopColorCode": "",
+          "colorName": "White"
+        }
+      ]
+    },
+    {
+      "model": "RC802",
+      "label": "RC802",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC802",
+          "name": "RC802 / Black",
+          "image": "RC802_black_gb__Shot_A__4K_R8.webp",
+          "frameColorName": "Black",
+          "frameColorCode": "",
+          "desktopColorName": "Graphite",
+          "desktopColorCode": "",
+          "colorName": "Black"
+        },
+        {
+          "code": "RC802",
+          "name": "RC802 / White",
+          "image": "RC802_white_wg__Shot_A__4K_R8.webp",
+          "frameColorName": "White",
+          "frameColorCode": "",
+          "desktopColorName": "Warm Grey",
+          "desktopColorCode": "",
+          "colorName": "White"
+        }
+      ]
+    },
+    {
+      "model": "RC802FS",
+      "label": "RC802FS",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC802FS",
+          "name": "RC802FS / Black",
+          "image": "RC802FS_black_gb__Shot_A__4K_R8.webp",
+          "frameColorName": "Black",
+          "frameColorCode": "",
+          "desktopColorName": "Graphite",
+          "desktopColorCode": "",
+          "colorName": "Black"
+        },
+        {
+          "code": "RC802FS",
+          "name": "RC802FS / White",
+          "image": "RC802FS_white_wg__Shot_A__4K_R8.webp",
+          "frameColorName": "White",
+          "frameColorCode": "",
+          "desktopColorName": "Warm Grey",
+          "desktopColorCode": "",
+          "colorName": "White"
+        }
+      ]
+    },
+    {
+      "model": "RC803",
+      "label": "RC803",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC803",
+          "name": "RC803 / Black",
+          "image": "RC803_black_gb__Shot_A__4K_R8.webp",
+          "frameColorName": "Black",
+          "frameColorCode": "",
+          "desktopColorName": "Graphite",
+          "desktopColorCode": "",
+          "colorName": "Black"
+        },
+        {
+          "code": "RC803",
+          "name": "RC803 / White",
+          "image": "RC803_white_wg__Shot_A__4K_R8.webp",
+          "frameColorName": "White",
+          "frameColorCode": "",
+          "desktopColorName": "Warm Grey",
+          "desktopColorCode": "",
+          "colorName": "White"
+        }
+      ]
+    },
+    {
+      "model": "RC804L-R",
+      "label": "RC804L-R",
+      "desc": "",
+      "items": [
+        {
+          "code": "RC804L-R",
+          "name": "RC804L-R / Black",
+          "image": "RC804L-R_black_gb__Shot_A__4K_R8.webp",
+          "frameColorName": "Black",
+          "frameColorCode": "",
+          "desktopColorName": "Graphite",
+          "desktopColorCode": "",
+          "colorName": "Black"
+        },
+        {
+          "code": "RC804L-R",
+          "name": "RC804L-R / White",
+          "image": "RC804L-R_white_wg__Shot_A__4K_R8.webp",
+          "frameColorName": "White",
+          "frameColorCode": "",
+          "desktopColorName": "Warm Grey",
+          "desktopColorCode": "",
+          "colorName": "White"
+        }
+      ]
+    }
+  ]
+}

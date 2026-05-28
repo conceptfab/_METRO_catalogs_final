@@ -1,0 +1,41 @@
+{
+  "sectionLabel": "Collection Overview",
+  "title": "Light form, thoughtful functionality",
+  "paragraphs": [
+    "The Fota collection is a range of mobile conference tables designed with flexible space organization in mind.",
+    "The lift-up tabletop, which can be positioned vertically, makes it easy to quickly fold and store the tables, increasing the functionality of the room.",
+    "This solution works particularly well where a single space must serve multiple different functions throughout the day.",
+    "Fota supports meeting comfort and helps create a modern, organized work environment."
+  ],
+  "packshotImage": "12_25_Metro_FOTA_SOLO_overview0000.webp",
+  "packshotImageAlt": "FOTA desk system product shot – L-shaped oak desktop with black steel frame on white background",
+  "packshotCaption": "FOTA — White / Grey",
+  "features": [
+    {
+      "icon": "puzzle",
+      "title": "Modular Design",
+      "desc": "Infinitely configurable to fit any workspace layout"
+    },
+    {
+      "icon": "zap",
+      "title": "Height Adjustable",
+      "desc": "Electric sit-stand mechanism with memory presets"
+    },
+    {
+      "icon": "ruler",
+      "title": "Multiple Sizes",
+      "desc": "From compact 1200mm to executive 2000mm widths"
+    },
+    {
+      "icon": "shield",
+      "title": "10-Year Warranty",
+      "desc": "Built to last with premium materials and craftsmanship"
+    }
+  ],
+  "quickLinkLabels": [
+    "Finishes",
+    "Dimensions",
+    "Materials",
+    "Features"
+  ]
+}

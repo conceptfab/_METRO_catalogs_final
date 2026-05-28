@@ -1,0 +1,774 @@
+/*
+ * Print-only stylesheet for catalog PDF export.
+ * Loaded globally; @media print rules are inert in normal viewing.
+ * .print-page utility is used by the dedicated /print route only.
+ */
+
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-hide {
+    display: none !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  .print-only {
+    display: block;
+  }
+}
+
+/* === Print page layout ===
+ * Each print-page is exactly 1920×1358px (1.414:1, A4 landscape ratio).
+ * Puppeteer renders the page at 1920px viewport width — Tailwind's lg:
+ * breakpoint fires, sections render in their desktop layout. When page.pdf()
+ * is called with format: 'A4', landscape: true, Chromium proportionally
+ * scales each 1920×1358 page down to fit A4 (297×210mm). No CSS transform
+ * required — the scale is applied during PDF rasterisation. */
+.catalog-print .print-page {
+  width: 1920px;
+  height: 1358px;
+  overflow: hidden;
+  /* Each .print-page is exactly one PDF page (height matches page.pdf's
+   * height: '1358px'). page-break-inside: avoid prevents Chromium from
+   * splitting one DOM page across two PDF pages — but we deliberately
+   * omit page-break-after, because the natural pagination from the fixed
+   * height handles it and an explicit break adds an extra blank page. */
+  page-break-inside: avoid;
+  break-inside: avoid;
+  background: #ffffff;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Section root absolute-positioned inside .print-page, forced to 1920×1358
+ * so Tailwind's lg:h-[960px] / lg:min-h-[960px] on the section element is
+ * overridden. Children keep their original heights — gallery images at
+ * lg:h-[797px], overview wrappers at lg:min-h-[960px], etc. all fit naturally
+ * inside the 1358px section. */
+.catalog-print .print-page > section {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 1920px !important;
+  height: 1358px !important;
+  margin: 0 !important;
+}
+
+/* Vertically center content within every section EXCEPT the Hero (which has
+ * its own min-h-screen + flex centering and uses a full-bleed background
+ * image — its layout already fills the page symmetrically). For every other
+ * section, the inner wrapper is shorter than 1358px, so without flex
+ * centering content sticks to the top with empty whitespace at the bottom. */
+.catalog-print .print-page > section:not(.min-h-screen) {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+/* Defeat framer-motion intro animations — print pages live inside Puppeteer
+ * which doesn't scroll, so useInView() never fires and sections stay at
+ * opacity: 0 / translateY initial state. Force the "last frame": everything
+ * visible, no motion transforms, no transitions. Scoped to descendants 2+
+ * levels deep so the section root layout above is untouched. */
+.catalog-print .print-page > * * {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* === Hero print section ===
+ * Dedicated print styles for HeroPrintQX. Kept here (not as Tailwind utility
+ * soup on the component) so design tweaks live in one place and don't leak
+ * to the live HeroQX. */
+.hero-print-cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.hero-print-image {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-print-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-print-logo {
+  position: absolute;
+  top: 96px;
+  /* SVG has internal whitespace before the "M" glyph — shift the box
+   * 10px left so the visible logo edge lines up with the text below. */
+  left: 86px;
+  z-index: 2;
+  width: 320px;
+  height: auto;
+}
+
+.hero-print-text {
+  position: absolute;
+  /* Sits directly under the logo. Logo top: 96px + height ~88px + gap 32px. */
+  top: 216px;
+  left: 96px;
+  /* Width = 1/3 of the print page (1920 / 3 ≈ 640px). */
+  width: 640px;
+  z-index: 2;
+  /* Match base desktop .hero-text (globals.css): body font, light weight,
+   * 2.4rem, neutral grey. The on-screen Hero may layer per-slide overrides
+   * via --hero-text-* vars; print uses the defaults. */
+  font-family: var(--font-body);
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1.22;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #b8b3b2;
+}
+
+.hero-print-text p {
+  margin: 0;
+}
+
+/* === Shared print section frame ===
+ * All non-Hero print sections share this outer geometry so the catalog looks
+ * uniform: centered 1440px content area (matches Overview's max-w-[1440px]),
+ * vertical centering of the inner frame inside the 1358px page. */
+.print-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.print-section-frame {
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 96px 0;
+}
+
+.print-section-heading {
+  flex: 0 0 auto;
+  margin-bottom: 48px;
+}
+
+.print-section-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Gallery (print-specific overrides) === */
+.gallery-print-grid {
+  flex: 1 1 auto;
+  display: grid;
+  min-height: 0;
+}
+
+/* Justified-row layout: equal-height rows, cells flex by image aspect ratio. */
+.gallery-print-rows {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.gallery-print-row {
+  flex: 1 1 0;
+  display: flex;
+  min-height: 0;
+}
+
+.gallery-print-cell {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gallery-print-image {
+  /* Image keeps its natural aspect ratio: fits inside the cell without
+   * cropping. Cell aspect ratios that don't match leave centered whitespace. */
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* === Finishes (print-specific, static — no selection / hover / zoom) === */
+
+/* MRC800 variant: heading + description on top, two large detail squares
+ * filling the row below. No configurator overlay, no swatch tiles. */
+.finishes-print-content-mrc800 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.finishes-print-grid-mrc800 {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  min-height: 0;
+}
+
+.finishes-print-figure-mrc800 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  margin: 0;
+  border: 1px solid hsl(0 0% 88%);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.finishes-print-figure-image-mrc800 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.finishes-print-figure-caption-mrc800 {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.88);
+  font-family: var(--font-display, inherit);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #1a1a1a;
+}
+
+.finishes-print-content {
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.finishes-print-left {
+  flex: 1 1 0;
+  min-width: 0;
+  /* 1440 frame − 687 preview − 24 gap = 729px → fits 6 tiles
+   * (6 × 7.25rem + 5 × 5px = 721px) on one row in both groups. */
+  max-width: 729px;
+}
+
+.finishes-print-description {
+  max-width: 633px;
+  margin-bottom: 32px;
+}
+
+.finishes-print-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.finishes-print-subgroups {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.finishes-print-tile-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.finishes-print-tile {
+  position: relative;
+  height: 9.75rem;
+  width: 7.25rem;
+  border: 1px solid transparent;
+  background: var(--background, #ffffff);
+  padding: 4px;
+  padding-top: 7rem;
+  box-sizing: border-box;
+}
+
+.finishes-print-tile-image {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+}
+
+.finishes-print-tile-label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--foreground, #000000);
+  margin: 0;
+}
+
+.finishes-print-swatch-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.finishes-print-swatch {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  border: 1px solid var(--border, #dddddd);
+}
+
+/* Preview adopts the Customization (Materials) schema: layered frame + desktop
+ * images stacked via absolute positioning. Random choice is made server-side. */
+.finishes-print-preview {
+  flex: 0 0 687px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.finishes-print-preview-stage {
+  position: relative;
+  width: 100%;
+  /* Square stage matches the source render's near-square aspect so
+   * object-contain doesn't leave a tall empty band below the image. */
+  height: 687px;
+  overflow: hidden;
+}
+
+.finishes-print-preview-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.finishes-print-preview-layer-multiply {
+  mix-blend-mode: multiply;
+}
+
+.finishes-print-preview-legend {
+  flex: 0 0 auto;
+  padding-top: 20px;
+  color: var(--foreground, #000000);
+}
+
+.finishes-print-preview-legend-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.finishes-print-preview-legend-label {
+  font-weight: 600;
+}
+
+.finishes-print-preview-legend-value {
+  font-weight: 400;
+}
+
+.finishes-print-preview-legend-note {
+  font-size: 12px;
+  line-height: 1.4;
+  font-style: italic;
+  opacity: 0.75;
+  margin: 0;
+}
+
+/* === Packshots (print-specific, static — no clicks / lightbox / motion) ===
+ * Each .print-page renders a 2×2 grid (4 packshots). Catalogs with more
+ * than 4 items get additional pages emitted by PackshotsPrintQX itself. */
+.packshots-print-subtitle {
+  max-width: 520px;
+  margin: -24px 0 32px;
+}
+
+.packshots-print-grid {
+  /* Explicit row heights (not 1fr) so both rows render even if the items
+   * happen to have content that the grid's intrinsic sizing would otherwise
+   * collapse to zero. 2 × 520 + 40 gap = 1080 total. */
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 520px 520px;
+  gap: 40px;
+}
+
+.print-page-packshots .print-section-content,
+.print-page-materials .print-section-content,
+.print-page-arrangements .print-section-content {
+  flex: 0 0 auto;
+}
+
+/* Maximised vertical space for the packshot grid — scoped so it only
+ * affects this print page, not other sections sharing the .print-section
+ * geometry. Frame padding, heading margin and subtitle margins are all
+ * tightened to give the 2×2 grid the largest possible cells.
+ * MaterialsPrintMRC800 and ArrangementsPrintMRC800 reuse the same
+ * .packshots-print-grid (1080px tall), so their .print-page-materials /
+ * .print-page-arrangements wrappers need the identical tightening — without
+ * this the bottom row's .packshots-print-meta captions get clipped by the
+ * 1358px page boundary. */
+.print-page-packshots .print-section-frame,
+.print-page-materials .print-section-frame,
+.print-page-arrangements .print-section-frame {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.print-page-packshots .print-section-heading,
+.print-page-materials .print-section-heading,
+.print-page-arrangements .print-section-heading {
+  margin-bottom: 16px;
+}
+
+.print-page-packshots .packshots-print-subtitle,
+.print-page-materials .packshots-print-subtitle,
+.print-page-arrangements .packshots-print-subtitle {
+  margin: -16px 0 16px;
+}
+
+.packshots-print-cell {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.packshots-print-image-wrap {
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  /* Anchor packshots to the top of their cell — without this object-contain
+   * centers each render within the tall grid row, leaving a visual band of
+   * empty space above the desks and pushing everything visually downward. */
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.packshots-print-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: top center;
+  display: block;
+}
+
+.packshots-print-meta {
+  flex: 0 0 auto;
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 20px;
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--foreground, #000000);
+}
+
+.packshots-print-code {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.packshots-print-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.packshots-print-chip-role {
+  font-family: var(--font-display, inherit);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.packshots-print-chip-swatch {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
+}
+
+.packshots-print-chip-code {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* === Features (print-specific, static — last video frame, no animation) ===
+ * Up to 3 features per page, 3 columns side-by-side. Each column:
+ * still image on top, dark "button" with icon + title, plain description.
+ * Image wrap uses an explicit aspect ratio so all buttons land on the same
+ * horizontal line — flex-grow on the wrap stretched cells unequally and
+ * pushed buttons low on the page. */
+.features-print-grid {
+  flex: 0 0 auto;
+  /* Flex with fixed-basis cards + justify-content: center. Card width adapts
+   * to the actual cards-per-page (set by the print component via a modifier
+   * class), so balanced layouts (2+2, 3+2 …) get appropriately sized cards. */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.features-print-grid--3col .features-print-card {
+  flex: 0 0 calc((100% - 80px) / 3);
+  max-width: calc((100% - 80px) / 3);
+}
+
+.features-print-grid--2col .features-print-card {
+  flex: 0 0 calc((100% - 40px) / 2);
+  max-width: calc((100% - 40px) / 2);
+}
+
+.features-print-grid--1col .features-print-card {
+  flex: 0 0 calc((100% - 80px) / 3);
+  max-width: calc((100% - 80px) / 3);
+}
+
+.print-page-features .print-section-content {
+  flex: 0 0 auto;
+}
+
+.features-print-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.features-print-image-wrap {
+  flex: 0 0 auto;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-elevated, #f5f5f5);
+}
+
+.features-print-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.features-print-button {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 14px 20px;
+  background: var(--foreground, #000000);
+  color: var(--background, #ffffff);
+  border: 1px solid var(--foreground, #000000);
+}
+
+.features-print-button-icon {
+  flex: 0 0 auto;
+}
+
+.features-print-button-title {
+  font-family: var(--font-display, inherit);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.features-print-desc {
+  flex: 0 0 auto;
+  margin: 16px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--foreground, #000000);
+}
+
+/* === Contact (print-specific, shared across all catalogs) ===
+ * 2-column layout matching Finishes: left = company + tagline + contact grid
+ * + note, right = square map. Mirrors `.finishes-print-content` row geometry
+ * so the contact page reads like the rest of the catalog. */
+.contact-print-content {
+  flex: 1 1 auto;
+  flex-direction: row;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.contact-print-left {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 633px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.contact-print-company {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-print-company-name {
+  font-family: var(--font-display, inherit);
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--foreground, #000000);
+  margin: 0;
+}
+
+.contact-print-company-tagline {
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--foreground, #000000);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.contact-print-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 48px;
+}
+
+.contact-print-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-print-block-label {
+  font-family: var(--font-display, inherit);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--foreground, #000000);
+  opacity: 0.6;
+  margin: 0;
+}
+
+.contact-print-block-value {
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--foreground, #000000);
+}
+
+.contact-print-block-value p {
+  margin: 0;
+}
+
+.contact-print-note {
+  max-width: 640px;
+  font-size: 12px;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--foreground, #000000);
+  opacity: 0.7;
+  margin: 8px 0 0;
+}
+
+.contact-print-map {
+  position: relative;
+  flex: 0 0 687px;
+  width: 687px;
+  height: 687px;
+  background: var(--surface-elevated, #f5f5f5);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.contact-print-map-image {
+  object-fit: cover;
+}
+
+/* On-screen preview of the /print route — visualise the page boundaries.
+ * Scales each 1920×1358 page down to 60% so they fit a normal browser
+ * window without horizontal scroll. Uses `zoom` (not `transform: scale`)
+ * so the document height shrinks too — otherwise the body keeps its
+ * full un-scaled height and the page scrolls miles past the last page. */
+@media screen {
+  body.print-preview {
+    background: #d4d4d4;
+    padding: 24px 0;
+  }
+  body.print-preview .catalog-print {
+    zoom: 0.6;
+    margin: 0 auto;
+    width: 1920px;
+  }
+  body.print-preview .catalog-print .print-page {
+    margin: 0 auto 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+}

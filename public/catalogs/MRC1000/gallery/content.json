@@ -1,0 +1,26 @@
+{
+  "sectionLabel": "Visual Gallery",
+  "title": "See MRC1000 in every context",
+  "images": [
+    {
+      "image": "10_26_Metro_MCR1000_HERO_0_R1_0000.webp",
+      "alt": "MRC1000 desk system in a modern workspace – scene 0",
+      "category": "Office"
+    },
+    {
+      "image": "10_26_Metro_MCR1000_HERO_1_R1_0000.webp",
+      "alt": "MRC1000 desk system in a modern workspace – scene 1",
+      "category": "Office"
+    },
+    {
+      "image": "10_26_Metro_MCR1000_HERO_3_0000.webp",
+      "alt": "MRC1000 desk system in a modern workspace – scene 3",
+      "category": "Office"
+    },
+    {
+      "image": "MCR1000_detal0006.webp",
+      "alt": "MRC1000 desk close-up – frame and desktop detail",
+      "category": "Detail"
+    }
+  ]
+}

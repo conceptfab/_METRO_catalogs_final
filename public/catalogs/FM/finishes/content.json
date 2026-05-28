@@ -1,0 +1,92 @@
+{
+  "sectionLabel": "Finishes",
+  "title": "Materials & Finishes",
+  "description": "FM is constructed from 25 mm MFC for the desktop and legs, with 2 mm PVC edging for enhanced durability and a clean finish. The connecting modesty panel is made from 18 mm MFC and also finished with 2 mm PVC edging, ensuring a consistent, robust, and well-detailed construction throughout.",
+  "desktopColors": [
+    {
+      "name": "Natural Oak",
+      "code": "#c9a96e",
+      "ral": "Similar to RAL 1001"
+    },
+    {
+      "name": "Walnut Dark",
+      "code": "#5c3a21",
+      "ral": "Similar to RAL 8007"
+    },
+    {
+      "name": "White",
+      "code": "#f2f0ec",
+      "ral": "RAL 9010"
+    },
+    {
+      "name": "Light Grey",
+      "code": "#c8c5be",
+      "ral": "RAL 7035"
+    },
+    {
+      "name": "Anthracite",
+      "code": "#3a3a3c",
+      "ral": "RAL 7016"
+    }
+  ],
+  "frameColors": [
+    {
+      "name": "Black",
+      "code": "#1a1a1a"
+    },
+    {
+      "name": "Silver",
+      "code": "#b0b0b0"
+    },
+    {
+      "name": "White",
+      "code": "#f0f0f0"
+    }
+  ],
+  "sizes": [
+    {
+      "label": "1200 × 600",
+      "desc": "Compact"
+    },
+    {
+      "label": "1400 × 700",
+      "desc": "Standard"
+    },
+    {
+      "label": "1600 × 800",
+      "desc": "Executive"
+    },
+    {
+      "label": "1800 × 800",
+      "desc": "Large"
+    },
+    {
+      "label": "2000 × 900",
+      "desc": ""
+    }
+  ],
+  "comparisonBasicLabel": "FM Basic",
+  "comparisonPremiumLabel": "FM Premium",
+  "comparisonTable": [
+    {
+      "feature": "Height adjustment",
+      "basic": "Manual crank",
+      "premium": "Electric dual motor"
+    },
+    {
+      "feature": "Memory presets",
+      "basic": "—",
+      "premium": "4 positions"
+    },
+    {
+      "feature": "Cable management",
+      "basic": "Basic tray",
+      "premium": "Integrated spine + tray"
+    },
+    {
+      "feature": "Load capacity",
+      "basic": "80 kg",
+      "premium": "120 kg"
+    }
+  ]
+}

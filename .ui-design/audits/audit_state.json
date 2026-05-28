@@ -1,0 +1,20 @@
+{
+  "audit_id": "metro_catalogs_zasady_20260507_115012",
+  "target": "src/app, src/layouts/qx, src/layouts/type2, src/layouts/type3, src/components/catalog, src/lib/icon-map.tsx, src/lib/motion.ts, src/app/globals.css, tailwind.config.ts",
+  "wcag_level": "AA",
+  "wcag_version": "2.1",
+  "basis_document": "docs/zasady.md",
+  "focus_areas": ["all"],
+  "status": "complete",
+  "started_at": "2026-05-07T11:50:12+02:00",
+  "completed_at": "2026-05-07T11:55:00+02:00",
+  "files_audited": 27,
+  "compliance_status": "needs_improvement",
+  "issues_found": {
+    "critical": 5,
+    "serious": 8,
+    "moderate": 9,
+    "minor": 5
+  },
+  "report": ".ui-design/audits/metro_catalogs_zasady_20260507_115012.md"
+}

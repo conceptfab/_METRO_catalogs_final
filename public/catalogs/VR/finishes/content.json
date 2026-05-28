@@ -1,0 +1,92 @@
+{
+  "sectionLabel": "Finishes",
+  "title": "Materials & Finishes",
+  "description": "Top: MFC 25mm, PVC/ABS tape 2mm.\nFrame: Steel profile 45 x 45 mm, powder coated, height adjustment (option) in the range of 64-84 cm, carried by a telescopic solution in the leg, blocking with 2 screws, black plastic foot.",
+  "desktopColors": [
+    {
+      "name": "Natural Oak",
+      "code": "#c9a96e",
+      "ral": "Similar to RAL 1001"
+    },
+    {
+      "name": "Walnut Dark",
+      "code": "#5c3a21",
+      "ral": "Similar to RAL 8007"
+    },
+    {
+      "name": "White",
+      "code": "#f2f0ec",
+      "ral": "RAL 9010"
+    },
+    {
+      "name": "Light Grey",
+      "code": "#c8c5be",
+      "ral": "RAL 7035"
+    },
+    {
+      "name": "Anthracite",
+      "code": "#3a3a3c",
+      "ral": "RAL 7016"
+    }
+  ],
+  "frameColors": [
+    {
+      "name": "Black",
+      "code": "#1a1a1a"
+    },
+    {
+      "name": "Silver",
+      "code": "#b0b0b0"
+    },
+    {
+      "name": "White",
+      "code": "#f0f0f0"
+    }
+  ],
+  "sizes": [
+    {
+      "label": "1200 × 600",
+      "desc": "Compact"
+    },
+    {
+      "label": "1400 × 700",
+      "desc": "Standard"
+    },
+    {
+      "label": "1600 × 800",
+      "desc": "Executive"
+    },
+    {
+      "label": "1800 × 800",
+      "desc": "Large"
+    },
+    {
+      "label": "2000 × 900",
+      "desc": ""
+    }
+  ],
+  "comparisonBasicLabel": "VR Basic",
+  "comparisonPremiumLabel": "VR Premium",
+  "comparisonTable": [
+    {
+      "feature": "Height adjustment",
+      "basic": "Manual crank",
+      "premium": "Electric dual motor"
+    },
+    {
+      "feature": "Memory presets",
+      "basic": "—",
+      "premium": "4 positions"
+    },
+    {
+      "feature": "Cable management",
+      "basic": "Basic tray",
+      "premium": "Integrated spine + tray"
+    },
+    {
+      "feature": "Load capacity",
+      "basic": "80 kg",
+      "premium": "120 kg"
+    }
+  ]
+}

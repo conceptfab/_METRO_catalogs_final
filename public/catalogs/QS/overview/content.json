@@ -1,0 +1,40 @@
+{
+  "sectionLabel": "Collection Overview",
+  "title": "Designed for the way you work today",
+  "paragraphs": [
+    "Contemporary sleigh-frame construction.",
+    "QS is a modern desk system designed for the way people work today. It combines a minimalist form with a solid construction, creating elegant and functional office furniture.",
+    "Its clean lines, visually light frame, and timeless character make QS a natural fit for both individual workstations and larger office layouts. It is a collection that brings order to the workspace and supports comfortable everyday work."
+  ],
+  "packshotImage": "QS-overview0000.webp",
+  "packshotImageAlt": "QS desk system product shot – L-shaped oak desktop with black steel frame on white background",
+  "packshotCaption": "QS — White / Grey",
+  "features": [
+    {
+      "icon": "puzzle",
+      "title": "Modular Design",
+      "desc": "Infinitely configurable to fit any workspace layout"
+    },
+    {
+      "icon": "zap",
+      "title": "Height Adjustable",
+      "desc": "Electric sit-stand mechanism with memory presets"
+    },
+    {
+      "icon": "ruler",
+      "title": "Multiple Sizes",
+      "desc": "From compact 1200mm to executive 2000mm widths"
+    },
+    {
+      "icon": "shield",
+      "title": "10-Year Warranty",
+      "desc": "Built to last with premium materials and craftsmanship"
+    }
+  ],
+  "quickLinkLabels": [
+    "Finishes",
+    "Dimensions",
+    "Materials",
+    "Features"
+  ]
+}

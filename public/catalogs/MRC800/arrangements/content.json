@@ -1,0 +1,10 @@
+{
+  "sectionLabel": "Arrangements",
+  "title": "Sample arrangements",
+  "placeholders": [
+    { "label": "Arrangement 1", "image": "/catalogs/MRC800/arrangements/arr_00.svg" },
+    { "label": "Arrangement 2", "image": "/catalogs/MRC800/arrangements/arr_01.svg" },
+    { "label": "Arrangement 3", "image": "/catalogs/MRC800/arrangements/arr_02.svg" },
+    { "label": "Arrangement 4", "image": "/catalogs/MRC800/arrangements/arr_03.svg" }
+  ]
+}

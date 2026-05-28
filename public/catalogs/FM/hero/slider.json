@@ -1,0 +1,76 @@
+{
+  "settings": {
+    "autoAdvance": true,
+    "interval": 5000,
+    "pauseOnHover": true,
+    "transitionMs": 1800,
+    "showArrows": true,
+    "showDots": true,
+    "initialSlide": 0
+  },
+  "slides": [
+    {
+      "image": "08_26_Metro_FM_HERO_R1A.webp",
+      "alt": "FM desk system in a modern open-space office with people working",
+      "description": "Slide 01: Open-space layout with collaborative desks.",
+      "descriptionStyle": {
+        "enabled": false,
+        "position": "bottom-left",
+        "offsetPx": 56,
+        "textAlign": "left",
+        "maxWidth": "28rem"
+      },
+      "contentLayout": {
+        "anchor": "top-left",
+        "textAlign": "left",
+        "maxWidth": "640px",
+        "paddingTop": "12rem",
+        "paddingBottom": "0",
+        "offsetX": "0",
+        "contentLift": "0",
+        "ctaPosition": "floating",
+        "ctaFloatingBottom": "2rem"
+      }
+    },
+    {
+      "image": "08_26_Metro_FM_HERO_R2.webp",
+      "alt": "FM desk system with matching chairs in a bright workspace",
+      "description": "Slide 02: Focused workstation arrangement with coordinated seating.",
+      "descriptionStyle": {
+        "enabled": false,
+        "position": "bottom-left",
+        "offsetPx": 56,
+        "textAlign": "left",
+        "maxWidth": "28rem"
+      },
+      "contentLayout": {
+        "anchor": "top-center",
+        "textAlign": "left",
+        "maxWidth": "640px",
+        "paddingTop": "10rem",
+        "paddingBottom": "0",
+        "offsetX": "5rem",
+        "contentLift": "0",
+        "ctaPosition": "floating",
+        "ctaFloatingBottom": "2rem"
+      }
+    }
+  ],
+  "descriptionStyle": {
+    "enabled": false,
+    "position": "bottom-center",
+    "offsetPx": 40,
+    "textColor": "#E8EEF5",
+    "backgroundColor": "rgba(0,0,0,0.35)",
+    "backdropBlurPx": 6,
+    "paddingX": 16,
+    "paddingY": 8,
+    "borderRadiusPx": 9999,
+    "fontSizePx": 13,
+    "fontWeight": 500,
+    "letterSpacingEm": 0.04,
+    "maxWidth": "90vw",
+    "textAlign": "center",
+    "uppercase": false
+  }
+}

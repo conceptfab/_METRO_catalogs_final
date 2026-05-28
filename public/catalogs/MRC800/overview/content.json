@@ -1,0 +1,40 @@
+{
+  "sectionLabel": "Collection Overview",
+  "title": "MRC800 — modern elegance and functionality in the reception area.",
+  "paragraphs": [
+    "Its sleek geometry, balanced proportions, and carefully crafted details create an elegant welcome point with a timeless feel.",
+    "The modular construction makes it easy to build configurations perfectly suited to prestigious interiors, combining aesthetics with functionality.",
+    "This is a reception desk that communicates quality and professionalism in a subtle yet unmistakable way."
+  ],
+  "packshotImage": "MRC800_overview_R11.webp",
+  "packshotImageAlt": "MRC800 desk system product shot – L-shaped oak desktop with black steel frame on white background",
+  "packshotCaption": "MRC800 — White / Grey",
+  "features": [
+    {
+      "icon": "puzzle",
+      "title": "Modular Design",
+      "desc": "Infinitely configurable to fit any workspace layout"
+    },
+    {
+      "icon": "zap",
+      "title": "Height Adjustable",
+      "desc": "Electric sit-stand mechanism with memory presets"
+    },
+    {
+      "icon": "ruler",
+      "title": "Multiple Sizes",
+      "desc": "From compact 1200mm to executive 2000mm widths"
+    },
+    {
+      "icon": "shield",
+      "title": "10-Year Warranty",
+      "desc": "Built to last with premium materials and craftsmanship"
+    }
+  ],
+  "quickLinkLabels": [
+    "Finishes",
+    "Dimensions",
+    "Materials",
+    "Features"
+  ]
+}

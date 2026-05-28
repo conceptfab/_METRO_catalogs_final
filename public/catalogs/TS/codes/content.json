@@ -1,0 +1,198 @@
+{
+  "sectionLabel": "Product Codes",
+  "title": "Order references",
+  "description": "Use these unique codes when placing your order or specifying modules for your workspace.",
+  "image": "/catalogs/TS/codes/axo_ts_codes.svg",
+  "legend": "* R – height-adjustable desk models. Other models feature a leveling range of +/- 1cm.",
+  "groups": [
+    {
+      "id": "single-depth-70",
+      "category": "single",
+      "title": "TS single desk (depth 70 cm)",
+      "rows": [
+        {
+          "index": "TS1(R)*",
+          "indexR": "TS1R",
+          "dimensions": "120 × 70 × 74 (64-84)*"
+        },
+        {
+          "index": "TS2(R)*",
+          "indexR": "TS2R",
+          "dimensions": "140 × 70 × 74 (64-84)*"
+        },
+        {
+          "index": "TS3(R)*",
+          "indexR": "TS3R",
+          "dimensions": "160 × 70 × 74 (64-84)*"
+        },
+        {
+          "index": "TS4(R)*",
+          "indexR": "TS4R",
+          "dimensions": "180 × 70 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "single-depth-80",
+      "category": "single",
+      "title": "TS single desk (depth 80 cm)",
+      "rows": [
+        {
+          "index": "TS180/TS1R80*",
+          "indexR": "TS1R80",
+          "dimensions": "120 × 80 × 74 (64-84)*"
+        },
+        {
+          "index": "TS280/TS2R80*",
+          "indexR": "TS2R80",
+          "dimensions": "140 × 80 × 74 (64-84)*"
+        },
+        {
+          "index": "TS380/TS3R80*",
+          "indexR": "TS3R80",
+          "dimensions": "160 × 80 × 74 (64-84)*"
+        },
+        {
+          "index": "TS480/TS4R80*",
+          "indexR": "TS4R80",
+          "dimensions": "180 × 80 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "single-extension-depth-70",
+      "category": "single",
+      "title": "Extension for TS single desk (depth 70 cm)",
+      "rows": [
+        {
+          "index": "TS1D(R)*",
+          "indexR": "TS1RD",
+          "dimensions": "66.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "TS2D(R)*",
+          "indexR": "TS2RD",
+          "dimensions": "86.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "TS3D(R)*",
+          "indexR": "TS3RD",
+          "dimensions": "106.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "TS4D(R)*",
+          "indexR": "TS4RD",
+          "dimensions": "126.5 × 50 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "single-extension-depth-80",
+      "category": "single",
+      "title": "Extension for TS single desk (depth 80 cm)",
+      "rows": [
+        {
+          "index": "TS1D80/TS1DR80*",
+          "indexR": "TS1RD80",
+          "dimensions": "66.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "TS2D80/TS2DR80*",
+          "indexR": "TS2RD80",
+          "dimensions": "86.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "TS3D80/TS3DR80*",
+          "indexR": "TS3RD80",
+          "dimensions": "106.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "TS4D80/TS4DR80*",
+          "indexR": "TS4RD80",
+          "dimensions": "126.5 × 50 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "single-electric-3seg",
+      "category": "single",
+      "title": "TS Single desk with electric height adjustment (3-segment column, 2 motors, memory)",
+      "rows": [
+        {
+          "index": "TS1EM",
+          "indexR": "",
+          "dimensions": "120 × 80 × 62-127"
+        },
+        {
+          "index": "TS2EM",
+          "indexR": "",
+          "dimensions": "140 × 80 × 62-127"
+        },
+        {
+          "index": "TS3EM",
+          "indexR": "",
+          "dimensions": "160 × 80 × 62-127"
+        },
+        {
+          "index": "TS4EM",
+          "indexR": "",
+          "dimensions": "180 × 80 × 62-127"
+        }
+      ]
+    },
+    {
+      "id": "single-electric-2seg",
+      "category": "single",
+      "title": "TS Single desk with electric height adjustment (2-segment column, 1 motor, memory)",
+      "rows": [
+        {
+          "index": "TS5EM",
+          "indexR": "",
+          "dimensions": "120 × 80 × 69-115"
+        },
+        {
+          "index": "TS6EM",
+          "indexR": "",
+          "dimensions": "140 × 80 × 69-115"
+        },
+        {
+          "index": "TS7EM",
+          "indexR": "",
+          "dimensions": "160 × 80 × 69-115"
+        },
+        {
+          "index": "TS8EM",
+          "indexR": "",
+          "dimensions": "180 × 80 × 69-115"
+        }
+      ]
+    },
+    {
+      "id": "single-manual-crank",
+      "category": "single",
+      "title": "TS single desk with manual adjustment by a crank",
+      "rows": [
+        {
+          "index": "TS10M",
+          "indexR": "",
+          "dimensions": "120 × 80 × 68-113"
+        },
+        {
+          "index": "TS11M",
+          "indexR": "",
+          "dimensions": "140 × 80 × 68-113"
+        },
+        {
+          "index": "TS12M",
+          "indexR": "",
+          "dimensions": "160 × 80 × 68-113"
+        },
+        {
+          "index": "TS13M",
+          "indexR": "",
+          "dimensions": "180 × 80 × 68-113"
+        }
+      ]
+    }
+  ]
+}

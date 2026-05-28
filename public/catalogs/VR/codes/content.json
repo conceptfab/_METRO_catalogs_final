@@ -1,0 +1,225 @@
+{
+  "sectionLabel": "Product Codes",
+  "title": "Order references",
+  "description": "Use these unique codes when placing your order or specifying modules for your workspace.",
+  "image": "/catalogs/VR/codes/axo_vr_codes.svg",
+  "legend": "* SW – height-adjustable desk models. Other models feature a leveling range of +/- 1cm.",
+  "groups": [
+    {
+      "id": "single-depth-70",
+      "category": "single",
+      "title": "VR single desk (depth 70 cm)",
+      "rows": [
+        {
+          "index": "V1(SW)*",
+          "indexR": "V1R",
+          "dimensions": "120 × 70 × 74 (64-84)*"
+        },
+        {
+          "index": "V2(SW)*",
+          "indexR": "V2R",
+          "dimensions": "140 × 70 × 74 (64-84)*"
+        },
+        {
+          "index": "V3(SW)*",
+          "indexR": "V3R",
+          "dimensions": "160 × 70 × 74 (64-84)*"
+        },
+        {
+          "index": "V4(SW)*",
+          "indexR": "V4R",
+          "dimensions": "180 × 70 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "single-depth-80",
+      "category": "single",
+      "title": "VR single desk (depth 80 cm)",
+      "rows": [
+        {
+          "index": "V180/V1SW80*",
+          "indexR": "V1R80",
+          "dimensions": "120 × 80 × 74 (64-84)*"
+        },
+        {
+          "index": "V280/V2SW80*",
+          "indexR": "V2R80",
+          "dimensions": "140 × 80 × 74 (64-84)*"
+        },
+        {
+          "index": "V380/V3SW80*",
+          "indexR": "V3R80",
+          "dimensions": "160 × 80 × 74 (64-84)*"
+        },
+        {
+          "index": "V480/V4SW80*",
+          "indexR": "V4R80",
+          "dimensions": "180 × 80 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "single-extension-depth-70",
+      "category": "single",
+      "title": "Extension for VR single desk (depth 70 cm)",
+      "rows": [
+        {
+          "index": "V1D(SW)*",
+          "indexR": "V1RD",
+          "dimensions": "66.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "V2D(SW)*",
+          "indexR": "V2RD",
+          "dimensions": "86.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "V3D(SW)*",
+          "indexR": "V3RD",
+          "dimensions": "106.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "V4D(SW)*",
+          "indexR": "V4RD",
+          "dimensions": "126.5 × 50 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "single-extension-depth-80",
+      "category": "single",
+      "title": "Extension for VR single desk (depth 80 cm)",
+      "rows": [
+        {
+          "index": "V1D80/V1DSW80*",
+          "indexR": "V1RD80",
+          "dimensions": "66.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "V2D80/V2DSW80*",
+          "indexR": "V2RD80",
+          "dimensions": "86.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "V3D80/V3DSW80*",
+          "indexR": "V3RD80",
+          "dimensions": "106.5 × 50 × 74 (64-84)*"
+        },
+        {
+          "index": "V4D80/V4DSW80*",
+          "indexR": "V4RD80",
+          "dimensions": "126.5 × 50 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "bench-depth-140",
+      "category": "bench",
+      "title": "VR bench double desk (depth 140 cm)",
+      "rows": [
+        {
+          "index": "V50(SW)*",
+          "indexR": "V10R",
+          "dimensions": "120 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "V51(SW)*",
+          "indexR": "V11R",
+          "dimensions": "140 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "V52(SW)*",
+          "indexR": "V12R",
+          "dimensions": "160 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "V53(SW)*",
+          "indexR": "V13R",
+          "dimensions": "180 × 140 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "bench-depth-160",
+      "category": "bench",
+      "title": "VR bench double desk (depth 160 cm)",
+      "rows": [
+        {
+          "index": "V5080/V55SW80*",
+          "indexR": "V1080R",
+          "dimensions": "120 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "V5180/V56SW80*",
+          "indexR": "V1180R",
+          "dimensions": "140 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "V5280/V57SW80*",
+          "indexR": "V1280R",
+          "dimensions": "160 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "V5380/V58SW80*",
+          "indexR": "V1380R",
+          "dimensions": "180 × 160 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "bench-flaps-depth-140",
+      "category": "bench",
+      "title": "VR bench double desk with access to the cable canal through the flaps (depth 140 cm)",
+      "rows": [
+        {
+          "index": "V55(SW)*",
+          "indexR": "V15R",
+          "dimensions": "120 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "V56(SW)*",
+          "indexR": "V16R",
+          "dimensions": "140 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "V57(SW)*",
+          "indexR": "V17R",
+          "dimensions": "160 × 140 × 74 (64-84)*"
+        },
+        {
+          "index": "V58(SW)*",
+          "indexR": "V18R",
+          "dimensions": "180 × 140 × 74 (64-84)*"
+        }
+      ]
+    },
+    {
+      "id": "bench-flaps-depth-160",
+      "category": "bench",
+      "title": "VR bench double desk with access to the cable canal through the flaps (depth 160 cm)",
+      "rows": [
+        {
+          "index": "V5580/V55SW80*",
+          "indexR": "V1580R",
+          "dimensions": "120 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "V5680/V56SW80*",
+          "indexR": "V1680R",
+          "dimensions": "140 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "V5780/V57SW808",
+          "indexR": "V1780R",
+          "dimensions": "160 × 160 × 74 (64-84)*"
+        },
+        {
+          "index": "V5880/v58SW80*",
+          "indexR": "V1880R",
+          "dimensions": "180 × 160 × 74 (64-84)*"
+        }
+      ]
+    }
+  ]
+}

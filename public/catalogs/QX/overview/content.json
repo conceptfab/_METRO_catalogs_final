@@ -1,0 +1,42 @@
+{
+  "sectionLabel": "Collection Overview",
+  "title": "Designed for the way you work today",
+  "paragraphs": [
+    "Bridge-frame construction with a shadow gap for a lighter, more refined visual effect.",
+    "QX represents Metro's advanced desk system, combining clean, contemporary design with careful attention to detail. Each desk is crafted from sustainably sourced materials and built to meet European office furniture standards.",
+    "Whether configuring a single workstation or an entire open-plan office, QX adapts seamlessly with its modular frame system, integrated cable management, and extensive range of accessories. Together with the dedicated ORGANIZER accessory system, it offers virtually unlimited arrangement possibilities.",
+    "Perfection lies in the details.",
+    "Our frames are manufactured with the highest precision — visible welds are eliminated in exposed areas, ensuring the structure retains its perfect geometry without distortions caused by the welding process, especially along the profile edges. This results in a clean form, impeccable aesthetics, and exceptional durability."
+  ],
+  "packshotImage": "02_26_Metro_QX_SOLO_D_0000.webp",
+  "packshotImageAlt": "QX desk system product shot – L-shaped oak desktop with black steel frame on white background",
+  "packshotCaption": "QX — White / Grey",
+  "features": [
+    {
+      "icon": "puzzle",
+      "title": "Modular Design",
+      "desc": "Infinitely configurable to fit any workspace layout"
+    },
+    {
+      "icon": "zap",
+      "title": "Height Adjustable",
+      "desc": "Electric sit-stand mechanism with memory presets"
+    },
+    {
+      "icon": "ruler",
+      "title": "Multiple Sizes",
+      "desc": "From compact 1200mm to executive 2000mm widths"
+    },
+    {
+      "icon": "shield",
+      "title": "10-Year Warranty",
+      "desc": "Built to last with premium materials and craftsmanship"
+    }
+  ],
+  "quickLinkLabels": [
+    "Finishes",
+    "Dimensions",
+    "Materials",
+    "Features"
+  ]
+}

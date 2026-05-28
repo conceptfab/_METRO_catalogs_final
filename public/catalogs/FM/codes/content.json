@@ -1,0 +1,127 @@
+{
+  "sectionLabel": "Product Codes",
+  "title": "Order references",
+  "description": "Use these unique codes when placing your order or specifying modules for your workspace.",
+  "image": "/catalogs/FM/codes/axo_fm_codes.svg",
+  "gridColumns": 2,
+  "groups": [
+    {
+      "id": "single-depth-70",
+      "category": "single",
+      "title": "FM single desk (depth 70 cm)",
+      "rows": [
+        {
+          "index": "FM1",
+          "indexR": "FM1R",
+          "dimensions": "100 × 70 × 74"
+        },
+        {
+          "index": "FM2",
+          "indexR": "FM2R",
+          "dimensions": "120 × 70 × 74"
+        },
+        {
+          "index": "FM3",
+          "indexR": "FM3R",
+          "dimensions": "140 × 70 × 74"
+        },
+        {
+          "index": "FM4",
+          "indexR": "FM4R",
+          "dimensions": "160 × 70 × 74"
+        },
+           {
+          "index": "FM5",
+          "indexR": "FM4R",
+          "dimensions": "180 × 70 × 74"
+        }
+      ]
+    },
+    {
+      "id": "single-depth-80",
+      "category": "single",
+      "title": "FM single desk (depth 80 cm)",
+      "rows": [
+        {
+          "index": "FM180",
+          "indexR": "FM1R80",
+          "dimensions": "100 × 80 × 74"
+        },
+        {
+          "index": "FM280",
+          "indexR": "FM2R80",
+          "dimensions": "120 × 80 × 74"
+        },
+        {
+          "index": "FM380",
+          "indexR": "FM3R80",
+          "dimensions": "140 × 80 × 74"
+        },
+        {
+          "index": "FM480",
+          "indexR": "FM4R80",
+          "dimensions": "160 × 80 × 74"
+        },
+          {
+          "index": "FM580",
+          "indexR": "FM4R80",
+          "dimensions": "180 × 80 × 74"
+        }
+      ]
+    },
+    {
+      "id": "single-extension-depth-70",
+      "category": "single",
+      "title": "Extension for FM single desk (depth 70 cm)",
+      "rows": [
+        {
+          "index": "FM1D",
+          "indexR": "FM1RD",
+          "dimensions": "66.5 × 50 × 74"
+        },
+        {
+          "index": "FM2D",
+          "indexR": "FM2RD",
+          "dimensions": "86.5 × 50 × 74"
+        },
+        {
+          "index": "FM3D",
+          "indexR": "FM3RD",
+          "dimensions": "106.5 × 50 × 74"
+        },
+        {
+          "index": "FM4D",
+          "indexR": "FM4RD",
+          "dimensions": "126.5 × 50 × 74"
+        }
+      ]
+    },
+    {
+      "id": "single-extension-depth-80",
+      "category": "single",
+      "title": "Extension for FM single desk (depth 80 cm)",
+      "rows": [
+        {
+          "index": "FM1D80",
+          "indexR": "FM1RD80",
+          "dimensions": "66.5 × 50 × 74"
+        },
+        {
+          "index": "FM2D80",
+          "indexR": "FM2RD80",
+          "dimensions": "86.5 × 50 × 74"
+        },
+        {
+          "index": "FM3D80",
+          "indexR": "FM3RD80",
+          "dimensions": "106.5 × 50 × 74"
+        },
+        {
+          "index": "FM4D80",
+          "indexR": "FM4RD80",
+          "dimensions": "126.5 × 50 × 74"
+        }
+      ]
+    }
+  ]
+}

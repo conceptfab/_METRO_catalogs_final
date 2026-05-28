@@ -1,0 +1,39 @@
+{
+  "sectionLabel": "Technical Data",
+  "title": "Dimensions & specifications",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat tempor odio rutrum varius. Mauris non ornare turpis, in dignissim augue. Etiam quam purus, ullamcorper sit amet porttitor eget, tempus ac lacus. Praesent eget commodo dolor, sit amet rutrum tellus. Vivamus ultrices posuere tellus id viverra. Donec a mauris vitae tortor tempor sodales.",
+  "image": "/catalogs/FOTA/dimensions/axo_FOTA.svg",
+  "specs": [
+    {
+      "label": "Width",
+      "value": "120 – 180 cm"
+    },
+    {
+      "label": "Depth",
+      "value": "70 – 80 cm"
+    },
+    {
+      "label": "Height",
+      "value": "74 cm"
+    },
+    {
+      "label": "Weight (frame)",
+      "value": "28 – 42 kg"
+    },
+    {
+      "label": "Desktop thickness",
+      "value": "25 mm"
+    }
+  ],
+  "certifications": [
+    "EN 527-1:2011 Office furniture — Work tables",
+    "EN 527-2:2016 Safety requirements",
+    "GS Mark (Geprüfte Sicherheit)",
+    "ISO 14001 Environmental Management"
+  ],
+  "dimensionDiagram": {
+    "width": "1600 mm",
+    "depth": "800 mm",
+    "heightRange": "650–1300 mm"
+  }
+}
