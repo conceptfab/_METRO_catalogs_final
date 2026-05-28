@@ -217,7 +217,7 @@ function useHeroMRC800ViewModel(data: HeroData) {
   useEffect(() => {
     goPrevRef.current = goPrev;
     goNextRef.current = goNext;
-  }, [goPrev, goNext]);
+  });
 
   useEffect(() => {
     if (
