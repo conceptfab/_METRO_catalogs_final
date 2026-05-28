@@ -237,10 +237,11 @@
         <li><a href="#uniwersalne-projektowanie">Uniwersalne projektowanie i WCAG&nbsp;2.1&nbsp;AA</a></li>
         <li><a href="#design-system">Autorski design&nbsp;system</a></li>
         <li><a href="#pdf-pipeline">Autorski system konwersji strony na PDF</a></li>
+        <li><a href="#ponad-standard">Funkcje ponad wymagany standard</a></li>
         <li><a href="#harmonogram">Harmonogram prac (5 etapów)</a></li>
         <li><a href="#wskazniki">Wskaźniki realizacji</a></li>
         <li><a href="#oswiadczenie">Oświadczenie końcowe</a></li>
-        <li><a href="#zalaczniki">Powołane dokumenty</a></li>
+        <li><a href="#zalaczniki">Dokumenty projektu</a></li>
       </ol>
     </nav>
   </aside>
@@ -254,7 +255,7 @@
       <div class="meta-grid">
         <div><strong>Data dokumentu</strong>29 maja 2026 r.</div>
         <div><strong>Okres realizacji</strong>1.01.2026 – 31.05.2026</div>
-        <div><strong>Wykonawca</strong>Michał Kleniewski</div>
+        <div><strong>Wykonawca</strong>CONCEPTFAB Michał Kleniewski</div>
         <div><strong>Repozytorium</strong><code>__METRO_catalogs</code>, branch <code>main</code></div>
         <div><strong>Wdrożenie produkcyjne</strong>Vercel · projekt <code>metro-catalogs</code></div>
         <div><strong>Dokument odniesienia</strong>Załącznik nr 2 do zapytania ofertowego</div>
@@ -642,6 +643,12 @@
           </tr>
         </tbody>
       </table>
+
+      <h3>5.3 Źródłowe pliki graficzne i platforma udostępniania</h3>
+      <div class="callout info">
+        <strong class="label">Dodatkowy zakres przekazania</strong>
+        <p>Do projektu zostanie dołączony <strong>komplet plików graficznych wykonanych w&nbsp;trakcie jego realizacji</strong> (m.in. rendery produktowe, packshoty, aranżacje oraz materiały robocze). W&nbsp;trakcie realizacji pliki te były na bieżąco <strong>udostępniane Zamawiającemu</strong> na specjalnie utworzonej na potrzeby projektu platformie internetowej pod adresem <a href="https://app.conceptfab.com">app.conceptfab.com</a>.</p>
+      </div>
     </section>
 
     <!-- 6. Zakres informacji o produkcie -->
@@ -728,7 +735,7 @@
 
       <p>Wymóg uniwersalnego projektowania (Załącznik nr 2 + art. 2 pkt 4 Ustawy z dnia 19 lipca 2019 r.) został zrealizowany w pełnej zgodności z <strong>WCAG 2.1 na poziomie AA</strong>. Dowód zgodności opisany jest w&nbsp;dokumencie <em>raport-dostepnosci-final-2026-05-29.md</em>.</p>
 
-      <h3>8.1 Spełnienie 10 zasad uniwersalnego projektowania</h3>
+      <h3>7.1 Spełnienie 10 zasad uniwersalnego projektowania</h3>
 
       <table>
         <thead>
@@ -803,7 +810,7 @@
         </tbody>
       </table>
 
-      <h3>8.2 Mapa kryteriów WCAG 2.1 AA</h3>
+      <h3>7.2 Mapa kryteriów WCAG 2.1 AA</h3>
 
       <table>
         <thead>
@@ -835,7 +842,7 @@
         </tbody>
       </table>
 
-      <h3>8.3 Weryfikacja automatyczna (stan 2026-05-29)</h3>
+      <h3>7.3 Weryfikacja automatyczna (stan 2026-05-29)</h3>
 
       <div class="stats">
         <div class="stat">
@@ -876,7 +883,7 @@
         Design system jest <strong>infrastrukturą wielokrotnego użytku</strong>: kolejne kolekcje meblowe można dołączać bez ponownego projektowania interfejsu. Każdy nowy katalog dziedziczy zgodność z WCAG 2.1 AA, wzorce nawigacji, tokeny kolorystyczne i komponenty interaktywne. Obniża to koszt utrzymania, gwarantuje spójność marki i zapewnia trwałość zgodności z wymogami dostępności.
       </div>
 
-      <h3>9.1 Warstwy design systemu</h3>
+      <h3>8.1 Warstwy design systemu</h3>
 
       <table>
         <thead>
@@ -930,7 +937,7 @@
         </tbody>
       </table>
 
-      <h3>9.2 Strona <code>/design-system</code> — żywa dokumentacja systemu <span class="badge plus">PONAD WYMAGANY STANDARD</span></h3>
+      <h3>8.2 Strona <code>/design-system</code> — żywa dokumentacja systemu <span class="badge plus">PONAD WYMAGANY STANDARD</span></h3>
 
       <p>Pełna dokumentacja design systemu udostępniona jest pod adresem <code>/design-system</code> w aplikacji produkcyjnej. Strona zawiera następujące sekcje:</p>
 
@@ -958,7 +965,7 @@
         </tbody>
       </table>
 
-      <h3>9.3 Bezpośredni wpływ design systemu na zgodność z Załącznikiem nr 2</h3>
+      <h3>8.3 Bezpośredni wpływ design systemu na zgodność z Załącznikiem nr 2</h3>
 
       <table>
         <thead>
@@ -1000,7 +1007,7 @@
         Pliki PDF stanowią <strong>dostępną alternatywę offline</strong> dla katalogu online — wymaganą przez Załącznik nr 2 oraz przez zasady uniwersalnego projektowania. System został zaprojektowany tak, by PDF-y były <strong>renderowane bezpośrednio z tych samych danych źródłowych co wersja online</strong> — eliminuje to ryzyko dryftu między dwoma kanałami dystrybucji i&nbsp;zapewnia, że każda aktualizacja produktu automatycznie propaguje się do obu wersji.
       </div>
 
-      <h3>10.1 Architektura systemu</h3>
+      <h3>9.1 Architektura systemu</h3>
 
       <table>
         <thead>
@@ -1054,7 +1061,7 @@
         </tbody>
       </table>
 
-      <h3>10.2 Pipeline generowania PDF</h3>
+      <h3>9.2 Pipeline generowania PDF</h3>
 
       <table>
         <thead>
@@ -1093,7 +1100,7 @@
         </tbody>
       </table>
 
-      <h3>10.3 Stos technologiczny</h3>
+      <h3>9.3 Stos technologiczny</h3>
 
       <table>
         <thead>
@@ -1122,7 +1129,7 @@
         </tbody>
       </table>
 
-      <h3>10.4 Komponenty print per rodzina layoutowa</h3>
+      <h3>9.4 Komponenty print per rodzina layoutowa</h3>
 
       <table>
         <thead>
@@ -1156,7 +1163,7 @@
         </tbody>
       </table>
 
-      <h3>10.5 Dlaczego rozwiązanie autorskie, a nie biblioteka „off the shelf"</h3>
+      <h3>9.5 Dlaczego rozwiązanie autorskie, a nie biblioteka „off the shelf"</h3>
 
       <ul>
         <li><strong>Jakość typograficzna</strong> — biblioteki konwersji „HTML to PDF" zazwyczaj produkują surowy zrzut DOM; nasze print components są projektowane pod format A4 z kontrolą podziałów stron, marginesów i hierarchii typograficznej.</li>
@@ -1172,7 +1179,7 @@
         Zbudowano <strong>autorski, trzystopniowy pipeline konwersji każdej strony katalogowej na zoptymalizowany plik PDF</strong>: 28 dedykowanych print components, własna warstwa CSS print, integracja Puppeteer + @sparticuz/chromium, automatyczna weryfikacja jakości. <strong>8 / 8 katalogów</strong> ma dostarczone PDF-y w <code>public/catalogs/&lt;ID&gt;/Download/</code> jako dostępną alternatywę offline wymaganą przez Załącznik nr 2.
       </div>
 
-      <h3>10.6 Dane strukturalne i metadane SEO <span class="badge plus">PONAD WYMAGANY STANDARD</span></h3>
+      <h3>9.6 Dane strukturalne i metadane SEO <span class="badge plus">PONAD WYMAGANY STANDARD</span></h3>
       <div class="callout plus">
         <strong class="label">Zakres dostarczony ponad wymagany standard.</strong>
         <p>Załącznik nr 2 nie definiuje wymagań w&nbsp;zakresie danych strukturalnych (schema.org / JSON-LD) ani rozszerzonych metadanych Open Graph / Twitter Card. Powyższe elementy zostały dostarczone dodatkowo, w&nbsp;celu zwiększenia widoczności katalogów w&nbsp;wyszukiwarkach i&nbsp;kwalifikowalności do wzbogaconych wyników wyszukiwania.</p>
@@ -1192,9 +1199,147 @@
       </ul>
     </section>
 
-    <!-- 10. Harmonogram -->
+    <!-- 10. Funkcje ponad wymagany standard -->
+    <section id="ponad-standard">
+      <h2>10. Funkcje dostarczone ponad wymagany standard <span class="badge plus">PONAD WYMAGANY STANDARD</span> <a href="#ponad-standard" class="anchor">#</a></h2>
+
+      <div class="callout plus">
+        <strong class="label">Zakres dostarczony ponad wymagania Załącznika nr 2.</strong>
+        <p>Wszystkie elementy opisane w&nbsp;tej sekcji <strong>wykraczają poza zakres wymagany</strong> przez Załącznik nr&nbsp;2 do zapytania ofertowego. Zostały zaprojektowane i&nbsp;zrealizowane z&nbsp;własnej inicjatywy Wykonawcy i&nbsp;<strong>znacząco podnoszą wartość użytkową, techniczną i&nbsp;rynkową dostarczonego rozwiązania</strong> — w&nbsp;obszarach interoperacyjności z&nbsp;systemami zewnętrznymi, wydajności (Core Web Vitals), dostępności na urządzeniach mobilnych oraz powtarzalności i&nbsp;audytowalności procesu wytwórczego. Każdy element jest <strong>weryfikowalny</strong> w&nbsp;repozytorium produkcyjnym oraz w&nbsp;działającym wdrożeniu na Vercel.</p>
+      </div>
+
+      <h3>10.1 Maszynowo-odczytywalny interfejs katalogu (interoperacyjność z systemami i agentami AI)</h3>
+      <p>Katalog udostępnia — obok interfejsu dla człowieka — komplet <strong>otwartych, standaryzowanych interfejsów maszynowych</strong>, dzięki którym opublikowane dane katalogowe mogą być w&nbsp;sposób kontrolowany odczytywane przez systemy zewnętrzne oraz asystentów AI. Wszystkie interfejsy są <strong>wyłącznie do odczytu</strong> i&nbsp;nie udostępniają żadnych danych wrażliwych.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Interfejs</th>
+            <th>Standard / protokół</th>
+            <th>Lokalizacja</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Serwer MCP</strong> (Model Context Protocol)</td>
+            <td>JSON-RPC 2.0, protokół MCP <code>2025-06-18</code> (zasoby / narzędzia / prompty)</td>
+            <td><code>/mcp</code> → <code>src/app/mcp/route.ts</code></td>
+          </tr>
+          <tr>
+            <td><strong>Karta agenta</strong> (Agent-to-Agent)</td>
+            <td>A2A, <code>protocolVersion 1.0</code></td>
+            <td><code>/.well-known/agent-card.json</code></td>
+          </tr>
+          <tr>
+            <td><strong>Karta serwera MCP</strong></td>
+            <td>MCP server-card</td>
+            <td><code>/.well-known/mcp/server-card.json</code></td>
+          </tr>
+          <tr>
+            <td><strong>Deskryptory umiejętności agenta</strong></td>
+            <td>agent-skills (<code>SKILL.md</code>)</td>
+            <td><code>/.well-known/agent-skills/metro-catalog-discovery/</code>, <code>/.well-known/agent-skills/dns-aid/</code></td>
+          </tr>
+          <tr>
+            <td><strong>Serwer autoryzacji OAuth 2.0</strong></td>
+            <td>OAuth 2.0 + OpenID Connect Discovery</td>
+            <td><code>/oauth/{authorize,token,revoke,register}</code>, <code>/oauth/jwks.json</code>, <code>/.well-known/openid-configuration</code>, <code>/.well-known/oauth-authorization-server</code>, <code>/.well-known/oauth-protected-resource</code></td>
+          </tr>
+          <tr>
+            <td><strong>Katalog API</strong> (linkset)</td>
+            <td>RFC 9727 (<code>application/linkset+json</code>)</td>
+            <td><code>/.well-known/api-catalog</code> + nagłówek <code>Link</code> na stronie głównej (<code>next.config.ts</code>)</td>
+          </tr>
+          <tr>
+            <td><strong>Reprezentacja Markdown dla agentów</strong></td>
+            <td><code>text/markdown</code></td>
+            <td><code>/agent-markdown</code> → <code>src/app/agent-markdown/route.ts</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout info">
+        <strong class="label">Dlaczego to istotne dla Zamawiającego</strong>
+        Warstwa maszynowa to <strong>gotowość do integracji</strong>: katalog może zostać automatycznie odpytany przez nową stronę WWW METRO, systemy partnerów handlowych oraz asystentów AI bez dodatkowych prac. Oparcie na otwartych standardach (MCP, A2A, OAuth&nbsp;2.0, RFC&nbsp;9727) zabezpiecza inwestycję przed uzależnieniem od jednego dostawcy. Interfejsy są wyłącznie do odczytu i&nbsp;publikują jedynie dane już dostępne publicznie — bez ekspozycji danych wrażliwych.
+      </div>
+
+      <h3>10.2 Inżynieria wydajności i Core Web Vitals</h3>
+      <p>Aplikacja została zoptymalizowana pod kątem szybkości ładowania i&nbsp;metryk Core Web Vitals — co przekłada się bezpośrednio na komfort użytkownika oraz pozycjonowanie w&nbsp;wyszukiwarkach.</p>
+      <ul>
+        <li><strong>Optymalizacja LCP:</strong> serwerowe preładowanie obrazu hero (<code>ReactDOM.preload</code> w&nbsp;<code>src/app/catalog/[catalogId]/page.tsx</code>) oraz atrybuty <code>fetchPriority="high"</code> i&nbsp;<code>decoding="async"</code> na obrazie tytułowym (<code>src/layouts/qx/HeroQX.tsx</code> i&nbsp;analogiczne dla MRC800 / MRC1000).</li>
+        <li><strong>Pipeline obrazów responsywnych:</strong> autorski loader <code>next/image</code> (<code>src/lib/image-loader.ts</code>, <code>src/lib/responsive-image.ts</code>) z&nbsp;pregenerowanymi wariantami WebP (480w / 960w / 1440w / oryginał), budowanymi poleceniem <code>npm run images</code>.</li>
+        <li><strong>Pipeline wideo:</strong> animacje funkcji w&nbsp;formacie MP4 z&nbsp;posterem <code>_last.webp</code> (ostatnia klatka) jako fallback; optymalizacja <code>scripts/optimize-videos.mjs</code>.</li>
+        <li><strong>React Compiler:</strong> włączona automatyczna memoizacja komponentów (<code>experimental.reactCompiler</code> w&nbsp;<code>next.config.ts</code>).</li>
+        <li><strong>Mniejsze bundle:</strong> <code>optimizePackageImports</code> dla <code>lucide-react</code> i&nbsp;<code>framer-motion</code>.</li>
+        <li><strong>Leniwe renderowanie poniżej linii zgięcia:</strong> <code>content-visibility: auto</code> dla sekcji katalogu (<code>src/app/globals.css</code>).</li>
+        <li><strong>Monitoring rzeczywistych użytkowników (RUM):</strong> <code>@vercel/speed-insights</code> oraz <code>@vercel/analytics</code> podpięte w&nbsp;<code>src/app/layout.tsx</code>.</li>
+      </ul>
+
+      <h3>10.3 Aplikacja instalowalna (PWA)</h3>
+      <p>Katalog jest <strong>instalowalny</strong> na ekranie głównym urządzeń mobilnych i&nbsp;na pulpicie (tryb <code>standalone</code>, doświadczenie zbliżone do aplikacji natywnej).</p>
+      <ul>
+        <li><strong>Web App Manifest:</strong> <code>public/site.webmanifest</code> (pola <code>id</code>, <code>name</code>, <code>short_name</code>, <code>start_url</code>, <code>scope</code>, <code>display: standalone</code>, kolory motywu) podpięty w&nbsp;<code>src/app/layout.tsx</code>.</li>
+        <li><strong>Ikony maskowalne:</strong> warianty 192&nbsp;px i&nbsp;512&nbsp;px z&nbsp;<code>purpose: "any maskable"</code> — poprawny kształt ikony na Androidzie.</li>
+        <li><strong>Funkcja „dodaj do ekranu głównego"</strong> dostępna w&nbsp;przeglądarkach mobilnych i&nbsp;desktopowych.</li>
+      </ul>
+      <div class="callout info">
+        <strong class="label">Świadoma decyzja projektowa</strong>
+        Zrealizowano instalowalność <strong>bez warstwy offline (service worker)</strong>. Jest to decyzja celowa: katalog bywa aktualizowany, a&nbsp;brak własnego cache eliminuje ryzyko serwowania nieaktualnych treści; szybkość ponownego ładowania zapewnia warstwa Edge Cache / CDN platformy Vercel.
+      </div>
+
+      <h3>10.4 Automatyzacja kontroli jakości i powtarzalne pipeline'y wytwórcze</h3>
+      <p>Proces wytwórczy jest <strong>zautomatyzowany i&nbsp;audytowalny</strong> — assety i&nbsp;artefakty są generowane oraz weryfikowane skryptami, a&nbsp;nie ręcznie.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Kontrola / pipeline</th>
+            <th>Polecenie</th>
+            <th>Skrypt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Audyt kompletności assetów katalogów</td>
+            <td><code>npm run audit</code> / <code>audit:check</code></td>
+            <td><code>scripts/catalog-assets.mjs</code></td>
+          </tr>
+          <tr>
+            <td>Wymuszenie formatu WebP (brak rasteryzacji innej niż WebP)</td>
+            <td><code>npm run assets:check</code></td>
+            <td><code>scripts/check-no-rasterized-non-webp.mjs</code></td>
+          </tr>
+          <tr>
+            <td>Kontrola kompletności packshotów</td>
+            <td><code>npm run packshots:check</code></td>
+            <td><code>scripts/check-packshots.mjs</code></td>
+          </tr>
+          <tr>
+            <td>Weryfikacja wygenerowanych PDF-ów</td>
+            <td><code>npm run pdfs:verify</code></td>
+            <td><code>scripts/verify-catalog-pdfs.mjs</code></td>
+          </tr>
+          <tr>
+            <td>Generowanie wariantów obrazów / miniatur / optymalizacja wideo</td>
+            <td><code>npm run images</code>, <code>thumbnails</code>, <code>optimize:videos</code></td>
+            <td>powtarzalne, idempotentne (flaga <code>--force</code>)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Dodatkowo: <strong>95 testów jednostkowych a11y</strong> (vitest + jest-axe), <code>tsc&nbsp;--noEmit</code> = 0&nbsp;błędów, wykrywanie martwego kodu narzędziem <strong>knip</strong> (<code>knip.json</code>) oraz lint ESLint.</p>
+
+      <h3>10.5 Atuty architektoniczne (treść rozdzielona od kodu, walidacja, CI/CD)</h3>
+      <ul>
+        <li><strong>Treść rozdzielona od kodu:</strong> każdy katalog opisany jest plikami JSON (<code>content.json</code> / <code>config.json</code>) w&nbsp;<code>public/catalogs/&lt;ID&gt;/</code> — jedna aplikacja obsługuje trzy rodziny layoutowe (qx, mrc800, mrc1000).</li>
+        <li><strong>Walidacja schematami Zod:</strong> dane wejściowe katalogów są walidowane (<code>src/lib/schemas/hero.ts</code>, <code>src/lib/schemas/packshots.ts</code> + testy <code>schemas.test.ts</code>).</li>
+        <li><strong>Pojedyncze źródło prawdy:</strong> manifest <code>public/catalogs/index.json</code> steruje statycznym generowaniem stron (<code>generateStaticParams</code>).</li>
+        <li><strong>Bezpieczeństwo typów end-to-end:</strong> TypeScript w&nbsp;trybie ścisłym, 0&nbsp;błędów typów.</li>
+        <li><strong>CI/CD:</strong> każdy commit generuje preview deployment na Vercel, dostępny dla Zamawiającego do bieżącej weryfikacji.</li>
+      </ul>
+    </section>
+
+    <!-- 11. Harmonogram -->
     <section id="harmonogram">
-      <h2>10. Harmonogram prac (5 etapów) <a href="#harmonogram" class="anchor">#</a></h2>
+      <h2>11. Harmonogram prac (5 etapów) <a href="#harmonogram" class="anchor">#</a></h2>
 
       <table>
         <thead>
@@ -1232,7 +1377,7 @@
             <td class="num">4.</td>
             <td><strong>Produkcja materiałów</strong></td>
             <td>Materiały graficzne w jakości 4K; monitoring postępów; elementy interaktywne podnoszące jakość użytkowania</td>
-            <td>Rendery 4K (do 2160 × 2160 px dla packshotów); pipeline <code>npm run images</code> generuje warianty responsywne (480w / 960w / 1440w / oryginał). CI Vercel z preview deployment dla każdego commita. Zaimplementowano: konfigurator materiałów/wykończeń, Lightbox z nawigacją klawiaturą, Hero slider, Features tabs, mobile gallery swipe, download PDF.</td>
+            <td>Rendery 4K (do 2160 × 2160 px dla packshotów); pipeline <code>npm run images</code> generuje warianty responsywne (480w / 960w / 1440w / oryginał). CI Vercel z preview deployment dla każdego commita. Materiały graficzne udostępniane Zamawiającemu na bieżąco na dedykowanej platformie <a href="https://app.conceptfab.com">app.conceptfab.com</a> (komplet plików zostanie dołączony do przekazania projektu). Zaimplementowano: konfigurator materiałów/wykończeń, Lightbox z nawigacją klawiaturą, Hero slider, Features tabs, mobile gallery swipe, download PDF.</td>
             <td class="status"><span class="badge ok">Wykonane</span></td>
           </tr>
           <tr>
@@ -1245,7 +1390,7 @@
         </tbody>
       </table>
 
-      <h3>9.1 Pliki PDF dostarczone (1 plik na katalog)</h3>
+      <h3>11.1 Pliki PDF dostarczone (1 plik na katalog)</h3>
       <ul>
         <li><code>public/catalogs/QX/Download/metro-qx.pdf</code></li>
         <li><code>public/catalogs/QS/Download/</code></li>
@@ -1258,9 +1403,9 @@
       </ul>
     </section>
 
-    <!-- 11. Wskaźniki -->
+    <!-- 12. Wskaźniki -->
     <section id="wskazniki">
-      <h2>11. Wskaźniki realizacji <a href="#wskazniki" class="anchor">#</a></h2>
+      <h2>12. Wskaźniki realizacji <a href="#wskazniki" class="anchor">#</a></h2>
 
       <p>Podsumowanie kluczowych wskaźników na dzień 29 maja 2026 r.</p>
 
@@ -1350,9 +1495,9 @@
       </table>
     </section>
 
-    <!-- 12. Oświadczenie końcowe -->
+    <!-- 13. Oświadczenie końcowe -->
     <section id="oswiadczenie">
-      <h2>12. Oświadczenie końcowe <a href="#oswiadczenie" class="anchor">#</a></h2>
+      <h2>13. Oświadczenie końcowe <a href="#oswiadczenie" class="anchor">#</a></h2>
 
       <p>Niniejszym Wykonawca oświadcza, że:</p>
 
@@ -1365,14 +1510,15 @@
         <li><strong>Informacje o produktach</strong> w zakresie konstrukcji, technologii oraz funkcjonalności zostały opracowane zgodnie ze specyfikacją.</li>
         <li><strong>Uniwersalne projektowanie</strong> zostało zrealizowane zgodnie z art. 2 pkt 4 Ustawy z dnia 19 lipca 2019 r., w&nbsp;pełnej zgodności z WCAG 2.1 AA.</li>
         <li><strong>Harmonogram prac</strong> (5 etapów: brief, debrief, modele 3D, produkcja, testowanie / optymalizacja) został zrealizowany w&nbsp;okresie 1.01.2026 – 31.05.2026.</li>
+        <li><strong>Pliki graficzne</strong> wykonane w&nbsp;trakcie realizacji (rendery, packshoty, aranżacje, materiały robocze) zostaną dołączone do przekazania projektu; w&nbsp;trakcie prac były na bieżąco udostępniane Zamawiającemu na specjalnie utworzonej na potrzeby projektu platformie internetowej <a href="https://app.conceptfab.com">app.conceptfab.com</a>.</li>
       </ol>
 
       <p>Wykonawca pozostaje do dyspozycji Zamawiającego na potrzeby odbioru końcowego, prezentacji wdrożenia oraz przekazania kompletu dokumentacji projektowej.</p>
     </section>
 
-    <!-- 13. Załączniki -->
+    <!-- 14. Załączniki -->
     <section id="zalaczniki">
-      <h2>13. Dokumenty projektu <a href="#zalaczniki" class="anchor">#</a></h2>
+      <h2>14. Dokumenty projektu <a href="#zalaczniki" class="anchor">#</a></h2>
 
       <p>Wszystkie dokumenty powołane w niniejszym dokumencie znajdują się w pakiecie <code>docs/odbior-2026-05-29/</code>.</p>
 
@@ -1382,10 +1528,9 @@
       <ul>
         <li><strong>1.</strong> <a href="./odbior-koncowy.html">odbior-koncowy.html</a> — niniejszy dokument: główne zestawienie wymagań i potwierdzenia realizacji</li>
         <li><strong>2.</strong> <a href="./raport-dostepnosci-final-2026-05-29.md">raport-dostepnosci-final-2026-05-29.md</a> — raport końcowy zgodności z zasadami uniwersalnego projektowania (wersja 2.0, markdown)</li>
-        <li><strong>3.</strong> <a href="./potwierdzenie-zgodnosci-zalacznik-2-2026-05-29.md">potwierdzenie-zgodnosci-zalacznik-2-2026-05-29.md</a> — potwierdzenie zgodności z Załącznikiem nr 2 (markdown)</li>
-        <li><strong>4.</strong> <a href="./ZAŁĄCZNIK_2_PARAMETRYZACJA.md">ZAŁĄCZNIK_2_PARAMETRYZACJA.md</a> — Załącznik nr 2 do zapytania ofertowego (dokument źródłowy postępowania)</li>
-        <li><strong>5.</strong> <a href="./zasady.md">zasady.md</a> — 10 zasad uniwersalnego projektowania przyjętych dla projektu</li>
-        <li><strong>6.</strong> <a href="./dokumentacja.html">dokumentacja.html</a> — dokumentacja techniczna projektu (13 sekcji)</li>
+        <li><strong>3.</strong> <a href="./ZAŁĄCZNIK_2_PARAMETRYZACJA.md">ZAŁĄCZNIK_2_PARAMETRYZACJA.md</a> — Załącznik nr 2 do zapytania ofertowego (dokument źródłowy postępowania)</li>
+        <li><strong>4.</strong> <a href="./zasady.md">zasady.md</a> — 10 zasad uniwersalnego projektowania przyjętych dla projektu</li>
+        <li><strong>5.</strong> <a href="./dokumentacja.html">dokumentacja.html</a> — dokumentacja techniczna projektu (13 sekcji)</li>
         <li><strong>0.</strong> <a href="./README.md">README.md</a> — indeks pakietu dokumentacji odbiorowej</li>
       </ul>
 
@@ -1393,7 +1538,7 @@
 
     <footer style="margin-top:64px;padding-top:24px;border-top:1px solid #d0d7de;color:#656d76;font-size:13px">
       <p style="margin:0">
-        <strong>Sporządził:</strong> Michał Kleniewski &middot;
+        <strong>Sporządził:</strong> CONCEPTFAB Michał Kleniewski &middot;
         <strong>Data:</strong> 29 maja 2026 r. &middot;
         <strong>Lokalizacja:</strong> <code>docs/odbior-2026-05-29/odbior-koncowy.html</code>
       </p>

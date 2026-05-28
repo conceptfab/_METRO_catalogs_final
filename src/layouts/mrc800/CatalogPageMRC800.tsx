@@ -53,6 +53,7 @@ export default function CatalogPageMRC800({
             catalog.meta.brandName ?? globalConfig?.brandName ?? catalog.hero.brandLabel
           ).toUpperCase()}
           brandLogoSrc="/catalogs/MRC800/metro_logo.svg"
+          backToCatalogListHref="/"
         />
 
         <main

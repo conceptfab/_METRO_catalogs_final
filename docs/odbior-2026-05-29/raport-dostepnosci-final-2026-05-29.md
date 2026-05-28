@@ -3,7 +3,7 @@
 **Data sporządzenia:** 29 maja 2026 r.
 **Wersja dokumentu:** 2.0 (raport finalny, zastępuje wersję 1.0 z 2026-05-07)
 **Przedmiot:** Katalog interaktywny online — METRO Catalogs (kolekcje QX, QS, VR, TS, FM, FOTA, MRC800, MRC1000 dystrybuowane pod marką METRO).
-**Wykonawca raportu:** Michał Kleniewski.
+**Wykonawca raportu:** CONCEPTFAB Michał Kleniewski.
 **Repozytorium:** `__METRO_catalogs`, branch `main` — projekt produkcyjny wdrożony na Vercel (`metro-catalogs`, ID `prj_ftCfrK7OGj9L0XVVVGCGTwWGWs97`).
 **Standard odniesienia:** Web Content Accessibility Guidelines (WCAG) 2.1 na poziomie AA.
 
@@ -335,12 +335,11 @@ Poniżej zasady 1–10 z dokumentu [docs/zasady.md](./zasady.md) wraz z uzasadni
 - **Załącznik D.** Zasady projektowe (dokument źródłowy) — [`docs/zasady.md`](./zasady.md)
 - **Załącznik E.** Dokumentacja wzorców a11y na żywo — strona `/design-system#a11y-patterns` w aplikacji
 - **Załącznik F.** Załącznik nr 2 do zapytania ofertowego — Parametryzacja — [`ZAŁĄCZNIK_2_PARAMETRYZACJA.md`](./ZAŁĄCZNIK_2_PARAMETRYZACJA.md)
-- **Załącznik G.** Potwierdzenie zgodności z Załącznikiem nr 2 — [`potwierdzenie-zgodnosci-zalacznik-2-2026-05-29.md`](./potwierdzenie-zgodnosci-zalacznik-2-2026-05-29.md)
-- **Załącznik H.** Dokumentacja techniczna projektu — [`dokumentacja.html`](./dokumentacja.html)
+- **Załącznik G.** Dokumentacja techniczna projektu — [`dokumentacja.html`](./dokumentacja.html)
 
 ---
 
-**Sporządził:** Michał Kleniewski
+**Sporządził:** CONCEPTFAB Michał Kleniewski
 **Data:** 29 maja 2026 r.
 **Podpis elektroniczny / data zatwierdzenia:** _____________________
 

@@ -68,6 +68,7 @@ export default function CatalogPageQX({
             catalog.meta.brandName ?? globalConfig?.brandName ?? catalog.hero.brandLabel
           ).toUpperCase()}
           brandLogoSrc="/catalogs/QX/metro_logo.svg"
+          backToCatalogListHref="/"
           variant="qx0"
         />
 
