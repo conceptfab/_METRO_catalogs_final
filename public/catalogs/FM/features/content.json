@@ -12,24 +12,28 @@
       "variants": [
         {
           "title": "Classic profile",
+          "caption": "Timeless rectangular profile for any office",
           "video": {
             "src": "/catalogs/FM/features/FM_classic.mp4"
           }
         },
         {
           "title": "Width 100–180 cm",
+          "caption": "Five worktop widths: 100, 120, 140, 160 and 180 cm",
           "video": {
             "src": "/catalogs/FM/features/FM_width_100-180.mp4"
           }
         },
         {
           "title": "Depth 70–80 cm",
+          "caption": "Two worktop depths: 70 and 80 cm",
           "video": {
             "src": "/catalogs/FM/features/FM_depth_70-80.mp4"
           }
         },
         {
           "title": "Optional return desk",
+          "caption": "Optional return desk adds an L-shaped extension",
           "video": {
             "src": "/catalogs/FM/features/FM_extend.mp4"
           }
@@ -40,6 +44,7 @@
       "icon": "wrench",
       "title": "Quick & simple assembly",
       "desc": "Pre-assembled frame keeps installation fast and straightforward. One person can complete a full desk without specialist help.",
+      "caption": "Pre-assembled frame — one-person installation",
       "video": {
         "src": "/catalogs/FM/features/FM_assembly.mp4"
       }

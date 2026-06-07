@@ -12,24 +12,28 @@
       "variants": [
         {
           "title": "Height 64–127 cm",
+          "caption": "Smooth sit-stand height adjustment from 64 to 127 cm",
           "video": {
             "src": "/catalogs/TS/features/TS_height.mp4"
           }
         },
         {
           "title": "Width 120–180 cm",
+          "caption": "Four worktop widths: 120, 140, 160 and 180 cm",
           "video": {
             "src": "/catalogs/TS/features/TS_width_120-180.mp4"
           }
         },
         {
           "title": "Depth 70–80 cm",
+          "caption": "Two worktop depths: 70 and 80 cm",
           "video": {
             "src": "/catalogs/TS/features/TS_depth_70-80.mp4"
           }
         },
         {
           "title": "Optional return desk",
+          "caption": "Optional return desk adds an L-shaped extension",
           "video": {
             "src": "/catalogs/TS/features/TS_extend.mp4"
           }
@@ -41,13 +45,30 @@
       "title": "Accessory ready",
       "desc": "Mount monitor arms, CPU holders, cable trays, and power modules without drilling. The under-desk rail accepts 30+ certified accessories from day one or after years of use.",
       "video": {
-        "src": "/catalogs/TS/features/TS_footers.mp4"
-      }
+        "src": "/catalogs/TS/features/TS_acces_V4.mp4"
+      },
+      "variants": [
+        {
+          "title": "Fully equipped",
+          "caption": "Monitor arm, shelf and document holder on the toolbar rail",
+          "video": {
+            "src": "/catalogs/TS/features/TS_acces_V4.mp4"
+          }
+        },
+        {
+          "title": "Privacy screen",
+          "caption": "Privacy screen mounted on the toolbar rail",
+          "video": {
+            "src": "/catalogs/TS/features/TS_acces_V3.mp4"
+          }
+        }
+      ]
     },
     {
       "icon": "wrench",
       "title": "Quick & simple assembly",
       "desc": "Pre-assembled frame keeps installation fast and straightforward. One person can complete a full desk without specialist help.",
+      "caption": "Pre-assembled frame — one-person installation",
       "video": {
         "src": "/catalogs/TS/features/TS_assembly.mp4"
       }
@@ -56,6 +77,7 @@
       "icon": "sparkles",
       "title": "Seamless welded joints",
       "desc": "Profile joints are welded and finished without visible seams, leaving the frame clean and uniform from every angle.",
+      "caption": "Profile joints welded without visible seams",
       "video": {
         "src": "/catalogs/TS/features/TS_welds.mp4"
       }

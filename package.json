@@ -27,6 +27,8 @@
     "optimize:images:force": "node scripts/optimize-images.mjs --force",
     "optimize:videos": "node scripts/optimize-videos.mjs",
     "optimize:videos:force": "node scripts/optimize-videos.mjs --force",
+    "posters": "node scripts/generate-feature-posters.mjs",
+    "posters:force": "node scripts/generate-feature-posters.mjs --force",
     "thumbnails": "node scripts/generate-thumbnails.mjs",
     "thumbnails:force": "node scripts/generate-thumbnails.mjs --force",
     "thumbnails:clean": "node scripts/generate-thumbnails.mjs --clean",

@@ -405,6 +405,8 @@ export interface MaterialsData {
 
 export interface FeatureVariant {
   title: string;
+  /** Optional short description shown beneath the video for this variant. */
+  caption?: string;
   video?: {
     src: string;
     poster?: string;
@@ -415,6 +417,8 @@ export interface FeatureItem {
   icon: string;
   title: string;
   desc: string;
+  /** Optional short description shown beneath the video (used when the item has no variants). */
+  caption?: string;
   video?: {
     src: string;
     poster?: string;

@@ -1,6 +1,7 @@
 import { createElement } from 'react';
 import type { FeatureItem, FeaturesData } from '@/types/catalog';
 import { getIcon } from '@/lib/icon-map';
+import { orderFeatureVariants } from '@/lib/feature-variant-order';
 import { SectionHeading } from '@/components/catalog/SectionHeading';
 import { QxText } from '@/components/catalog/QxText';
 import { PrintImage } from '@/components/catalog/PrintImage';
@@ -60,11 +61,12 @@ function flattenVariants(items: FeatureItem[]): FeatureItem[] {
       result.push(item);
       continue;
     }
-    for (const variant of variants) {
+    for (const variant of orderFeatureVariants(variants)) {
       result.push({
         icon: item.icon,
         title: variant.title,
         desc: item.desc,
+        caption: variant.caption,
         video: variant.video,
       });
     }
@@ -100,7 +102,7 @@ function FeatureCard({ item }: { item: FeatureItem }) {
       </div>
 
       <p className="features-print-desc">
-        <QxText text={item.desc} />
+        <QxText text={item.caption ?? item.desc} />
       </p>
     </article>
   );

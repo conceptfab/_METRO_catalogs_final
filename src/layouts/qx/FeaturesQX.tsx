@@ -5,6 +5,7 @@ import { AnimatePresence, m, useInView, useReducedMotion } from 'framer-motion';
 import type { FeatureItem, FeatureVariant, FeaturesData } from '@/types/catalog';
 import { getIcon } from '@/lib/icon-map';
 import { SECTION_REVEAL_SLIDE, slowTransition } from '@/lib/motion';
+import { orderFeatureItems } from '@/lib/feature-variant-order';
 import { QxText } from '@/components/catalog/QxText';
 
 interface FeaturesSectionProps {
@@ -21,13 +22,20 @@ interface FeatureVideoProps {
   video: ActiveVideo | undefined;
   videoKey: string;
   ariaLabel: string;
+  caption?: string;
 }
 
-function FeatureVideo({ videoRef, video, videoKey, ariaLabel }: FeatureVideoProps) {
+function FeatureVideo({
+  videoRef,
+  video,
+  videoKey,
+  ariaLabel,
+  caption,
+}: FeatureVideoProps) {
   return (
-    <div className="relative aspect-square w-full overflow-hidden bg-surface-elevated">
-      {video ? (
-        <>
+    <figure className="w-full">
+      <div className="relative aspect-square w-full overflow-hidden bg-surface-elevated">
+        {video ? (
           <video
             ref={videoRef}
             key={videoKey}
@@ -40,10 +48,19 @@ function FeatureVideo({ videoRef, video, videoKey, ariaLabel }: FeatureVideoProp
             tabIndex={-1}
             aria-hidden="true"
           />
-          <span className="sr-only">{ariaLabel}</span>
-        </>
-      ) : null}
-    </div>
+        ) : null}
+      </div>
+      {caption ? (
+        <figcaption
+          key={`${videoKey}-caption`}
+          className="qx-video-caption mt-3 text-center"
+        >
+          <QxText text={caption} />
+        </figcaption>
+      ) : (
+        <figcaption className="sr-only">{ariaLabel}</figcaption>
+      )}
+    </figure>
   );
 }
 
@@ -57,6 +74,16 @@ function resolveActiveVideo(
   return feature?.video;
 }
 
+function resolveActiveCaption(
+  feature: FeatureItem | undefined,
+  variant: FeatureVariant | undefined,
+): string | undefined {
+  if (feature?.variants && feature.variants.length > 0) {
+    return variant?.caption;
+  }
+  return feature?.caption;
+}
+
 const FeaturesQX = ({ data }: FeaturesSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -68,11 +95,12 @@ const FeaturesQX = ({ data }: FeaturesSectionProps) => {
   const mobileVideoRef = useRef<HTMLVideoElement | null>(null);
   const desktopVideoRef = useRef<HTMLVideoElement | null>(null);
 
-  const items = data.items;
+  const items = orderFeatureItems(data.items);
   const active: FeatureItem | undefined = items[activeIndex];
   const activeVariants = active?.variants;
   const activeVariant = activeVariants?.[activeVariantIndex];
   const activeVideo = resolveActiveVideo(active, activeVariant);
+  const activeCaption = resolveActiveCaption(active, activeVariant);
   const videoKey = `${activeIndex}-${activeVariants ? activeVariantIndex : 'main'}-${activeVideo?.src ?? 'empty'}`;
   const ariaLabel = active
     ? activeVariant
@@ -155,6 +183,7 @@ const FeaturesQX = ({ data }: FeaturesSectionProps) => {
               video={activeVideo}
               videoKey={`mobile-${videoKey}`}
               ariaLabel={ariaLabel}
+              caption={activeCaption}
             />
           </m.div>
 
@@ -170,7 +199,6 @@ const FeaturesQX = ({ data }: FeaturesSectionProps) => {
               {items.map((item, index) => {
                 const Icon = getIcon(item.icon);
                 const isActive = index === activeIndex;
-                const panelId = `functionality-panel-${index}`;
                 const tabId = `functionality-tab-${index}`;
                 const variants = item.variants;
                 const hasVariants = !!variants && variants.length > 0;
@@ -185,9 +213,7 @@ const FeaturesQX = ({ data }: FeaturesSectionProps) => {
                       id={tabId}
                       role="tab"
                       aria-selected={isActive}
-                      aria-controls={
-                        hasVariants ? variantGroupId : panelId
-                      }
+                      aria-controls={hasVariants ? variantGroupId : undefined}
                       aria-expanded={hasVariants ? variantsExpanded : undefined}
                       tabIndex={isActive ? 0 : -1}
                       onClick={() => handleSelectFeature(index, hasVariants)}
@@ -244,13 +270,13 @@ const FeaturesQX = ({ data }: FeaturesSectionProps) => {
                                       setActiveVariantIndex(vIndex)
                                     }
                                     aria-pressed={isVariantActive}
-                                    className={`flex w-full items-center border px-4 py-3 text-left text-sm transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground ${
+                                    className={`flex w-full items-center border px-4 py-2 text-left transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground ${
                                       isVariantActive
                                         ? 'border-foreground bg-foreground text-background'
-                                        : 'border-border bg-background text-foreground hover:border-foreground/40 hover:bg-foreground/5'
+                                        : 'border-border bg-background text-muted-foreground hover:border-foreground/40 hover:bg-foreground/5 hover:text-foreground'
                                     }`}
                                   >
-                                    <span className="qx-item-title">
+                                    <span className="qx-variant-title">
                                       <QxText text={variant.title} />
                                     </span>
                                   </button>
@@ -266,26 +292,6 @@ const FeaturesQX = ({ data }: FeaturesSectionProps) => {
               })}
             </div>
           </m.div>
-
-          <div
-            className="mt-8 max-w-[520px] lg:mt-10"
-            id={`functionality-panel-${activeIndex}`}
-            role="tabpanel"
-            aria-labelledby={`functionality-tab-${activeIndex}`}
-          >
-            <AnimatePresence mode="wait">
-              <m.p
-                key={activeIndex}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={slowTransition({ duration: 0.35 })}
-                className="sec_main_text font-body"
-              >
-                {active && <QxText text={active.desc} />}
-              </m.p>
-            </AnimatePresence>
-          </div>
         </div>
 
         <div className="hidden lg:absolute lg:inset-y-0 lg:left-1/2 lg:right-0 lg:flex lg:items-center lg:justify-center">
@@ -294,6 +300,7 @@ const FeaturesQX = ({ data }: FeaturesSectionProps) => {
             video={activeVideo}
             videoKey={`desktop-${videoKey}`}
             ariaLabel={ariaLabel}
+            caption={activeCaption}
           />
         </div>
       </div>
